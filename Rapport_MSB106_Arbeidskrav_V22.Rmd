@@ -11,10 +11,10 @@ author:
 - Vilde Haugland
 subtitle: MSB106, Anvendt by- og regionaløkonomi
 output:
-  pdf_document: default
-  html_notebook: default
-  html_document:
-    df_print: paged
+  pdf_document:
+html_notebook: default
+html_document:
+  df_print: paged
 lang: no-NB
 editor_options: 
   markdown: 
@@ -28,6 +28,7 @@ suppressPackageStartupMessages({
   library(knitr)
   library(viridis)
   library(tidyverse)
+  library(kableExtra)
   })
 knitr::opts_chunk$set(echo=FALSE, include = TRUE)
 ```
@@ -665,23 +666,30 @@ tmp <- hgl_Pendling
 
 
 ```{r}
-new_names <- tmp %>% 
+knavn <- tmp %>% 
   # Bokommuen???
   select(-Bokommuen) %>% 
   names() %>% 
-  str_sub(start = -4L, end = -1L) %>% 
-  paste("k", ., sep = "_") %>% 
-  # retter skrivefeil
-  c("Bokommune", .) 
+  str_split("_") %>% 
+  map_chr(1)
 
-names(tmp) <- new_names
+names(tmp) <- c("Bo/Arbeid", knavn) 
 
+tmp <- tmp %>%
+  mutate(
+   `Bo/Arbeid` = map_chr(str_split(`Bo/Arbeid`, "_"), 1)
+  )
 ```
 
 
 ```{r Pendling på Haugalandet}
-tmp %>% 
-  kable()
+tmp %>%
+ kbl(
+   booktabs = T,
+   align = "lcccccccc",
+   linesep = "" # to avoid extra linesep every 5th row
+ ) %>% 
+  kable_styling(latex_options = "striped")
 ```
 
 ```{r}
@@ -690,22 +698,30 @@ tmp <- sun_Pendling
 
 
 ```{r}
-new_names <- tmp %>% 
+knavn <- tmp %>% 
   # Bokommuen???
   select(-Bokommuen) %>% 
   names() %>% 
-  str_sub(start = -4L, end = -1L) %>% 
-  paste("k", ., sep = "_") %>% 
-  # retter skrivefeil
-  c("Bokommune", .) 
+  str_split("_") %>% 
+  map_chr(1)
 
-names(tmp) <- new_names
+names(tmp) <- c("Bo/Arbeid", knavn) 
+
+tmp <- tmp %>%
+  mutate(
+   `Bo/Arbeid` = map_chr(str_split(`Bo/Arbeid`, "_"), 1)
+  )
 ```
 
 
 ```{r Pendling i Sunnhordland}
-tmp %>% 
-  kable()
+tmp %>%
+ kbl(
+   booktabs = T,
+   align = "lcccccccc",
+   linesep = "" # to avoid extra linesep every 5th row
+ ) %>% 
+  kable_styling(latex_options = "striped")
 ```
 
 -   
