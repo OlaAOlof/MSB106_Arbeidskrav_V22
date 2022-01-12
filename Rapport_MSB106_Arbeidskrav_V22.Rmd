@@ -639,7 +639,60 @@ hgl_Pendling
 sun_Pendling
 ```
 
--   
+```{r}
+#nasjonalt bosted
+nbo <- read_delim(
+  file = "data/nasjonalt_bosted.csv", 
+  delim = ";",
+  show_col_types = FALSE
+  )nbo %>% 
+  select(-...2, -...3) %>% 
+  rename(
+    naering = ...1
+  ) %>% 
+  mutate(
+    # Fikser verdiene i variabelen naering slik at de følger
+    # R-reglene for variabelnavn. Ikke strengt nødvendig, 
+    # men kan gjøre livet lettere for oss senere
+    naering = str_replace_all(naering, pattern = "[-.,\\s]+", "_"),
+    naering = paste("k", naering, sep="_")
+  )
+```
+
+```{r}
+nbo_l <- nbo %>% 
+  pivot_longer(
+    cols = `2008`:`2020`,
+    names_to = "aar",
+    values_to = "personer"
+  )
+```
+
+```{r}
+nbo_w <- nbo_l %>% 
+  pivot_wider(
+    id_cols = aar,
+    names_from = naering,
+    values_from = personer
+  )
+```
+
+
+
+```{r}
+#nasjonalt arbeidssted
+nar <- read_delim(file = "data/nasjonalt_bosted.csv", 
+                 delim = ";",
+                 show_col_types = FALSE
+                 )
+```
+```{r}
+#Samme eksersis som for nbo_w
+```
+
+
+
+
 
 ```{r siste}
 # Siste
