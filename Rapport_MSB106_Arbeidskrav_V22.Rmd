@@ -919,12 +919,15 @@ Haug_arb_GINI <- Haug_arb_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_arbeidssted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_arbeidssted$Industri/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
-    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse
+) %>% 
   mutate_if(is.numeric, round, digits=4)
 ```
 
@@ -1004,12 +1007,15 @@ Bokn_arb_GINI <- Bokn_arb_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_arbeidssted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_arbeidssted$Industri/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
-    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse
+) %>% 
   mutate_if(is.numeric, round, digits=4)
 ```
 
@@ -1089,12 +1095,15 @@ Tysv_arb_GINI <- Tysv_arb_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_arbeidssted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_arbeidssted$Industri/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
-    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse
+) %>% 
   mutate_if(is.numeric, round, digits=4)
 ```
 
@@ -1174,12 +1183,15 @@ Karm_arb_GINI <- Karm_arb_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_arbeidssted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_arbeidssted$Industri/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
-    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse
+) %>% 
   mutate_if(is.numeric, round, digits=4)
 ```
 
@@ -1339,12 +1351,15 @@ Stord_arb_GINI <- Stord_arb_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_arbeidssted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_arbeidssted$Industri/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
-    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse
+) %>% 
   mutate_if(is.numeric, round, digits=4)
 ```
 
@@ -1424,12 +1439,15 @@ Kvinn_arb_GINI <- Kvinn_arb_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_arbeidssted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_arbeidssted$Industri/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
-    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse
+) %>% 
   mutate_if(is.numeric, round, digits=4)
 ```
 
@@ -1509,12 +1527,15 @@ Bømlo_arb_GINI <- Bømlo_arb_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_arbeidssted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_arbeidssted$Industri/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
-    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse
+) %>% 
   mutate_if(is.numeric, round, digits=4)
 ```
 
@@ -1594,12 +1615,15 @@ Sveio_arb_GINI <- Sveio_arb_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_arbeidssted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_arbeidssted$Industri/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
-    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse
+) %>% 
   mutate_if(is.numeric, round, digits=4)
 ```
 
@@ -1764,12 +1788,15 @@ Odda_arb_GINI <- Odda_arb_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjo_arb_red$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjo_arb_red$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjo_arb_red$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjo_arb_red$`Jordbruk, Skogbruk og Fiske`/nasjo_arb_red$`Alle Næringer`,
+    Ein_En_Industri = nasjo_arb_red$Industri/nasjo_arb_red$`Alle Næringer`,
+    Ein_En_Helse = nasjo_arb_red$`Helse- og Sosialtjenester`/nasjo_arb_red$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
-    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse
+) %>% 
   mutate_if(is.numeric, round, digits=4)
 ```
 
@@ -1849,12 +1876,15 @@ Ullen_arb_GINI <- Ullen_arb_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_arbeidssted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_arbeidssted$Industri/nasjonalt_arbeidssted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
-    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse
+) %>% 
   mutate_if(is.numeric, round, digits=4)
 ```
 
