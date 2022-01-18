@@ -451,7 +451,7 @@ hau20 <- syssel_bos %>%
 ```
 
 ```{r}
-syssel_bos <- syssel_bos %>% 
+lq_syssel_bos <- syssel_bos %>% 
   mutate(Eir_Er_industri = Industri/`Alle Næringer`,
          Eir_Er_Jordbruk = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
          Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
@@ -471,40 +471,54 @@ nasjonalt_bosted <- nasjonalt_bosted %>%
          Ein_En_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
 ```
 
-```{r, include=FALSE}
-# Forelår å være litt mer forsiktig her. syssel_bos$Eir_Er_industri har lengde 207
-# 13*15 + 12 (den siste Odda). nasjonalt_bosted$Ein_En_Industri har lengde 13
-# Koden her forutsetter at nasjonalt_bosted$Ein_En_Industri kan replikeres 16
-# ganger. Risky i utgangspunktet og her går det galt pga. Odda med 12 obs.
-# Medfører at resultatet blir galt etter Odda. Foreslår å ta det mer stegvis slik at
-# en gar mer kontroll
 
-LQindustri <- syssel_bos %>% 
+```{r}
+LQ_bos_Jordbruk <- lq_syssel_bos%>% 
+  select(aar, knavn, Eir_Er_Jordbruk) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_bosted, aar, Ein_En_Jordbruk), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Jordbruk/Ein_En_Jordbruk
+  )
+
+LQ_bos_Industri <- lq_syssel_bos %>% 
   select(aar, knavn, Eir_Er_industri) %>% 
   mutate(aar = as.character(aar)) %>% 
   left_join(select(.data = nasjonalt_bosted, aar, Ein_En_Industri), by = c("aar")) %>% 
-  mutate(
-  andel = Eir_Er_industri/Ein_En_Industri
-  )
+  mutate(andel = Eir_Er_industri/Ein_En_Industri)
 
-# Disse må fikses på tilsvarende vis. Har feil verdier slik de er nå 
-LQjordbruk <- as_tibble(syssel_bos$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
-LQundervisning <- as_tibble(syssel_bos$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
-LQhelse <- as_tibble(syssel_bos$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
+
+LQ_bos_Undervisning <- lq_syssel_bos %>% 
+  select(aar, knavn, Eir_Er_Undervisning) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_bosted, aar, Ein_En_Undervisning), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Undervisning/Ein_En_Undervisning)
+
+
+LQ_bos_Helse <- lq_syssel_bos %>% 
+  select(aar, knavn, Eir_Er_Helse) %>% 
+  mutate(aar = as.character(aar)) %>% 
+  left_join(select(.data = nasjonalt_bosted, aar, Ein_En_Helse), by = c("aar")) %>% 
+  mutate(andel = Eir_Er_Helse/Ein_En_Helse)
 ```
 
 ```{r}
 syssel_bos <- syssel_bos %>% 
-  mutate(LQindustri = LQindustri$andel,
-         LQjordbruk = LQjordbruk,
-         LQundervisning = LQundervisning,
-         LQhelse = LQhelse)
+  mutate(LQ_bos_Jordbruk = LQ_bos_Jordbruk$andel,
+         LQ_bos_Industri = LQ_bos_Industri$andel,
+         LQ_bos_Undervisning = LQ_bos_Undervisning$andel,
+         LQ_bos_Helse = LQ_bos_Helse$andel)
 ```
 
 ```{r}
-LQbos <- syssel_bos %>% 
-  select(aar, knavn, LQindustri, LQjordbruk, LQundervisning, LQhelse)
+LQ_bos <- syssel_bos %>% 
+  select(aar, knavn, LQ_bos_Jordbruk, LQ_bos_Industri, LQ_bos_Undervisning, LQ_bos_Helse)
 ```
+
+```{r}
+LQ_bos[is.na(LQ_bos)] = 0
+```
+
+
 
 For region Haugaland:
 

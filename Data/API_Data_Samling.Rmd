@@ -790,6 +790,8 @@ har_bos <- har_bos %>%
 # 2. Mål for Beskrivelse av Næringsstrukturen
 
 
+
+
 # 3. Sysselsetting i ulike næringer, etter arbeidsstedskommune
 
 # 4. Pendling mellom de ulike kommunene i regionen (Heidi og Ann Elisabeth jobber videre med denne)
