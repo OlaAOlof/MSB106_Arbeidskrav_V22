@@ -1921,6 +1921,8 @@ kable(
   add_header_above(c("Ullensvang: Lokalkvotient"=11))
 ```
 
+-
+
 ## Nasjonalt?? (Dette kan kaaaaaaaaaaaaaaaaaaaaaaanskje bli tatt vekk. Det ser vi etter kvart)
 
 ```{r}
