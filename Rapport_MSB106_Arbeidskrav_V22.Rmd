@@ -598,6 +598,391 @@ har_bos_LQ <- har_bos_LQ %>%
   select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
 ```
 
+### GINI Regionaltnivå
+#### Haugalandet
+
+```{r}
+hld_bos_GINI <- hld_bos %>% 
+  mutate(
+    GINI_Primær = ((hld_bos$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - hld_bos$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
+    
+    GINI_Industri = ((hld_bos$Industri/nasjonalt_bosted$Industri - hld_bos$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
+    
+    GINI_Helse = ((hld_bos$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - hld_bos$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
+```
+
+```{r}
+hld_bos_GINI <- hld_bos_GINI %>% 
+  mutate(
+    RDI_Primær = 1 / abs(hld_bos$`Jordbruk, Skogbruk og Fiske` / hld_bos$`Alle Næringer` -
+  nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` / nasjonalt_bosted$`Alle Næringer`),
+    
+    RDI_Industri = 1 / abs(hld_bos$Industri / hld_bos$`Alle Næringer` -
+  nasjonalt_bosted$Industri / nasjonalt_bosted$`Alle Næringer`),
+    
+    RDI_Helse = 1 / abs(hld_bos$`Helse- og Sosialtjenester`/hld_bos$`Alle Næringer` -
+  nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`)) %>% 
+  
+  select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse) %>% 
+  mutate_if(is.numeric, round, digits=6)
+```
+
+```{r}
+kable(hld_bos_GINI,
+             col.names = c("År",
+                           "Alle",
+                           "Primær",
+                           "Industri",
+                           "Helse",
+                           "Primær",
+                           "Industri",
+                           "Helse")) %>%
+  add_header_above(c(" "=2, "GINI" = 3, "RDI" = 3)) %>%
+  add_header_above(c("Haugalandet"=8))
+```
+
+### GINI Kommunalt nivå
+#### Haugesund
+
+```{r}
+Haug_bos_GINI <- syssel_bos %>% 
+  filter(knr %in% "1106")
+```
+
+```{r}
+Haug_bos_GINI <- Haug_bos_GINI %>% 
+  mutate(
+    Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
+    Eir_Er_Industri = Industri/`Alle Næringer`,
+    Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_bosted$Industri/`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
+    LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+  mutate_if(is.numeric, round, digits=4)
+```
+
+```{r}
+names(Haug_bos_GINI)[[5]] <- "År"
+```
+
+```{r}
+Haug_bos_GINI <- Haug_bos_GINI %>% 
+  mutate(
+    GINI_Primær = ((Haug_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - Haug_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
+    
+    GINI_Industri = ((Haug_bos_GINI$Industri/nasjonalt_bosted$Industri - Haug_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
+    
+    GINI_Helse = ((Haug_bos_GINI$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - Haug_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
+```
+
+```{r}
+Haug_bos_GINI <- Haug_bos_GINI %>%
+  mutate(
+    RDI_Primær = 1 / abs(Haug_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Haug_bos_GINI$`Alle Næringer` -
+  nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` / nasjonalt_bosted$`Alle Næringer`),
+    
+    RDI_Industri = 1 / abs(Haug_bos_GINI$Industri / Haug_bos_GINI$`Alle Næringer` -
+  nasjonalt_bosted$Industri / nasjonalt_bosted$`Alle Næringer`),
+    
+    RDI_Helse = 1 / abs(Haug_bos_GINI$`Helse- og Sosialtjenester`/Haug_bos_GINI$`Alle Næringer` -
+  nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`)) %>% 
+  
+  select(År, `Alle Næringer`, Eir_Er_Primær, Eir_Er_Industri, Eir_Er_Helse, Ein_En_Primær, Ein_En_Industri, Ein_En_Helse, LQ_Primær, LQ_Industri, LQ_Helse, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse) %>% 
+  mutate_if(is.numeric, round, digits=6)
+```
+
+```{r}
+kable(
+  Haug_bos_GINI %>% 
+    select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
+             col.names = c("År",
+                           "Alle",
+                           "Primær",
+                           "Industri",
+                           "Helse",
+                           "Primær",
+                           "Industri",
+                           "Helse")) %>% 
+  add_header_above(c(" "=2, "GINI" = 3, "RDI" = 3)) %>% 
+  add_header_above(c("Haugesund: Gini & RDI"=8))
+
+kable(
+  Haug_bos_GINI %>% 
+    select(År, `Alle Næringer`, Eir_Er_Primær, Eir_Er_Industri, Eir_Er_Helse, Ein_En_Primær, Ein_En_Industri, Ein_En_Helse, LQ_Primær, LQ_Industri, LQ_Helse),
+             col.names = c("År",
+                           "Alle",
+                           "Primær",
+                           "Industri",
+                           "Helse",
+                           "Primær",
+                           "Industri",
+                           "Helse",
+                           "Primær",
+                           "Industri",
+                           "Helse")) %>% 
+  add_header_above(c(" "=2, "Eir/Er" = 3, "Ein/En" = 3, "LQ" = 3)) %>% 
+  add_header_above(c("Haugesund: Lokalkvotient"=11))
+```
+### GINI Kommunalt nivå
+#### Bokn
+
+```{r}
+Bokn_bos_GINI <- syssel_bos %>% 
+  filter(knr %in% "1145")
+```
+
+```{r}
+Bokn_bos_GINI <- Bokn_bos_GINI %>% 
+  mutate(
+    Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
+    Eir_Er_Industri = Industri/`Alle Næringer`,
+    Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_bosted$Industri/`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
+    LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+  mutate_if(is.numeric, round, digits=4)
+```
+
+```{r}
+names(Bokn_bos_GINI)[[5]] <- "År"
+```
+
+```{r}
+Bokn_bos_GINI <- Bokn_bos_GINI %>% 
+  mutate(
+    GINI_Primær = ((Bokn_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - Bokn_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
+    
+    GINI_Industri = ((Bokn_bos_GINI$Industri/nasjonalt_bosted$Industri - Bokn_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
+    
+    GINI_Helse = ((Bokn_bos_GINI$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - Bokn_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
+```
+
+```{r}
+Bokn_bos_GINI <- Bokn_bos_GINI %>% 
+  mutate(
+    RDI_Primær = 1 / abs(Bokn_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Bokn_bos_GINI$`Alle Næringer` -
+  nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` / nasjonalt_bosted$`Alle Næringer`),
+    
+    RDI_Industri = 1 / abs(Bokn_bos_GINI$Industri / Bokn_bos_GINI$`Alle Næringer` -
+  nasjonalt_bosted$Industri / nasjonalt_bosted$`Alle Næringer`),
+    
+    RDI_Helse = 1 / abs(Bokn_bos_GINI$`Helse- og Sosialtjenester`/Bokn_bos_GINI$`Alle Næringer` -
+  nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`)) %>% 
+  
+  select(År, `Alle Næringer`, Eir_Er_Primær, Eir_Er_Industri, Eir_Er_Helse, Ein_En_Primær, Ein_En_Industri, Ein_En_Helse, LQ_Primær, LQ_Industri, LQ_Helse, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse) %>% 
+  mutate_if(is.numeric, round, digits=6)
+```
+
+```{r}
+kable(
+  Bokn_bos_GINI %>% 
+    select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
+             col.names = c("År",
+                           "Alle",
+                           "Primær",
+                           "Industri",
+                           "Helse",
+                           "Primær",
+                           "Industri",
+                           "Helse")) %>% 
+  add_header_above(c(" "=2, "GINI" = 3, "RDI" = 3)) %>% 
+  add_header_above(c("Bokn: Gini & RDI"=8))
+
+kable(
+  Bokn_bos_GINI %>% 
+    select(År, `Alle Næringer`, Eir_Er_Primær, Eir_Er_Industri, Eir_Er_Helse, Ein_En_Primær, Ein_En_Industri, Ein_En_Helse, LQ_Primær, LQ_Industri, LQ_Helse),
+             col.names = c("År",
+                           "Alle",
+                           "Primær",
+                           "Industri",
+                           "Helse",
+                           "Primær",
+                           "Industri",
+                           "Helse",
+                           "Primær",
+                           "Industri",
+                           "Helse")) %>% 
+  add_header_above(c(" "=2, "Eir/Er" = 3, "Ein/En" = 3, "LQ" = 3)) %>% 
+  add_header_above(c("Bokn"=11))
+```
+### GINI Kommunalt nivå
+#### Tysvær
+
+```{r}
+Tysv_bos_GINI <- syssel_bos %>% 
+  filter(knr %in% "1146")
+```
+
+```{r}
+Tysv_bos_GINI <- Tysv_bos_GINI %>% 
+  mutate(
+    Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
+    Eir_Er_Industri = Industri/`Alle Næringer`,
+    Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_bosted$Industri/`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
+    LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+  mutate_if(is.numeric, round, digits=4)
+```
+
+```{r}
+names(Tysv_bos_GINI)[[5]] <- "År"
+```
+
+```{r}
+Tysv_bos_GINI <- Tysv_bos_GINI %>% 
+  mutate(
+    GINI_Primær = ((Tysv_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - Tysv_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
+    
+    GINI_Industri = ((Tysv_bos_GINI$Industri/nasjonalt_bosted$Industri - Tysv_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
+    
+    GINI_Helse = ((Tysv_bos_GINI$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - Tysv_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
+```
+
+```{r}
+Tysv_bos_GINI <- Tysv_bos_GINI %>% 
+  mutate(
+    RDI_Primær = 1 / abs(Tysv_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Tysv_bos_GINI$`Alle Næringer` -
+  nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` / nasjonalt_bosted$`Alle Næringer`),
+    
+    RDI_Industri = 1 / abs(Tysv_bos_GINI$Industri / Tysv_bos_GINI$`Alle Næringer` -
+  nasjonalt_bosted$Industri / nasjonalt_bosted$`Alle Næringer`),
+    
+    RDI_Helse = 1 / abs(Tysv_bos_GINI$`Helse- og Sosialtjenester`/Tysv_bos_GINI$`Alle Næringer` -
+  nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`)) %>% 
+  
+  select(År, `Alle Næringer`, Eir_Er_Primær, Eir_Er_Industri, Eir_Er_Helse, Ein_En_Primær, Ein_En_Industri, Ein_En_Helse, LQ_Primær, LQ_Industri, LQ_Helse, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse) %>% 
+  mutate_if(is.numeric, round, digits=6)
+```
+
+```{r}
+kable(
+  Tysv_bos_GINI %>% 
+    select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
+             col.names = c("År",
+                           "Alle",
+                           "Primær",
+                           "Industri",
+                           "Helse",
+                           "Primær",
+                           "Industri",
+                           "Helse")) %>% 
+  add_header_above(c(" "=2, "GINI" = 3, "RDI" = 3)) %>% 
+  add_header_above(c("Tysvær: Gini & RDI"=8))
+
+kable(
+  Tysv_bos_GINI %>% 
+    select(År, `Alle Næringer`, Eir_Er_Primær, Eir_Er_Industri, Eir_Er_Helse, Ein_En_Primær, Ein_En_Industri, Ein_En_Helse, LQ_Primær, LQ_Industri, LQ_Helse),
+             col.names = c("År",
+                           "Alle",
+                           "Primær",
+                           "Industri",
+                           "Helse",
+                           "Primær",
+                           "Industri",
+                           "Helse",
+                           "Primær",
+                           "Industri",
+                           "Helse")) %>% 
+  add_header_above(c(" "=2, "Eir/Er" = 3, "Ein/En" = 3, "LQ" = 3)) %>% 
+  add_header_above(c("Tysvær"=11))
+```
+### GINI Kommunalt nivå
+#### Karmøy
+
+```{r}
+Karm_bos_GINI <- syssel_bos %>% 
+  filter(knr %in% "1149")
+```
+
+```{r}
+Karm_bos_GINI <- Karm_bos_GINI %>% 
+  mutate(
+    Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
+    Eir_Er_Industri = Industri/`Alle Næringer`,
+    Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_bosted$Industri/`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
+    LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
+  mutate_if(is.numeric, round, digits=4)
+```
+
+```{r}
+names(Karm_bos_GINI)[[5]] <- "År"
+```
+
+```{r}
+Karm_bos_GINI <- Karm_bos_GINI %>% 
+  mutate(
+    GINI_Primær = ((Karm_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - Karm_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
+    
+    GINI_Industri = ((Karm_bos_GINI$Industri/nasjonalt_bosted$Industri - Karm_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
+    
+    GINI_Helse = ((Karm_bos_GINI$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - Karm_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
+```
+
+```{r}
+Karm_bos_GINI <- Karm_bos_GINI %>% 
+  mutate(
+    RDI_Primær = 1 / abs(Karm_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Karm_bos_GINI$`Alle Næringer` -
+  nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` / nasjonalt_bosted$`Alle Næringer`),
+    
+    RDI_Industri = 1 / abs(Karm_bos_GINI$Industri / Karm_bos_GINI$`Alle Næringer` -
+  nasjonalt_bosted$Industri / nasjonalt_bosted$`Alle Næringer`),
+    
+    RDI_Helse = 1 / abs(Karm_bos_GINI$`Helse- og Sosialtjenester`/Karm_bos_GINI$`Alle Næringer` -
+  nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`)) %>% 
+  
+  select(År, `Alle Næringer`, Eir_Er_Primær, Eir_Er_Industri, Eir_Er_Helse, Ein_En_Primær, Ein_En_Industri, Ein_En_Helse, LQ_Primær, LQ_Industri, LQ_Helse, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse) %>% 
+  mutate_if(is.numeric, round, digits=6)
+```
+
+```{r}
+kable(
+  Karm_bos_GINI %>% 
+    select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
+             col.names = c("År",
+                           "Alle",
+                           "Primær",
+                           "Industri",
+                           "Helse",
+                           "Primær",
+                           "Industri",
+                           "Helse")) %>% 
+  add_header_above(c(" "=2, "GINI" = 3, "RDI" = 3)) %>% 
+  add_header_above(c("Karmøy: Gini & RDI"=8))
+
+kable(
+  Karm_bos_GINI %>% 
+    select(År, `Alle Næringer`, Eir_Er_Primær, Eir_Er_Industri, Eir_Er_Helse, Ein_En_Primær, Ein_En_Industri, Ein_En_Helse, LQ_Primær, LQ_Industri, LQ_Helse),
+             col.names = c("År",
+                           "Alle",
+                           "Primær",
+                           "Industri",
+                           "Helse",
+                           "Primær",
+                           "Industri",
+                           "Helse",
+                           "Primær",
+                           "Industri",
+                           "Helse")) %>% 
+  add_header_above(c(" "=2, "Eir/Er" = 3, "Ein/En" = 3, "LQ" = 3)) %>% 
+  add_header_above(c("Karmøy"=11))
+```
+
+
 # 3 Sysselsetting i ulike næringer, etter bosted (Modeller under arbeid)
 
 ## Haugalandet
