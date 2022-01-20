@@ -985,7 +985,7 @@ kable(
 ### Regionaltnivå Sunnhordaland
 
 
-```{r sun_industri}
+```{r sun_bos_Eir_Er}
 sun_bos_LQ <- sun_bos %>% 
   mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
          Eir_Er_Industri = Industri/`Alle Næringer`,
@@ -1402,7 +1402,7 @@ kable(
 
 ### Reginonalt nivå Hardanger
 
-```{r har_industri}
+```{r har_bos_Eir_Er}
 har_bos_LQ <- har_bos %>% 
   mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
          Eir_Er_Industri = Industri/`Alle Næringer`,
