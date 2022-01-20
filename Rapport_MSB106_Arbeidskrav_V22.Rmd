@@ -2450,6 +2450,8 @@ RDI-indeksen viser samme nivå av fluktuasjoner i primærnæringer. Det fremkomm
 
 -- Oppsummering rundt Haugalandet--
 
+Committings
+
 ### Sunnhordland 2008-2020
 
 -   Eir_Er_Jordbruk = Samlet sysselsetting i region Sunnhordland
