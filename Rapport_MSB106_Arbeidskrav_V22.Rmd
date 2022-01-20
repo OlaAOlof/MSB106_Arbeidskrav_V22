@@ -568,6 +568,12 @@ kable(hld_bos_LQ,
 ```
 
 
+
+Vi ser at industri har hatt størst utvikling fra LQ på 1.55 til 1.75, mens resten av næringene har vært ganske stabile, med untakt av finans som har blitt nesten halvert fra 0.478 til 0.286.
+
+Fra tabellen fremkommer det at blant de 7 observerte næringene er *Finans* og *Undervisning* klyngenæringer, mens de resterende næringene i tabellen er basisnæringeringer. Vi ser at *Helse* har utviklet seg fra klynge til basisnæring da LQ-verdien over tid har utviklet seg fra under 0 til over 1.
+
+
 ### GINI Regionaltnivå
 #### Haugalandet
 
@@ -611,6 +617,12 @@ kable(hld_bos_GINI,
   add_header_above(c(" "=2, "GINI" = 3, "RDI" = 3)) %>%
   add_header_above(c("Haugalandet"=8))
 ```
+
+På Haugalandet har både primærnæringer, industri og helsetjenester har svært lave GINI-verdier, dette tyder på lav grad av klyngedannelser. GINI verdiene for industri er noe høyere enn de for primærnæringer og helse, og tendenserer derfor mer mot klyngedannelser enn de to overstående.
+
+Indeksen tyder på at næringsstrukturen i primærnæringene og helse er spesialisert. I tillegg er det svært jevn utvikling indeksen for industri, mens indeksen for primærnæringer og helse er svært ujevn over tid. Indeksverdiene tyder på at industri er en mer diversifisert næring.
+
+
 
 ### GINI Kommunalt nivå
 #### Haugesund
@@ -699,6 +711,11 @@ kable(
   add_header_above(c(" "=2, "Eir/Er" = 3, "Ein/En" = 3, "LQ" = 3)) %>% 
   add_header_above(c("Haugesund: Lokalkvotient"=11))
 ```
+Tabellen viser LQ-verdier for utvalgte næringer i Haugesund. Vi ser en tydelig vekst innen Industri hvor LQ-verdien har utviklet seg fra 1.28 til 1.36. Dette tyder på klyngedannelser innen industri, dette er ikke overraskende da industri er sentrert i Haugesund kommune.
+
+Det er svake tegn på klyngedannelser, men sterkere tegn på diversifisering i samtlige av de utvalgte næringene. Fra tabellen fremkommer det at indeksen for helse har sunket de siste årene, noe som tyder på helse næringen har blitt litt mer diversifesert de siste seks årene. 
+
+
 ### GINI Kommunalt nivå
 #### Bokn
 
@@ -786,6 +803,10 @@ kable(
   add_header_above(c(" "=2, "Eir/Er" = 3, "Ein/En" = 3, "LQ" = 3)) %>% 
   add_header_above(c("Bokn"=11))
 ```
+
+For Bokn er det verdt å merke seg at primærnæringene er diversifisert da den har en jevn og lav indeksverdi. Industri og helse viser tegn på å være litt mer mangfoldige næringer, og har også hatt en mer ujevn utvikling det siste tiåret.
+LQ-verdiene viser at primærnæringene har hatt noe vekst over tid, mens Helse og Industri har holder seg på et jevnt nivå.
+
 ### GINI Kommunalt nivå
 #### Tysvær
 
@@ -872,6 +893,9 @@ kable(
   add_header_above(c(" "=2, "Eir/Er" = 3, "Ein/En" = 3, "LQ" = 3)) %>% 
   add_header_above(c("Tysvær"=11))
 ```
+
+I Tysvær har ingen av de utvalgte næringene opplevd særlig vekst eller reduksjon det siste tiåret. Her ser vi også høyere grad av spesialisering innen helse og industri enn for primærnæringene. Industri tendenserer dog til å bli mer diversifisert med tiden.
+
 ### GINI Kommunalt nivå
 #### Karmøy
 
@@ -958,6 +982,10 @@ kable(
   add_header_above(c(" "=2, "Eir/Er" = 3, "Ein/En" = 3, "LQ" = 3)) %>% 
   add_header_above(c("Karmøy"=11))
 ```
+
+Her er det tydelig at industri er en basisnæringer mens primærnæringene og helsenæringen er lokalnærinæringer. Primærnæringene viser tegn på å være spesialisert, helsenæringen har hatt en mer ujevn utvikling men viser også tegn på spesialisering. Industri har hatt en jevn utvikling og viser seg å være mer diversifisert også her.
+
+
 ### Regionaltnivå Sunnhordaland
 
 
