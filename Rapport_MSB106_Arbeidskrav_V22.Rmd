@@ -1,14 +1,8 @@
 ---
 title: "Arbeidskrav våren 2022"
 author:
-- Kevin Ha
-- Ola Andre Olofsson
-- Ann Elisabeth Jacobsen
-- Heidi Marie Rolfsnes
-- Daniel Karstad
-- Henriette Hansen
-- Susann Birkeland Sivertsen
-- Vilde Haugland
+- Ha, K., Hansen, H., Haugland, V., Jacobsen, A. E.,
+- Karstad, D., Olofsson, O. A., Rolfsnes, H. M. & Sivertsen, S. B.
 subtitle: MSB106, Anvendt by- og regionaløkonomi
 output:
   pdf_document: default
