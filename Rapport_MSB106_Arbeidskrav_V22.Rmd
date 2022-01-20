@@ -3136,7 +3136,7 @@ kable(
 
 ??Dette ferdig??
 
--- Oppdatert LQ-verdiar.
+-- Oppdatert LQ-verdiar
 
 ## Nasjonalt?? (Dette kan kaaaaaaaaaaaaaaaaaaaaaaanskje bli tatt vekk. Det ser vi etter kvart)
 
