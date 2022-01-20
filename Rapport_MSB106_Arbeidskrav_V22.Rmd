@@ -1528,9 +1528,9 @@ Odda_bos_GINI <- Odda_bos_GINI %>%
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
     
-    Ein_En_Primær = nasjo_bos_red$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
-    Ein_En_Industri = nasjo_bos_red$Industri/nasjonalt_bosted$`Alle Næringer`,
-    Ein_En_Helse = nasjo_bos_red$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Primær = nasjo_bos_red$`Jordbruk, Skogbruk og Fiske`/nasjo_bos_red$`Alle Næringer`,
+    Ein_En_Industri = nasjo_bos_red$Industri/nasjo_bos_red$`Alle Næringer`,
+    Ein_En_Helse = nasjo_bos_red$`Helse- og Sosialtjenester`/nasjo_bos_red$`Alle Næringer`,
     
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
