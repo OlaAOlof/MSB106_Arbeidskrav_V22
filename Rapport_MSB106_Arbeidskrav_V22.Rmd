@@ -3270,6 +3270,8 @@ Oppsummeringsvis til Hardanger så ser vi en vekst i industrien og primærnærin
 
 Avsluttningsvis her kan vi si noe om vurderingen av utviklingen i våres data. Vi ser ganske tydelig nå at med det aggregeringsnivået vi har i denne rapporten, så stiller Gini-koeffisienten et problem for oss, som er en svakhet. Med aggregeringsnivået vi har i rapporten så ville det antageligvis vært mer optimalt å studere utviklingen til LQ-verdien slik vi har gjort og sammenlignet Eir/Er mot Ein/En med så små kommuner og regioner. Dette er en av hovedgrunnene til at vi velger å ta med Eir/Er og Ein/En med i tabellene som for å illustrere dataene bedre. Dessverre er dataene innhentet og tilrettelagt, og kalkuleringene er gjennomført, så vi må jobbe med det vi har. Dette er en svakhet som evt. videre arbeid på denne rapporten kunne tatt hensyn til i neste omgang. 
 
+- Slutten av denne delen. Committings.
+
 # Pendling
 
 De ulike kommunene og regionene har ulike behov, for at regionene skal utvikle seg er pendling et viktig begrep for å tiltrekke seg arbeidskraft.
