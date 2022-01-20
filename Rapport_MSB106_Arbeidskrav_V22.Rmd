@@ -347,15 +347,13 @@ Bømlo har også sett en stabil reduksjon i ansatte innen industri, samt vekst i
 
 Ser en på hele Sunnhordlandsregionen i sin helhet, så ser vi en svært tydelig vekst innen Helse- og Sosialetjenester, og reduksjon innen industri i hele regionen.
 Kvinnherad, Tysnes og Fitjar har opplevd ein markant vekst innen primærnæring.
-**Kan det vere ein grunn til dette som burde diskuterast??**
-
-# Fortsett Her (OA, KH)
 
 ## Hardanger
 
 Til slutt må vi gjere det samme med *Hardanger*
 
 I henhold til oppgavens krav til betrakter vi *Hardanger* før 2019 som Ullensvang- og Odda kommune som to separerte kommuner.
+
 i 2020 så ble Ullensvang, Odda og Jondal slått sammen til Ullensvang.
 Dette forklarer den voldsomme økningen i sysselsetting i regionen ved tidspunktet for kommunesammenslåing.
 
@@ -420,8 +418,6 @@ I figur 16 ser vi at industrinæringen utgjør en betraktelig større andel av s
 Industrinæringen er også omfattet og bygg- og anleggsvirksomhet.
 På motsatt side er jordbruk, helse- og sosialtjenester dominerende i Ullensvang.
 
-**Generelt om Ullensvang kommune**
-
 Ullensvang kommune (med Odda) har hatt en jevn og negativ befolkningsvekst i mange tiår.
 Det gjenspeiles ikke tydelig i våre modeller på grunn av skalaen som er brukt.
 I tillegg har vi ikke hensyntatt innvandrende arbeidere, eller midlertidige fraflyttede som for eksempel studenter.
@@ -429,6 +425,8 @@ I tillegg har vi ikke hensyntatt innvandrende arbeidere, eller midlertidige fraf
 # 2 (Dette er >EGENTLIG< siste del av oppgåve 3. Denne og Gini/RDI for oppgåve 3 bør bli byttast om)
 
 Finner lokaliseringskvotienter for ulike næringer i ulike kommuner, og for regionen samlet
+
+# Kanskje fjernet det under denne linja?? Dette er overflødisk no. Trenger ikkje dette lengre, med unntak av excell innlesing.
 
 ```{r}
 #ordner etter kommunenavn og år
@@ -513,11 +511,11 @@ LQ_bos <- syssel_bos %>%
 LQ_bos[is.na(LQ_bos)] = 0
 ```
 
-
+# Kanskje fjernet det ovenfor denne linja?? Dette er overflødisk no. Trenger ikkje dette lengre, med unntak av excell innlesing.
 
 For region Haugaland:
 
-```{r hld_bos_Eir_Er}
+```{r Haugalandet_Bos_LQ_1}
 hld_bos_LQ <- hld_bos %>% 
   mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
          Eir_Er_Industri = Industri/`Alle Næringer`,
@@ -553,11 +551,11 @@ hld_bos_LQ <- hld_bos %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Haugalandet_Bos_LQ_2}
 kable(hld_bos_LQ,
              col.names = c("År",
                            "Alle",
-                           "Jordbruk",
+                           "Primær",
                            "Industri",
                            "Vann",
                            "Bygg",
@@ -572,7 +570,7 @@ kable(hld_bos_LQ,
 #### Haugalandet
 
 
-```{r}
+```{r Haugalandet_Bos_LQ_3}
 hld_bos_GINI <- hld_bos %>% 
   mutate(
     GINI_Primær = ((hld_bos$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - hld_bos$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
@@ -582,7 +580,7 @@ hld_bos_GINI <- hld_bos %>%
     GINI_Helse = ((hld_bos$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - hld_bos$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
 ```
 
-```{r}
+```{r Haugalandet_Bos_LQ_4}
 hld_bos_GINI <- hld_bos_GINI %>% 
   mutate(
     RDI_Primær = 1 / abs(hld_bos$`Jordbruk, Skogbruk og Fiske` / hld_bos$`Alle Næringer` -
@@ -598,7 +596,7 @@ hld_bos_GINI <- hld_bos_GINI %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Haugalandet_Bos_LQ_5}
 kable(hld_bos_GINI,
              col.names = c("År",
                            "Alle",
@@ -615,12 +613,12 @@ kable(hld_bos_GINI,
 ### GINI Kommunalt nivå
 #### Haugesund
 
-```{r}
+```{r Haugesund_Bos_LQ_1}
 Haug_bos_GINI <- syssel_bos %>% 
   filter(knr %in% "1106")
 ```
 
-```{r}
+```{r Haugesund_Bos_LQ_2}
 Haug_bos_GINI <- Haug_bos_GINI %>% 
   mutate(
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
@@ -637,11 +635,11 @@ Haug_bos_GINI <- Haug_bos_GINI %>%
   mutate_if(is.numeric, round, digits=4)
 ```
 
-```{r}
+```{r Haugesund_Bos_LQ_3}
 names(Haug_bos_GINI)[[5]] <- "År"
 ```
 
-```{r}
+```{r Haugesund_Bos_LQ_4}
 Haug_bos_GINI <- Haug_bos_GINI %>% 
   mutate(
     GINI_Primær = ((Haug_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - Haug_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
@@ -651,7 +649,7 @@ Haug_bos_GINI <- Haug_bos_GINI %>%
     GINI_Helse = ((Haug_bos_GINI$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - Haug_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
 ```
 
-```{r}
+```{r Haugesund_Bos_LQ_5}
 Haug_bos_GINI <- Haug_bos_GINI %>%
   mutate(
     RDI_Primær = 1 / abs(Haug_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Haug_bos_GINI$`Alle Næringer` -
@@ -667,7 +665,7 @@ Haug_bos_GINI <- Haug_bos_GINI %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Haugesund_Bos_LQ_6}
 kable(
   Haug_bos_GINI %>% 
     select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
@@ -702,12 +700,12 @@ kable(
 ### GINI Kommunalt nivå
 #### Bokn
 
-```{r}
+```{r Bokn_Bos_LQ_1}
 Bokn_bos_GINI <- syssel_bos %>% 
   filter(knr %in% "1145")
 ```
 
-```{r}
+```{r Bokn_Bos_LQ_2}
 Bokn_bos_GINI <- Bokn_bos_GINI %>% 
   mutate(
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
@@ -724,11 +722,11 @@ Bokn_bos_GINI <- Bokn_bos_GINI %>%
   mutate_if(is.numeric, round, digits=4)
 ```
 
-```{r}
+```{r Bokn_Bos_LQ_3}
 names(Bokn_bos_GINI)[[5]] <- "År"
 ```
 
-```{r}
+```{r Bokn_Bos_LQ_4}
 Bokn_bos_GINI <- Bokn_bos_GINI %>% 
   mutate(
     GINI_Primær = ((Bokn_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - Bokn_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
@@ -738,7 +736,7 @@ Bokn_bos_GINI <- Bokn_bos_GINI %>%
     GINI_Helse = ((Bokn_bos_GINI$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - Bokn_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
 ```
 
-```{r}
+```{r Bokn_Bos_LQ_5}
 Bokn_bos_GINI <- Bokn_bos_GINI %>% 
   mutate(
     RDI_Primær = 1 / abs(Bokn_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Bokn_bos_GINI$`Alle Næringer` -
@@ -754,7 +752,7 @@ Bokn_bos_GINI <- Bokn_bos_GINI %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Bokn_Bos_LQ_6}
 kable(
   Bokn_bos_GINI %>% 
     select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
@@ -789,12 +787,12 @@ kable(
 ### GINI Kommunalt nivå
 #### Tysvær
 
-```{r}
+```{r Tysvær_Bos_LQ_1}
 Tysv_bos_GINI <- syssel_bos %>% 
   filter(knr %in% "1146")
 ```
 
-```{r}
+```{r Tysvær_Bos_LQ_2}
 Tysv_bos_GINI <- Tysv_bos_GINI %>% 
   mutate(
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
@@ -810,11 +808,11 @@ Tysv_bos_GINI <- Tysv_bos_GINI %>%
   mutate_if(is.numeric, round, digits=4)
 ```
 
-```{r}
+```{r Tysvær_Bos_LQ_3}
 names(Tysv_bos_GINI)[[5]] <- "År"
 ```
 
-```{r}
+```{r Tysvær_Bos_LQ_4}
 Tysv_bos_GINI <- Tysv_bos_GINI %>% 
   mutate(
     GINI_Primær = ((Tysv_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - Tysv_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
@@ -824,7 +822,7 @@ Tysv_bos_GINI <- Tysv_bos_GINI %>%
     GINI_Helse = ((Tysv_bos_GINI$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - Tysv_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
 ```
 
-```{r}
+```{r Tysvær_Bos_LQ_5}
 Tysv_bos_GINI <- Tysv_bos_GINI %>% 
   mutate(
     RDI_Primær = 1 / abs(Tysv_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Tysv_bos_GINI$`Alle Næringer` -
@@ -840,7 +838,7 @@ Tysv_bos_GINI <- Tysv_bos_GINI %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Tysvær_Bos_LQ_6}
 kable(
   Tysv_bos_GINI %>% 
     select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
@@ -875,12 +873,12 @@ kable(
 ### GINI Kommunalt nivå
 #### Karmøy
 
-```{r}
+```{r Karmøy_Bos_LQ_1}
 Karm_bos_GINI <- syssel_bos %>% 
   filter(knr %in% "1149")
 ```
 
-```{r}
+```{r Karmøy_Bos_LQ_2}
 Karm_bos_GINI <- Karm_bos_GINI %>% 
   mutate(
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
@@ -896,11 +894,11 @@ Karm_bos_GINI <- Karm_bos_GINI %>%
   mutate_if(is.numeric, round, digits=4)
 ```
 
-```{r}
+```{r Karmøy_Bos_LQ_3}
 names(Karm_bos_GINI)[[5]] <- "År"
 ```
 
-```{r}
+```{r Karmøy_Bos_LQ_4}
 Karm_bos_GINI <- Karm_bos_GINI %>% 
   mutate(
     GINI_Primær = ((Karm_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - Karm_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
@@ -910,7 +908,7 @@ Karm_bos_GINI <- Karm_bos_GINI %>%
     GINI_Helse = ((Karm_bos_GINI$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - Karm_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
 ```
 
-```{r}
+```{r Karmøy_Bos_LQ_5}
 Karm_bos_GINI <- Karm_bos_GINI %>% 
   mutate(
     RDI_Primær = 1 / abs(Karm_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Karm_bos_GINI$`Alle Næringer` -
@@ -926,7 +924,7 @@ Karm_bos_GINI <- Karm_bos_GINI %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Karmøy_Bos_LQ_6}
 kable(
   Karm_bos_GINI %>% 
     select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
@@ -958,10 +956,10 @@ kable(
   add_header_above(c(" "=2, "Eir/Er" = 3, "Ein/En" = 3, "LQ" = 3)) %>% 
   add_header_above(c("Karmøy"=11))
 ```
+
 ### Regionaltnivå Sunnhordaland
 
-
-```{r sun_bos_Eir_Er}
+```{r Sunnhordland_Bos_LQ_1}
 sun_bos_LQ <- sun_bos %>% 
   mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
          Eir_Er_Industri = Industri/`Alle Næringer`,
@@ -997,11 +995,11 @@ sun_bos_LQ <- sun_bos %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Sunnhordland_Bos_LQ_2}
 kable(sun_bos_LQ,
              col.names = c("År",
                            "Alle",
-                           "Jordbruk",
+                           "Primær",
                            "Industri",
                            "Vann",
                            "Bygg",
@@ -1012,7 +1010,11 @@ kable(sun_bos_LQ,
 
 ```
 
-```{r}
+Når man ser på Sunnhordaland som region ser man at lokaliseringskvotienter basert på sysselsetting etter bosted tilsier at Finansiering og Forskning og Undervisning er lokalnæringer. Videre viser kvotientene at det er klynger i Jordbruk, Skogbruk og Fiske, Industri, Elektrisitet, Vann og Renovasjon, Bygge- og Anleggsvirksomhet og Helse- og Sosialtjenester. Det er såpass høye kvotienter for Jordbruk, Skogbruk og Fiske, Industri og Vann og Renovasjon at det tilsier at dette er basisnæringer i regionen. 
+
+Tabellen viser at den største utviklingen i lokalkvotienter har skjedd innen Jordbruk, Skogbruk og Fiske, der den har økt fra 1.56 til 2.14. Det største fallet har skjedd innen Finansiering og Forskning hvor lokalkvotienten har sunket fra 0.42 til 0.26. 
+
+```{r Sunnhordland_Bos_LQ_3}
 sun_bos_GINI <- sun_bos %>% 
   mutate(
     GINI_Primær = ((sun_bos$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - sun_bos$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
@@ -1022,7 +1024,7 @@ sun_bos_GINI <- sun_bos %>%
     GINI_Helse = ((sun_bos$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - sun_bos$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
 ```
 
-```{r}
+```{r Sunnhordland_Bos_LQ_4}
 sun_bos_GINI <- sun_bos_GINI %>% 
   mutate(
     RDI_Primær = 1 / abs(sun_bos$`Jordbruk, Skogbruk og Fiske` / sun_bos$`Alle Næringer` -
@@ -1038,7 +1040,7 @@ sun_bos_GINI <- sun_bos_GINI %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Sunnhordland_Bos_LQ_5}
 kable(sun_bos_GINI,
              col.names = c("År",
                            "Alle",
@@ -1052,19 +1054,20 @@ kable(sun_bos_GINI,
   add_header_above(c("Region: Sunnhordland"=8))
 ```
 
+Når man ser videre på GINI-indekser for Sunnhordaland basert på sysselsetting etter bosted er data for helsenæringene for lave til å bli fanget opp. Det er industri næringene som har høyest GINI-indeks og dermed er mest konsentrert. Primær næringer har hatt størst økning og ender på nesten samme nivå som industri næringene.
 
-
+Videre med utgangspunkt i RDI indekser ser man at næringsstrukturen i helse næringen er spesialisert, selv om det er denne næringen som synker mest over tid. Indeksen for primær næringen synker også med tiden, men ikke like drastisk. Industri næringen øker mest, men har den laveste indeksen og er dermed mer diversifisert. 
 
 #### Kommunale nivå i Sunnhordland 
 
 ##### Stord
 
-```{r}
+```{r Stord_Bos_LQ_1}
 Stord_bos_GINI <- syssel_bos %>% 
   filter(knr %in% "4614")
 ```
 
-```{r}
+```{r Stord_Bos_LQ_2}
 Stord_bos_GINI <- Stord_bos_GINI %>% 
   mutate(
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
@@ -1081,11 +1084,11 @@ Stord_bos_GINI <- Stord_bos_GINI %>%
   mutate_if(is.numeric, round, digits=4)
 ```
 
-```{r}
+```{r Stord_Bos_LQ_3}
 names(Stord_bos_GINI)[[5]] <- "År"
 ```
 
-```{r}
+```{r Stord_Bos_LQ_4}
 Stord_bos_GINI <- Stord_bos_GINI %>% 
   mutate(
     GINI_Primær = ((Stord_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - Stord_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
@@ -1095,7 +1098,7 @@ Stord_bos_GINI <- Stord_bos_GINI %>%
     GINI_Helse = ((Stord_bos_GINI$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - Stord_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
 ```
 
-```{r}
+```{r Stord_Bos_LQ_5}
 Stord_bos_GINI <- Stord_bos_GINI %>% 
   mutate(
     RDI_Primær = 1 / abs(Stord_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Stord_bos_GINI$`Alle Næringer` -
@@ -1111,7 +1114,7 @@ Stord_bos_GINI <- Stord_bos_GINI %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Stord_Bos_LQ_6}
 kable(
   Stord_bos_GINI %>% 
     select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
@@ -1144,15 +1147,19 @@ kable(
   add_header_above(c("Stord: "=11))
 ```
 
+Stord kommune har lokaliseringskvotienter som tilsier at det har vært en kraftig vekst i industri næringene, en jevn vekst i primær næringene og en jevn nedgang i helse næringene. En lokaliseringskvotient på 2.6 i industri næringen tilsier at det er en basisnæring, mens verdiene for helse og primær næringene tilsier at de er lokalnæringer.
+
+Stord kommune har svært lave GINI-indekser, men indeksen for industri næringen ser ut til å øke med tiden, imens indeksen for primær næringen ser ut til å synke. Noe som indikerer at primærnæringen jevner seg ut og industri næringen klynger seg med tiden. Verdiene er så lav innen Helse næringer at disse ikke fanges opp. Helse og primær næringene ser ut til å spesialiseres mest i kommunen, imens industri næringen er mer diversifisert.
+
 
 ##### Kvinnherad
 
-```{r}
+```{r Kvinnherad_Bos_LQ_1}
 Kvinn_bos_GINI <- syssel_bos %>% 
   filter(knr %in% "4617")
 ```
 
-```{r}
+```{r Kvinnherad_Bos_LQ_2}
 Kvinn_bos_GINI <- Kvinn_bos_GINI %>% 
   mutate(
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
@@ -1169,11 +1176,11 @@ Kvinn_bos_GINI <- Kvinn_bos_GINI %>%
   mutate_if(is.numeric, round, digits=4)
 ```
 
-```{r}
+```{r Kvinnherad_Bos_LQ_3}
 names(Kvinn_bos_GINI)[[5]] <- "År"
 ```
 
-```{r}
+```{r Kvinnherad_Bos_LQ_4}
 Kvinn_bos_GINI <- Kvinn_bos_GINI %>% 
   mutate(
     GINI_Primær = ((Kvinn_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - Kvinn_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
@@ -1183,7 +1190,7 @@ Kvinn_bos_GINI <- Kvinn_bos_GINI %>%
     GINI_Helse = ((Kvinn_bos_GINI$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - Kvinn_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
 ```
 
-```{r}
+```{r Kvinnherad_Bos_LQ_5}
 Kvinn_bos_GINI <- Kvinn_bos_GINI %>% 
   mutate(
     RDI_Primær = 1 / abs(Kvinn_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Kvinn_bos_GINI$`Alle Næringer` -
@@ -1199,7 +1206,7 @@ Kvinn_bos_GINI <- Kvinn_bos_GINI %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Kvinnherad_Bos_LQ_6}
 kable(
   Kvinn_bos_GINI %>% 
     select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
@@ -1232,14 +1239,20 @@ kable(
   add_header_above(c("Kvinnherad: "=11))
 ```
 
+I Kvinnherad kommune ser man med lokaliseringskvotienter at primær og industri næringene har hatt en kraftig vekst og er basisnæringer. Helse næringene har sunket med årene.
+
+GINI-indeksen for primær næringene er svært lav og synkende noe som vil si at den jevner seg ut. Indeksen for industri er også svært lav men økende, noe som vil at den klynger seg.
+
+Ved å se på RDI-indekser ser man at kommunen er spesialisert innen helse og primær næringer og mer mangfoldig og diversifisert i industri næringene. 
+
 ##### Bømlo
 
-```{r}
+```{r Bømlo_Bos_LQ_1}
 Bømlo_bos_GINI <- syssel_bos %>% 
   filter(knr %in% "4613")
 ```
 
-```{r}
+```{r Bømlo_Bos_LQ_2}
 Bømlo_bos_GINI <- Bømlo_bos_GINI %>% 
   mutate(
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
@@ -1256,11 +1269,11 @@ Bømlo_bos_GINI <- Bømlo_bos_GINI %>%
   mutate_if(is.numeric, round, digits=4)
 ```
 
-```{r}
+```{r Bømlo_Bos_LQ_3}
 names(Bømlo_bos_GINI)[[5]] <- "År"
 ```
 
-```{r}
+```{r Bømlo_Bos_LQ_4}
 Bømlo_bos_GINI <- Bømlo_bos_GINI %>% 
   mutate(
     GINI_Primær = ((Bømlo_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - Bømlo_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
@@ -1270,7 +1283,7 @@ Bømlo_bos_GINI <- Bømlo_bos_GINI %>%
     GINI_Helse = ((Bømlo_bos_GINI$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - Bømlo_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
 ```
 
-```{r}
+```{r Bømlo_Bos_LQ_5}
 Bømlo_bos_GINI <- Bømlo_bos_GINI %>% 
   mutate(
     RDI_Primær = 1 / abs(Bømlo_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Bømlo_bos_GINI$`Alle Næringer` -
@@ -1286,7 +1299,7 @@ Bømlo_bos_GINI <- Bømlo_bos_GINI %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Bømlo_Bos_LQ_6}
 kable(
   Bømlo_bos_GINI %>% 
     select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
@@ -1319,14 +1332,16 @@ kable(
   add_header_above(c("Bømlo:"=11))
 ```
 
+Lokaliseringskvotienter for Bømlo kommune viser at det har vært en stor vekst innen primær og industri næringer og at næringene er basisnæringer. Helse næringer er en lokalnæring og har med årene sunket jevnt. GINI-indekser i kommunen fanger ikke opp tallene for helse, men selv med lave verdier ser man at primær og industri næringene klynger seg over tid. RDI-indeksene tilsier at det spesialiseres innen helse næringer og at det er diversifisert i industri næringer. 
+
 ##### Sveio
 
-```{r}
+```{r Sveio_Bos_LQ_1}
 Sveio_bos_GINI <- syssel_bos %>% 
   filter(knr %in% "4612")
 ```
 
-```{r}
+```{r Sveio_Bos_LQ_2}
 Sveio_bos_GINI <- Sveio_bos_GINI %>% 
   mutate(
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
@@ -1343,11 +1358,11 @@ Sveio_bos_GINI <- Sveio_bos_GINI %>%
   mutate_if(is.numeric, round, digits=4)
 ```
 
-```{r}
+```{r Sveio_Bos_LQ_3}
 names(Sveio_bos_GINI)[[5]] <- "År"
 ```
 
-```{r}
+```{r Sveio_Bos_LQ_4}
 Sveio_bos_GINI <- Sveio_bos_GINI %>% 
   mutate(
     GINI_Primær = ((Sveio_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - Sveio_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
@@ -1357,7 +1372,7 @@ Sveio_bos_GINI <- Sveio_bos_GINI %>%
     GINI_Helse = ((Sveio_bos_GINI$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - Sveio_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
 ```
 
-```{r}
+```{r Sveio_Bos_LQ_5}
 Sveio_bos_GINI <- Sveio_bos_GINI %>% 
   mutate(
     RDI_Primær = 1 / abs(Sveio_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Sveio_bos_GINI$`Alle Næringer` -
@@ -1373,7 +1388,7 @@ Sveio_bos_GINI <- Sveio_bos_GINI %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Sveio_Bos_LQ_6}
 kable(
   Sveio_bos_GINI %>% 
     select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
@@ -1406,10 +1421,13 @@ kable(
   add_header_above(c("Sveio:"=11))
 ```
 
+Sveio kommune sine lokaliseringskvotienter viser en stor øke i primære næringer, og med en verdi på 2.5 i 2019 blir det antatt som basisnæring. Industri og helse næringene har også sett en vekst de siste årene.
+
+Når det kommer til GINI-indekser er det ikke store nok verdier av industri og helse næringer, mens primær næringer har holdt seg stabilt og svært lave. RDI-indekser er nokså høye på tvers av de tre næringene, men viser til spesialisering i helse næringer. 
 
 ### Reginonalt nivå Hardanger
 
-```{r har_bos_Eir_Er}
+```{r Hardanger_Bos_LQ_1}
 har_bos_LQ <- har_bos %>% 
   mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
          Eir_Er_Industri = Industri/`Alle Næringer`,
@@ -1445,11 +1463,11 @@ har_bos_LQ <- har_bos %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Hardanger_Bos_LQ_2}
 kable(hld_bos_LQ,
              col.names = c("År",
                            "Alle",
-                           "Jordbruk",
+                           "Primær",
                            "Industri",
                            "Vann",
                            "Bygg",
@@ -1460,7 +1478,11 @@ kable(hld_bos_LQ,
 
 ```
 
-```{r}
+Når man ser på Hardanger som region ser man at lokaliseringskvotienter basert på sysselsetting etter bosted tilsier at det er klynger i Industri og med en verdi på 1.6 i 2020 kan det ansees som basisnæring for regionen. De resterende: Jordbruk, Skogbruk og Fiske, Elektrisitet, Vann og Renovasjon, Bygge- og Anleggsvirksomhet, Finansiering og Forskning, Undervisning og Helse- og Sosialtjenester, er lokalnæringer. 
+
+Tabellen viser at næringene med størst positiv utvikling er Industri og Helse- og Sosialtjenester. Næringene med negativ utvikling har vært Finansiering og Forsking, med et fall fra 0,5 til 0.3. 
+
+```{r Hardanger_Bos_LQ_3}
 har_bos_GINI <- har_bos %>% 
   mutate(
     GINI_Primær = ((har_bos$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - har_bos$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
@@ -1470,7 +1492,7 @@ har_bos_GINI <- har_bos %>%
     GINI_Helse = ((har_bos$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - har_bos$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
 ```
 
-```{r}
+```{r Hardanger_Bos_LQ_4}
 har_bos_GINI <- har_bos_GINI %>% 
   mutate(
     RDI_Primær = 1 / abs(har_bos$`Jordbruk, Skogbruk og Fiske` / har_bos$`Alle Næringer` -
@@ -1486,7 +1508,7 @@ har_bos_GINI <- har_bos_GINI %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Hardanger_Bos_LQ_5}
 kable(har_bos_GINI,
              col.names = c("År",
                            "Alle",
@@ -1500,22 +1522,23 @@ kable(har_bos_GINI,
   add_header_above(c("Region: Hardanger"=8))
 ```
 
+Når man ser på GINI-indekser for Hardanger basert på sysselsetting etter bosted er data for helsenæringene også her for lave til å bli fanget opp. Videre ser man at indeksene for primær og industri næringer har økt svært smått, noe som kan tyde på at næringene blir mer konsentrert. RDI-indekser tilsier at næringsstrukturen innen helse er spesialisert, med jevn øke over tid. Indeksen for primær næringer synker med tiden, mens industri næringer har den laveste indeksen og er dermed mer diversifisert.
 
 #### Kommunale nivå i Hardanger
 
 ##### Odda
 
-```{r}
+```{r Odda_Bos_LQ_1}
 nasjo_bos_red <- nasjonalt_bosted %>% 
   filter(aar %in% c(2008:2019))
 ```
 
-```{r}
+```{r Odda_Bos_LQ_2}
 Odda_bos_GINI <- syssel_bos %>% 
   filter(knr %in% "1228")
 ```
 
-```{r}
+```{r Odda_Bos_LQ_3}
 Odda_bos_GINI <- Odda_bos_GINI %>% 
   mutate(
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
@@ -1532,11 +1555,11 @@ Odda_bos_GINI <- Odda_bos_GINI %>%
   mutate_if(is.numeric, round, digits=4)
 ```
 
-```{r}
+```{r Odda_Bos_LQ_4}
 names(Odda_bos_GINI)[[5]] <- "År"
 ```
 
-```{r}
+```{r Odda_Bos_LQ_5}
 Odda_bos_GINI <- Odda_bos_GINI %>% 
   mutate(
     GINI_Primær = ((Odda_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjo_bos_red$`Jordbruk, Skogbruk og Fiske` - Odda_bos_GINI$`Alle Næringer`/nasjo_bos_red$`Alle Næringer`)^2),
@@ -1546,7 +1569,7 @@ Odda_bos_GINI <- Odda_bos_GINI %>%
     GINI_Helse = ((Odda_bos_GINI$`Helse- og Sosialtjenester`/nasjo_bos_red$`Helse- og Sosialtjenester` - Odda_bos_GINI$`Alle Næringer`/nasjo_bos_red$`Alle Næringer`)^2))
 ```
 
-```{r}
+```{r Odda_Bos_LQ_6}
 Odda_bos_GINI <- Odda_bos_GINI %>% 
   mutate(
     RDI_Primær = 1 / abs(Odda_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Odda_bos_GINI$`Alle Næringer` -
@@ -1562,7 +1585,7 @@ Odda_bos_GINI <- Odda_bos_GINI %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Odda_Bos_LQ_7}
 kable(
   Odda_bos_GINI %>% 
     select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
@@ -1595,14 +1618,18 @@ kable(
   add_header_above(c("Odda(-2019)"=11))
 ```
 
+Lokaliseringskvotientene for Odda kommune viser en øke i de tre næringene, her er industri næringer med verdi på 2.8 ansett som basisnæring, mens primær og helse næringer er lokalnæringer.
+
+Når det kommer til GINI-indekser tas de ikke opp for primær og helse næringer og de er svært lave for industri. De er derimot litt økende for industri næringer. RDI-indeksene viser til spesialisering i primær næringer, øke i spesialisering innen helse næringer og en diversifisert industri næring.  
+
 ##### Ullensvang
 
-```{r}
+```{r Ullensvang_Bos_LQ_1}
 Ullen_bos_GINI <- syssel_bos %>% 
   filter(knr %in% "4618")
 ```
 
-```{r}
+```{r Ullensvang_Bos_LQ_2}
 Ullen_bos_GINI <- Ullen_bos_GINI %>% 
   mutate(
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
@@ -1619,11 +1646,11 @@ Ullen_bos_GINI <- Ullen_bos_GINI %>%
   mutate_if(is.numeric, round, digits=4)
 ```
 
-```{r}
+```{r Ullensvang_Bos_LQ_3}
 names(Ullen_bos_GINI)[[5]] <- "År"
 ```
 
-```{r}
+```{r Ullensvang_Bos_LQ_4}
 Ullen_bos_GINI <- Ullen_bos_GINI %>% 
   mutate(
     GINI_Primær = ((Ullen_bos_GINI$`Jordbruk, Skogbrug og Fiske`/nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske` - Ullen_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2),
@@ -1633,7 +1660,7 @@ Ullen_bos_GINI <- Ullen_bos_GINI %>%
     GINI_Helse = ((Ullen_bos_GINI$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Helse- og Sosialtjenester` - Ullen_bos_GINI$`Alle Næringer`/nasjonalt_bosted$`Alle Næringer`)^2))
 ```
 
-```{r}
+```{r Ullensvang_Bos_LQ_5}
 Ullen_bos_GINI <- Ullen_bos_GINI %>% 
   mutate(
     RDI_Primær = 1 / abs(Ullen_bos_GINI$`Jordbruk, Skogbrug og Fiske` / Ullen_bos_GINI$`Alle Næringer` -
@@ -1649,7 +1676,7 @@ Ullen_bos_GINI <- Ullen_bos_GINI %>%
   mutate_if(is.numeric, round, digits=6)
 ```
 
-```{r}
+```{r Ullensvang_Bos_LQ_6}
 kable(
   Ullen_bos_GINI %>% 
     select(År, `Alle Næringer`, GINI_Primær, GINI_Industri, GINI_Helse, RDI_Primær, RDI_Industri, RDI_Helse),
@@ -1681,6 +1708,10 @@ kable(
   add_header_above(c(" "=2, "Eir/Er" = 3, "Ein/En" = 3, "LQ" = 3)) %>% 
   add_header_above(c("Ullensvang:"=11))
 ```
+
+Ullensvang kommune sine lokaliseringskvotienter viser til en stor øke i primær næringen. Kommunen har høye verdier i både primær og industri næringer og de er dermed basisnæringer.
+
+Når det kommer til GINI-indekser er det ikke store nok verdier av industri og helse næringer, mens primær næringer er svært lave og synkende. RDI-indekser er nokså høye på tvers av de tre næringene, men viser til spesialisering i helse næringer og økende spesialisering i industri næringer. Primær næringen er lavere og kan vise til mer mangfold. 
 
 # 3 Sysselsetting i ulike næringer, etter bosted (Modeller under arbeid)
 
