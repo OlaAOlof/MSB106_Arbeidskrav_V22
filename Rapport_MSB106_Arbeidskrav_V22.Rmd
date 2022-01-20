@@ -632,9 +632,11 @@ Haug_bos_GINI <- Haug_bos_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_bosted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
     LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
@@ -717,9 +719,11 @@ Bokn_bos_GINI <- Bokn_bos_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_bosted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
     LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
@@ -802,9 +806,10 @@ Tysv_bos_GINI <- Tysv_bos_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_bosted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
     LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
@@ -887,9 +892,10 @@ Karm_bos_GINI <- Karm_bos_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_bosted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
     LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
@@ -1070,9 +1076,11 @@ Stord_bos_GINI <- Stord_bos_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_bosted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
     LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
@@ -1156,9 +1164,11 @@ Kvinn_bos_GINI <- Kvinn_bos_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_bosted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
     LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
@@ -1241,9 +1251,11 @@ Bømlo_bos_GINI <- Bømlo_bos_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_bosted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
     LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
@@ -1326,9 +1338,11 @@ Sveio_bos_GINI <- Sveio_bos_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_bosted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
     LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
@@ -1513,9 +1527,11 @@ Odda_bos_GINI <- Odda_bos_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjo_bos_red$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjo_bos_red$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjo_bos_red$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjo_bos_red$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Industri = nasjo_bos_red$Industri/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Helse = nasjo_bos_red$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
     LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
@@ -1598,9 +1614,11 @@ Ullen_bos_GINI <- Ullen_bos_GINI %>%
     Eir_Er_Primær = `Jordbruk, Skogbrug og Fiske`/`Alle Næringer`,
     Eir_Er_Industri = Industri/`Alle Næringer`,
     Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
-    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-    Ein_En_Industri = nasjonalt_bosted$Industri/`Alle Næringer`,
-    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+    
     LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
     LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
     LQ_Helse = Eir_Er_Helse / Ein_En_Helse) %>% 
