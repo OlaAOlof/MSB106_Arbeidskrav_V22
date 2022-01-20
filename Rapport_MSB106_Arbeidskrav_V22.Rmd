@@ -523,84 +523,60 @@ LQ_bos[is.na(LQ_bos)] = 0
 
 For region Haugaland:
 
-```{r}
+```{r hld_bos_Eir_Er}
 hld_bos_LQ <- hld_bos %>% 
-  mutate(Eir_Er_industri = Industri/`Alle Næringer`,
-         Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+  mutate(Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+         Eir_Er_Industri = Industri/`Alle Næringer`,
+         Eir_Er_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+         Eir_Er_Bygg_og_Anlegg = `Bygge- og Annleggsvirksomhet`/`Alle Næringer`,
+         Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
          Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
-         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
+         
+         Ein_En_Jordbruk = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+
+         Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+
+         Ein_En_El_Vann_Reno = nasjonalt_bosted$`Elektrisitet, Vann og Renovasjon`/nasjonalt_bosted$`Alle Næringer`,
+         
+         Ein_En_Bygg_og_Anlegg = nasjonalt_bosted$`Bygge- og Anleggsvirksomhet`/nasjonalt_bosted$`Alle Næringer`,
+         
+         Ein_En_Finans = nasjonalt_bosted$`Finansiering og Forsikring`/nasjonalt_bosted$`Alle Næringer`,
+         
+         Ein_En_Undervisning = nasjonalt_bosted$Undervisning/nasjonalt_bosted$`Alle Næringer`,
+         
+         Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+         
+         LQ_Primær = Eir_Er_Jordbruk/Ein_En_Jordbruk,
+         LQ_Industri = Eir_Er_Industri/Ein_En_Industri,
+         LQ_El_Vann_Reno = Eir_Er_El_Vann_Reno/Ein_En_El_Vann_Reno,
+         LQ_Bygg_og_Anlegg = Eir_Er_Bygg_og_Anlegg/Ein_En_Bygg_og_Anlegg,
+         LQ_Finans = Eir_Er_Finans/Ein_En_Finans,
+         LQ_Undervisning = Eir_Er_Undervisning/Ein_En_Undervisning,
+         LQ_Helse = Eir_Er_Helse/Ein_En_Helse
+) %>% 
+  select(År, `Alle Næringer`, LQ_Primær, LQ_Industri, LQ_El_Vann_Reno, LQ_Bygg_og_Anlegg, LQ_Finans, LQ_Undervisning, LQ_Helse) %>% 
+  mutate_if(is.numeric, round, digits=6)
 ```
 
 ```{r}
-LQindustri_hld <- as_tibble(hld_bos_LQ$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
-LQjordbruk_hld <- as_tibble(hld_bos_LQ$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
-LQundervisning_hld <- as_tibble(hld_bos_LQ$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
-LQhelse_hld <- as_tibble(hld_bos_LQ$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
+kable(hld_bos_LQ,
+             col.names = c("År",
+                           "Alle",
+                           "Jordbruk",
+                           "Industri",
+                           "Vann",
+                           "Bygg",
+                           "Finans",
+                           "Underv.",
+                           "Helse")) %>%
+  add_header_above(c("Lokalkvotient, region: Haugalandet"=9))
 ```
 
-```{r}
-hld_bos_LQ <- hld_bos_LQ %>% 
-  mutate(LQindustri = LQindustri_hld$value,
-         LQjordbruk = LQjordbruk_hld$value,
-         LQundervisning = LQundervisning_hld$value,
-         LQhelse = LQhelse_hld$value) %>% 
-  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
-```
-
-For Sunnhordaland:
-
-```{r}
-sun_bos_LQ <- sun_bos %>% 
-  mutate(Eir_Er_industri = Industri/`Alle Næringer`,
-         Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
-         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
-```
-
-```{r}
-LQindustri_sun <- as_tibble(sun_bos_LQ$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
-LQjordbruk_sun <- as_tibble(sun_bos_LQ$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
-LQundervisning_sun <- as_tibble(sun_bos_LQ$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
-LQhelse_sun <- as_tibble(sun_bos_LQ$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
-```
-
-```{r}
-sun_bos_LQ <- sun_bos_LQ %>% 
-  mutate(LQindustri = LQindustri_sun$value,
-         LQjordbruk = LQjordbruk_sun$value,
-         LQundervisning = LQundervisning_sun$value,
-         LQhelse = LQhelse_sun$value) %>% 
-  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
-```
-
-For Hardanger:
-
-```{r}
-har_bos_LQ <- har_bos %>% 
-  mutate(Eir_Er_industri = Industri/`Alle Næringer`,
-         Eir_Er_Jordbruk = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
-         Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
-         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`)
-```
-
-```{r}
-LQindustri_har <- as_tibble(har_bos_LQ$Eir_Er_industri/nasjonalt_bosted$Ein_En_Industri)
-LQjordbruk_har <- as_tibble(har_bos_LQ$Eir_Er_Jordbruk/nasjonalt_bosted$Ein_En_Jordbruk)
-LQundervisning_har <- as_tibble(har_bos_LQ$Eir_Er_Undervisning/nasjonalt_bosted$Ein_En_Undervisning)
-LQhelse_har <- as_tibble(har_bos_LQ$Eir_Er_Helse/nasjonalt_bosted$Ein_En_Helse)
-```
-
-```{r}
-har_bos_LQ <- har_bos_LQ %>% 
-  mutate(LQindustri = LQindustri_har$value,
-         LQjordbruk = LQjordbruk_har$value,
-         LQundervisning = LQundervisning_har$value,
-         LQhelse = LQhelse_hld$value) %>% 
-  select(År, LQindustri, LQjordbruk, LQundervisning, LQhelse)
-```
 
 ### GINI Regionaltnivå
 #### Haugalandet
+
 
 ```{r}
 hld_bos_GINI <- hld_bos %>% 
@@ -993,11 +969,33 @@ sun_bos_LQ <- sun_bos %>%
          Eir_Er_Bygg_og_Anlegg = `Bygge- og Annleggsvirksomhet`/`Alle Næringer`,
          Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
          Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
-         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`) %>% 
-  select(År, `Alle Næringer`, Eir_Er_Jordbruk, Eir_Er_Industri, Eir_Er_El_Vann_Reno, Eir_Er_Bygg_og_Anlegg, Eir_Er_Finans, Eir_Er_Undervisning, Eir_Er_Helse) %>% 
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
+         
+         Ein_En_Jordbruk = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+
+         Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+
+         Ein_En_El_Vann_Reno = nasjonalt_bosted$`Elektrisitet, Vann og Renovasjon`/nasjonalt_bosted$`Alle Næringer`,
+         
+         Ein_En_Bygg_og_Anlegg = nasjonalt_bosted$`Bygge- og Anleggsvirksomhet`/nasjonalt_bosted$`Alle Næringer`,
+         
+         Ein_En_Finans = nasjonalt_bosted$`Finansiering og Forsikring`/nasjonalt_bosted$`Alle Næringer`,
+         
+         Ein_En_Undervisning = nasjonalt_bosted$Undervisning/nasjonalt_bosted$`Alle Næringer`,
+         
+         Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+         
+         LQ_Primær = Eir_Er_Jordbruk/Ein_En_Jordbruk,
+         LQ_Industri = Eir_Er_Industri/Ein_En_Industri,
+         LQ_El_Vann_Reno = Eir_Er_El_Vann_Reno/Ein_En_El_Vann_Reno,
+         LQ_Bygg_og_Anlegg = Eir_Er_Bygg_og_Anlegg/Ein_En_Bygg_og_Anlegg,
+         LQ_Finans = Eir_Er_Finans/Ein_En_Finans,
+         LQ_Undervisning = Eir_Er_Undervisning/Ein_En_Undervisning,
+         LQ_Helse = Eir_Er_Helse/Ein_En_Helse
+) %>% 
+  select(År, `Alle Næringer`, LQ_Primær, LQ_Industri, LQ_El_Vann_Reno, LQ_Bygg_og_Anlegg, LQ_Finans, LQ_Undervisning, LQ_Helse) %>% 
   mutate_if(is.numeric, round, digits=6)
 ```
-
 
 ```{r}
 kable(sun_bos_LQ,
@@ -1010,7 +1008,8 @@ kable(sun_bos_LQ,
                            "Finans",
                            "Underv.",
                            "Helse")) %>%
-  add_header_above(c("Lokalkvotienten, region: Sunnhordland"=9))
+  add_header_above(c("Lokalkvotient, region: Sunnhordland"=9))
+
 ```
 
 ```{r}
@@ -1410,13 +1409,36 @@ har_bos_LQ <- har_bos %>%
          Eir_Er_Bygg_og_Anlegg = `Bygge- og Annleggsvirksomhet`/`Alle Næringer`,
          Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
          Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
-         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`) %>% 
-  select(År, `Alle Næringer`, Eir_Er_Jordbruk, Eir_Er_Industri, Eir_Er_El_Vann_Reno, Eir_Er_Bygg_og_Anlegg, Eir_Er_Finans, Eir_Er_Undervisning, Eir_Er_Helse) %>% 
+         Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
+         
+         Ein_En_Jordbruk = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+
+         Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+
+         Ein_En_El_Vann_Reno = nasjonalt_bosted$`Elektrisitet, Vann og Renovasjon`/nasjonalt_bosted$`Alle Næringer`,
+         
+         Ein_En_Bygg_og_Anlegg = nasjonalt_bosted$`Bygge- og Anleggsvirksomhet`/nasjonalt_bosted$`Alle Næringer`,
+         
+         Ein_En_Finans = nasjonalt_bosted$`Finansiering og Forsikring`/nasjonalt_bosted$`Alle Næringer`,
+         
+         Ein_En_Undervisning = nasjonalt_bosted$Undervisning/nasjonalt_bosted$`Alle Næringer`,
+         
+         Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+         
+         LQ_Primær = Eir_Er_Jordbruk/Ein_En_Jordbruk,
+         LQ_Industri = Eir_Er_Industri/Ein_En_Industri,
+         LQ_El_Vann_Reno = Eir_Er_El_Vann_Reno/Ein_En_El_Vann_Reno,
+         LQ_Bygg_og_Anlegg = Eir_Er_Bygg_og_Anlegg/Ein_En_Bygg_og_Anlegg,
+         LQ_Finans = Eir_Er_Finans/Ein_En_Finans,
+         LQ_Undervisning = Eir_Er_Undervisning/Ein_En_Undervisning,
+         LQ_Helse = Eir_Er_Helse/Ein_En_Helse
+) %>% 
+  select(År, `Alle Næringer`, LQ_Primær, LQ_Industri, LQ_El_Vann_Reno, LQ_Bygg_og_Anlegg, LQ_Finans, LQ_Undervisning, LQ_Helse) %>% 
   mutate_if(is.numeric, round, digits=6)
 ```
 
 ```{r}
-kable(har_bos_LQ,
+kable(hld_bos_LQ,
              col.names = c("År",
                            "Alle",
                            "Jordbruk",
@@ -1426,7 +1448,8 @@ kable(har_bos_LQ,
                            "Finans",
                            "Underv.",
                            "Helse")) %>%
-  add_header_above(c("region: Hardanger"=9))
+  add_header_above(c("Lokalkvotient, region: Hardanger"=9))
+
 ```
 
 ```{r}
