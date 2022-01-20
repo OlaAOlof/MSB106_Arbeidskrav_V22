@@ -23,6 +23,7 @@ suppressPackageStartupMessages({
   library(viridis)
   library(tidyverse)
   library(kableExtra)
+  library(writexl)
   options(scipen = 999)
   })
 knitr::opts_chunk$set(echo=FALSE, include = TRUE)
@@ -3397,7 +3398,16 @@ Disse kommunene har en del oljebaserte næringer og i de periodene oljemarkedet 
 Det vil også vise en betydelig økning i antall arbeidsplasser om det er oppgangstider.
 Oppgangstider i oljenæringen gir en økning av pendlere inn til kommuner som har virksomheter innenfor oljenæringen.
 
--   
+```{r Skriver_Excel_Filer}
+write_xlsx(syssel_arb, file="Sysselsetting_Etter_Arbeidsplass.xlsx")
+write_xlsx(syssel_bos, file="Sysselsetting_Etter_Bosted.xlsx")
+write_xlsx(nasjonalt_arbeidssted, file= "Nasjonalt_Arbeidssted.xlsx")
+write_xlsx(nasjonalt_bosted, file="Nasjonalt_Bosted.xlsx")
+write_xlsx(Pendling, file="Pendling.xlsx")
+```
+   
+
+
 
 ```{r siste}
 # Siste
