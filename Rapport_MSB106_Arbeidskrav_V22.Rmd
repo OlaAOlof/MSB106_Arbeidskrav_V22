@@ -1958,9 +1958,15 @@ nasjonalt_arbeidssted <- read_excel("Data/nasjonalt_arbeidssted.xlsx")
 
 Nå har vi illustert og sett på grafene for utviklingen i de tre regionene, med hensyn på sysselsetting etter arbeidssted. Videre i rapporten skal vi nå se på Gini-koeffisientene og den regionelle diversifiserings indeksen (RDI) for å vurdere hvor spredt eller konsentrert, samt spesialisert utvlagt næringer er i utvalgte kommuner i regionene.
 
+En generell regel for lokalkvotient-verdier (LQ-verdier) er at visst verdien er over 1 så kan det tyde på at det har oppstått klynger innenfor næringen. En annen regel er at verdier under 1 innenfor næringer som driver med produksjon og eksport så er det oftest en *lokal næring*. Visst verdien er over 1 så kan det være tegn til at det er *en basisnæring*.
+
+Disse to argumentene for LQ-verdier vil vi ta med oss videre når vi ser nermere på regionene i sin helhet og utvalgte næringer, samt utvalgte kommuner og næringer i dem.
+
+RDI er et mål for hvorvidt næringsstrukturen er diversifisert og mangfoldig. Høy RDI karakterisert ved mer spesialisert, og motsatt.
+
 ### Haugalandet 2008-2020
 
-Første vi ser på er Haugalandet.
+Første regionen vi ser på er Haugalandet.
 
 ```{r hld_arb_Eir_Er}
 hld_arb_LQ <- hld_arb %>% 
@@ -2012,7 +2018,9 @@ kable(hld_arb_LQ,
   add_header_above(c("Lokalkvotient, region: Haugalandet"=9))
 ```
 
-Vi
+I denne tabellen så ser vi alle lokalkvotientverdiene(LQ) for 7 utvalgte næringer på Haugalandet. Ut av de 7 utvalgte næringene, så tyder det på at det er klynger i 5 av dem, som er *Jordbruk, Skogbruk og Fiske*, *Industri*, *Elektrisitet, Vann og Renovasjon*, *Bygge- og Annleggsvirksomhet*, og *Helsetjenester*.  Ut fra tabellen så tyder det på at regionen inneholder basisnæringer innen Industri og Elektrisitet, Vann og Renovasjon, da disse verdiene er langt over 1 og er typiske næringer en kan forvente å være basisnæringer.
+
+Vi ser at industri har hatt størst utvikling fra LQ på 1.55 til 1.75, mens resten av næringene har vært ganske stabile, med untakt av finans som har blitt nesten halvert fra 0.478 til 0.286.
 
 ```{r}
 hld_arb_GINI <- hld_arb %>% 
@@ -2053,6 +2061,14 @@ kable(hld_arb_GINI,
   add_header_above(c(" "=2, "GINI" = 3, "RDI" = 3)) %>%
   add_header_above(c("Haugalandet"=8))
 ```
+
+Her ser vi flere faktorer.
+
+Det første og viktigeste vi ser med en gang er GINI-koeffisientene. Vi har en stor svakhet i disse beregninge, som stammer fra aggregeringsnivået vårt. I våre data er primær, industri og helsetjenester en "felles benevnelse". Det vil si at når vi hentet data fra SSB så skilte ikke SSB næringene innen hver bemerkelse, i tabellen vi brukte som var *Tabell 07984*. Den har med andre ord slått sammen alt som har med industri å gjøre, f.eks. olje og gass, bergvinning, skipsverft, osv. under en og samme kategori. Dette gjør at alle GINI-koeffisienter vi rekner ut vil være ekstremt små fordi den skiller ikke ut de store ulikhetene mellom næringene innenfor hver bemerkelse. Dette igjen medfører at det er vanskelig å vurdere GINI-koeffisientene optimalt. Dette er desverre et problem som følger oss gjennom rapporten videre på alle regioner og kommuner hvor vi rekner ut GINI-koeffisientene.
+
+Vi ser ut ifra GINI-verdiene våres for Haugalandet at industri har en mye høyere verdi enn primærnæringer og helsetjenester, som tyder på at det er større grad av klyngedannelser av industri i regionen. En annen observasjon verdt å merke seg, er at blant de tre undersøkte næringene, er det kun «Industri» som har stadig hatt sterkere klyngetendenser de siste årene. Dette gjenspeiles av en stadig økende verdi på indeksen over tid. Samme observasjon kan vi ikke se hos primærnæringen eller i helsesektoren.
+
+I regionen, Haugelandet, ser vi at næringsstrukturen i primærnæringene er i stor grad spesialisert. I tillegg tendenserer indeksen til å øke med tid. I de to andre næringene er indeksen relativ jevn, der industri er den laveste og dermed mye mer diversifisert.
 
 #### Kommunenivå på Haugalandet (Haugesund, Karmøy, Tysvær og Bokn)
 
@@ -2145,6 +2161,10 @@ kable(
   add_header_above(c("Haugesund: Lokalkvotient"=11))
 ```
 
+Tabellen viser LQ-verdiene for de utvalgte næringene i Haugesund kommune. Det som er verdt å bemerke her er igjen industrien og helsetjenester. Haugesund kommune har sett en kraftig vekst innen industri og helsetjenester, med industri fra 1.19 til 1.38 og helsetjenester fra 1.19 til 1.30. Dette tyder på klyngedannelser innen både industri og helsetjenster i Haugesund, noe som kan stemme mtp. Haugesund Sjukehus som tilbyr tjenester til heile regionen. I tillegg er Haugesund også et industri senter med Haugaland Vekst i front, samt stort fokus på entreprenørskap i kommunen.
+
+I Haugesund kommune viser alle observasjonene små eller tilnærmet ingen endringer over tid. I lys av klyngetendenser, skiller primærnæringene i Haugesund seg ut ved at indeksen synker over tid. Med andre ord viser primærnæringen indikasjoner på at den sprer seg jevnere ut i motsetning til å klynge seg sammen. Det er også verdt å trekke frem at primærnæringene har spesialisert seg med tiden, mens industri- og helsesektoren har blitt mer mangfoldig og diversifisert det siste tiåret.
+
 ##### Bokn
 
 ```{r}
@@ -2233,6 +2253,10 @@ kable(
   add_header_above(c(" "=2, "Eir/Er" = 3, "Ein/En" = 3, "LQ" = 3)) %>% 
   add_header_above(c("Bokn: Lokalkvotient"=11))
 ```
+
+I denne tabellen ser vi LQ-verdien til utvalgte næringer i Bokn kommune. Her ser vi at både primærnæringene og indudstri har sett en svært kraftig vekst i regionen i perioden 2008 - 2020. Under primærnæringer går jordbruk, skogbruk og fiske, og vi kan dermed si at her er det klart tilstedeværelse av klynger innenfor primærnæringene og industrien på bokn. Det tyder også sterkt på at det er tilstedeværelse av basisnæringer i kommunen. Helsetjenester har sett en kraftig reduksjon. En må være observang på en faktor, og det er hvor liten den totale sysselsetningen på bokn er. Dette gjør at en liten endring i antal personer som jobber innen industri vil ha store utslag på LQ-verdiene. Men det er ingen tvil om at Bokn har sett en solid vekst siste perioden. 
+
+GINI fra næringene i Bokn har for lave verdiene til å fanges opp i vår metode. RDI fra næringene i Bokn forteller oss at industrisektoren har blitt betraktelig mer diversifisert eller mangfoldig, mens helsevesenet har spesialisert mer årene. Indeksen på de ulike næringene har fluktuerende verdi, men fra 2008 til 2020 er utfallet som nevnt.
 
 ##### Tysvær
 
@@ -2323,6 +2347,12 @@ kable(
   add_header_above(c("Tysvær:"=11))
 ```
 
+I denne tabellen ser vi LQ-verdiene for Tysvær. Vi ser med en gang at Tysvær har sett en enorm vekst innen industri i perioden 2008 - 2020. Med en verdi på 1.71 så tyder det på at det er tilstedeværelse av klynger og basisnæring innen industri i kommunen. Primærnæringene har sett et kraftig fall, samme gjelder også helsetjenester i kommunen.
+
+GINI fra næringene i Tysvær kommune har også lave verdier i vår skala. Vi ser dog at primærnæringene og industrisektoren utvikler seg i motsatt retning av hverandre. Primærnæringene viser små tendenser til å desentralisere seg, mens for de andre næringene mangler vi representativ data.
+
+RDI fra næringene i Tysvær forteller oss at det kun er primærnæringene som har spesialisert seg, mens de to resterende næringene viser stadig synkende verdier over tid som kjennetegnes ved at de blir mer mangfoldig og diversifisert.
+
 ##### Karmøy
 
 ```{r}
@@ -2411,6 +2441,14 @@ kable(
   add_header_above(c(" "=2, "Eir/Er" = 3, "Ein/En" = 3, "LQ" = 3)) %>% 
   add_header_above(c("Karmøy: Lokalkvotient"=11))
 ```
+
+I denne tabellen ser vi LQ-verdiene for Karmøy kommune. Ut fra tabellen kan vi se at både primærnæringene og industrien på Karmøy har sett en reduksjon over tid. Primærnæringene ser ut til å bare fortsette å synke, mens industrien har begynt å sjå en liten vekst fra 2014 frem til i dag. Det er klart tilstedeværelse av klynger innen industri på Karmøy og det er definitiv basisnæring der, mtp blant annet Hydro Karmøy. Helsevesenet har gått opp og ned i perioden, men har vert relativt jevnt rundt 1.
+
+I Karmøy mangler vi representativ data for den romlige Gini-indeksen for helsesektoren, men kort oppsummert ser vi klyngetendenser i industrinæringen, men små fluktuasjoner i primærnæringer.
+
+RDI-indeksen viser samme nivå av fluktuasjoner i primærnæringer. Det fremkommer som en spesialisert næringen med små endringer i sammensetning over tid. I Industrien og helsesektoren ser vi derimot økende grad av spesialisering jevnt over tid.
+
+-- Oppsummering rundt Haugalandet--
 
 ### Sunnhordland 2008-2020
 
