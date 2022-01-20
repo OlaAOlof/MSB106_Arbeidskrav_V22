@@ -3399,18 +3399,10 @@ Det vil også vise en betydelig økning i antall arbeidsplasser om det er oppgan
 Oppgangstider i oljenæringen gir en økning av pendlere inn til kommuner som har virksomheter innenfor oljenæringen.
 
 ```{r Skriver_Excel_Filer}
-write_xlsx(syssel_arb, file="Sysselsetting_Etter_Arbeidsplass.xlsx")
-write_xlsx(syssel_bos, file="Sysselsetting_Etter_Bosted.xlsx")
-write_xlsx(nasjonalt_arbeidssted, file= "Nasjonalt_Arbeidssted.xlsx")
-write_xlsx(nasjonalt_bosted, file="Nasjonalt_Bosted.xlsx")
-write_xlsx(Pendling, file="Pendling.xlsx")
+write_xlsx(syssel_arb, "Sysselsetting_Etter_Arbeidsplass.xlsx")
+write_xlsx(syssel_bos, "Sysselsetting_Etter_Bosted.xlsx")
+write_xlsx(nasjonalt_arbeidssted, "Nasjonalt_Arbeidssted.xlsx")
+write_xlsx(nasjonalt_bosted, "Nasjonalt_Bosted.xlsx")
+write_xlsx(Pendling, "Pendling.xlsx")
 ```
    
-
-
-
-```{r siste}
-# Siste
-```
-
--   
