@@ -13,6 +13,7 @@ lang: no-NB
 editor_options: 
   markdown: 
     wrap: sentence
+bibliography: MSB106.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -3129,7 +3130,7 @@ Når det kommer til GINI-indekser er det ikke store nok verdier av industri og h
 
 Til slutt ønsker vi å se på hvordan pendlingen mellom kommuner og regioner har utviklet seg.
 
-De ulike kommunene og regionene har ulike behov, for at regionene skal utvikle seg er pendling et viktig begrep for å tiltrekke seg arbeidskraft. Veldig mange kommuner har for lite arbeidsplasser i forhold til antall arbeidende innbyggere, som vil si at de fleste er avhengige av pendlere.
+De ulike kommunene og regionene har ulike behov, for at regionene skal utvikle seg er pendling et viktig begrep for å tiltrekke seg arbeidskraft. Veldig mange kommuner har for lite arbeidsplasser i forhold til antall arbeidende innbyggere, som vil si at de fleste er avhengige av pendlere. Arbeidstakere er ofte villige til å pendle til nabokommuner innenfor en akseptabel rekkevidde @mcarthurEmploymentTransportInfrastructure2014, som oftest innenfor 30 - 60 minutters pendling, der 60 minutt er i lengste laget. Vi kan se dette mer tydelig senere i denne delen med arbeidstakere som pendler fra Karmøy til Haugesund, og Kvinnherad til Stord.
 
 Pendling kan være til andre kommuner i samme region eller til andre regioner. Alle kommuner har kanskje ikke arbeidsplasser innen alle fagfelt, arbeidstakere er derfor avhengig av å pendler til andre kommuner for å finne relevant arbeid.Det samme gjelder dersom arbeidstaker har tilhørighet til en kommune, men det ikke finnes relevant arbeid da er han også nødt til å søke jobb i andre kommuner.
 
@@ -3199,3 +3200,20 @@ write_xlsx(nasjonalt_arbeidssted, "Nasjonalt_Arbeidssted.xlsx")
 write_xlsx(nasjonalt_bosted, "Nasjonalt_Bosted.xlsx")
 write_xlsx(Pendling, "Pendling.xlsx")
 ```
+
+# 5 - Vurder lokal/basis bedrifter ut ifra LQ-verdier
+
+# 6 - Basemultiplikator (Kevin & Ola A)
+
+## Teori
+
+PPT, Slide 8 - 14
+
+Basemultiplikator er en teori som viser sammenhengen lokalisjonen mellom arbeidsplasser og arbeidstakere i en region. Teorien rundt base multiplikatoren tilsier at en vekst i en basisnæring vil medføre en syklus der etterpsørselen etter arbeidskraft går opp, som igjen vil medføre en økning i etterspørsel til andre goder. Dette er en positiv syklus som stimulerer til vekst i ein kommune og/eller region @mcarthurEmploymentTransportInfrastructure2014.
+
+Studien til @hoogstraJobsFollowPeople2017 peker på flere funn som indikerer på at arbeidsplasser følger befolkningsvekst (Jobs follow people), men de trekker frem at årsakene til dette er varierende og påvirkes av mange faktorer. Forskningen innenfor fagfeltet bruker både ulike metoder og datagrunnlag. Svaret er følgelig ikke entydig, men det kan argumenteres for begge retninger.
+
+I vårt arbeidskrav skal vi se på hva som skjer ved en evt. satsing på vindkraft i en kommune, som medfører en etablering av en industribedrift med 500 arbeidstakere. Vi skal her se på effekten av plasseringen av en slik bedrift i Odda (Ullensvang), Husnes (Kvinnherad) og Leirvik (Stord).
+
+
+
