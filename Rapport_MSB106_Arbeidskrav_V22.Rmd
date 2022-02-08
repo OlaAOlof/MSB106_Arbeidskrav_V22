@@ -4658,7 +4658,9 @@ Basemultiplikator er en teori som viser sammenhengen lokalisjonen mellom arbeids
 
 Studien til @hoogstraJobsFollowPeople2017 peker på flere funn som indikerer på at arbeidsplasser følger befolkningsvekst (Jobs follow people), men de trekker frem at årsakene til dette er varierende og påvirkes av mange faktorer. Forskningen innenfor fagfeltet bruker både ulike metoder og datagrunnlag. Svaret er følgelig ikke entydig, men det kan argumenteres for begge retninger.
 
-I vårt arbeidskrav skal vi se på hva som skjer ved en evt. satsing på vindkraft i en kommune, som medfører en etablering av en industribedrift med 500 arbeidstakere. Vi skal her se på effekten av plasseringen av en slik bedrift i Odda (Ullensvang), Husnes (Kvinnherad) og Leirvik (Stord).
+I vårt arbeidskrav skal vi se på hva som skjer ved en evt. satsing på vindkraft i en kommune, som medfører en etablering av en industribedrift med 500 arbeidstakere. Vi skal her se på effekten av plasseringen av en slik bedrift i Odda (Ullensvang), Husnes (Kvinnherad) og Leirvik (Stord). Vi vil her se på hvordan dette påvirker kommunene både med hensyn på arbeidssted og bosted.
 
+### Eksogent Sjokk Med Hensyn På Arbeidssted.
 
+Ved et positivt sjokk på 500 for Stord kommune så vil dette medfølge en verdi på 1,65 * 500 = 825 totalt nye arbeidsplasser. 500 arbeidsplasser i bedriften og ytterlige 325 i lokalnæringen som følge av økt etterspørsel til goder i kommunen. Vi må her også ta hensyn til pendling. Det vil si at det blir 500 nye arbeidsplasser i Stord kommune i industrien, men arbeidstakere kan ha bosted i Bømlo, eller Fitjar. Dette vil medføre at en andel av økningen i de lokale arbeidsplassene på Stord, vil nå bli mer fordelt blant kommuner rundt Stord.
 
