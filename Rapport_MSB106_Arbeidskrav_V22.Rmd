@@ -4046,7 +4046,7 @@ Antall ansatte i Stord kommune i lokale næringer blir da 3667.
 
 Totalt ansatte i kommunen er 9301.
 
-Multiplikatoren for Stord blir da 1,65
+Multiplikatoren for Stord blir da ca 1,65
 
 #### Kvinnherad
 
@@ -4063,7 +4063,7 @@ Antall ansatte i Kvinnherad kommune i lokale næringer blir da 2326.
 
 Totalt ansatte i kommunen er 5808.
 
-Multiplikatoren for Kvinnherad blir da 
+Multiplikatoren for Kvinnherad blir da ca 1,66
 
 #### Odda (2019)
 
@@ -4077,7 +4077,7 @@ Antall ansatte i Odda kommune (2019) i lokale næringer blir da 1474.
 
 Totalt ansatte i kommunen er 3566
 
-Multiplikatoren for Odda (2019) blir da 
+Multiplikatoren for Odda (2019) blir da ca 1,70
 
 ### Basemultiplikator Med Hensyn På Bosted
 
@@ -4095,7 +4095,7 @@ Antall ansatte, etter bosted, i Stord kommune i lokale næringer blir da 3976.
 
 Totalt ansatte, etter bosted, i kommunen er 9315.
 
-Multiplikatoren for Stord, etter bosted, blir da .
+Multiplikatoren for Stord, etter bosted, blir da ca 1,74.
 
 #### Kvinnherad
 
@@ -4111,7 +4111,7 @@ Antall ansatte, etter bosted, i Kvinnherad kommune i lokale næringer blir da 25
 
 Totalt ansatte, etter bosted, i kommunen er 6426.
 
-Multiplikatoren for Kvinnherad, etter bosted, blir da .
+Multiplikatoren for Kvinnherad, etter bosted, blir da ca 1,64.
 
 #### Odda (2019)
 
@@ -4125,7 +4125,7 @@ Antall ansatte, etter bosted, i Odda (2019) kommune i lokale næringer blir da 1
 
 Totalt ansatte, etter bosted, i kommunen er 3350.
 
-Multiplikatoren for Odda (2019), etter bosted, blir da .
+Multiplikatoren for Odda (2019), etter bosted, blir da ca 1,79.
 
 # 6 - Basemultiplikator (Kevin & Ola A)
 
