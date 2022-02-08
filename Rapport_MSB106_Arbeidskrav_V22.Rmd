@@ -4676,6 +4676,8 @@ Til slutt ønsker vi å se på scenarioet på regionalt nivå, der vi først ser
 
 Pendlingen en evt. må ta hensyn til her er pendling fra Haugalandet til Sunnhordland ved en etablering av bedriften i Sunnhordland. Men dette gjelder bare i stor grad om bedriften blir etablert på Stord, da det er svært få personer som orker å pendle fra Skudneshavn på Karmøy til Husnes i Kvinnherad for å jobbe. Pendling vil dermed i stor grad i dette tilfellet forbli internt i regionen.
 
+**Trenger Pendler Detaljer Her**
+
 ### Eksogent Sjokk Med Hensyn På Bosted.
 
 Nå velger vi å se på effekten av en ny industribedrift med 500 ansatte i kommunene Stord, Kvinnherad og Odda, før vi ser på det på et regionalt nivå, med hensyn på bosted til arbeidstakere.
@@ -4686,7 +4688,7 @@ Videre ønsker vi å se på effekten av den nye bedriften på regionalt nivå, o
 
 Når vi ser på positiv sjokk på regionalt nivå med hensyn på arbeidstakerenes bosted, så er det en detalj som kommer frem: migrasjon. Vi ser her en økning i antal bosatte som jobber i den nye bedriften som igjen gir ringvirkninger lokalt. Vi ser her med andre ord en vekst i befolkning i regionen i sin helhet. Dette kommer mest sannsynelig av at personer i andre kommuner utenfor regionen flytter til regionen som får den nye bedriften for å jobbe. En ny bedrift i en region vil dermed medføre positiv vekst i flere områder: antalt arbeidere, lokale økonomien og befolkningsvekst.
 
-
+**Trenger Pendler Detaljer her**
 
 
 
