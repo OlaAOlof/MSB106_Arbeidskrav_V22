@@ -3315,6 +3315,461 @@ I figur 3 og 4 vises det at de siste 10 årene har Haugesund hatt en reduksjon i
 
 # 5 - Vurder lokal/basis bedrifter ut ifra LQ-verdier
 
+## Sunnhordland - LQ, Etter Arbeidssted
+
+```{r Sunnhordland_Arb_LQ_Vurdering_1}
+Sunnhordland_arb_LQ <- sun_arb
+```
+
+```{r Sunnhordland_Arb_LQ_Vurdering_2}
+Sunnhordland_arb_LQ <- Sunnhordland_arb_LQ %>% 
+  mutate(
+    Eir_Er_Primær = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+    Eir_Er_Berg = `Bergverksdrift og Utvinning`/`Alle Næringer`,
+    Eir_Er_Industri = Industri/`Alle Næringer`,
+    Eir_Er_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+    Eir_Er_Bygg = `Bygge- og Annleggsvirksomhet`/`Alle Næringer`,
+    Eir_Er_Vare_RepMotor = `Varehandel, Reperasjon av Motorvogner`/`Alle Næringer`,
+    Eir_Er_Transport = `Transport og Lagring`/`Alle Næringer`,
+    Eir_Er_Overnatting = `Overnattings- og Serveringsvirksomhet`/`Alle Næringer`,
+    Eir_Er_Informasjon = `Informasjon og Kommunikasjon`/`Alle Næringer`,
+    Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+    Eir_Er_Teknisk = `Teknisk Tjenesteyting, Eiendomsdrift`/`Alle Næringer`,
+    Eir_Er_Forretning = `Forretningsmessig Tjenesteyting`/`Alle Næringer`,
+    Eir_Er_Off_Adm = `Off.Adm., Forsvar, Sosialforsikring`/`Alle Næringer`,
+    Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+    Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
+    Eir_Er_Personlig = `Personlig Tjenesteyting`/`Alle Næringer`,
+    Eir_Er_Uoppgitt = Uoppgitt/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Berg = nasjonalt_arbeidssted$`Bergverksdrift og Utvinning`/nasjonalt_arbeidssted$`Alle Næringer`,
+
+    Ein_En_Industri = nasjonalt_arbeidssted$Industri/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_El_Vann_Reno = nasjonalt_arbeidssted$`Elektrisitet, Vann og Renovasjon`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Bygg = nasjonalt_arbeidssted$`Bygge- og Anleggsvirksomhet`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Vare_RepMotor = nasjonalt_arbeidssted$`Varehandel, Reparasjon av Motorvogner`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Transport = nasjonalt_arbeidssted$`Transport og Lagring`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Overnatting = nasjonalt_arbeidssted$`Overnattings- og Serveringsvirksomhet`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Informasjon = nasjonalt_arbeidssted$`Informasjon og Kommunikasjon`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Finans = nasjonalt_arbeidssted$`Finansiering og Forsikring`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Teknisk = nasjonalt_arbeidssted$`Teknisk Tjenesteyting, Eiendomsdrift`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Forretning = nasjonalt_arbeidssted$`Forretningsmessig Tjenesteyting`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Off_Adm = nasjonalt_arbeidssted$`Off.Adm, Forsvar, Sosialforsikring`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Undervisning = nasjonalt_arbeidssted$Undervisning/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Personlig = nasjonalt_arbeidssted$`Personlig Tjenesteyting`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Uoppgitt = nasjonalt_arbeidssted$Uoppgitt/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
+    LQ_Berg = Eir_Er_Berg / Ein_En_Berg,
+    LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
+    LQ_El_Vann_Reno = Eir_Er_El_Vann_Reno / Ein_En_El_Vann_Reno,
+    LQ_Bygg = Eir_Er_Bygg / Ein_En_Bygg,
+    LQ_Vare_RepMotor = Eir_Er_Vare_RepMotor / Ein_En_Vare_RepMotor,
+    LQ_Transport = Eir_Er_Transport / Ein_En_Transport,
+    LQ_Overnatting = Eir_Er_Overnatting / Ein_En_Overnatting,
+    LQ_Informasjon = Eir_Er_Informasjon / Ein_En_Informasjon,
+    LQ_Finans = Eir_Er_Finans / Ein_En_Finans,
+    LQ_Teknisk = Eir_Er_Teknisk / Ein_En_Teknisk,
+    LQ_Forretning = Eir_Er_Forretning / Ein_En_Forretning,
+    LQ_Off_Adm = Eir_Er_Off_Adm / Ein_En_Forretning,
+    LQ_Undervisning = Eir_Er_Undervisning / Ein_En_Undervisning,
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse,
+    LQ_Personlig = Eir_Er_Personlig / Ein_En_Personlig,
+    LQ_Uoppgitt = Eir_Er_Uoppgitt / Ein_En_Uoppgitt) %>% 
+  mutate_if(is.numeric, round, digits=4)
+```
+
+```{r Sunnhordland_Arb_LQ_Vurdering_3}
+kable(
+  Sunnhordland_arb_LQ %>% 
+    select(År, LQ_Primær, LQ_Berg, LQ_Industri, LQ_Bygg, LQ_Vare_RepMotor, LQ_Transport, LQ_Overnatting, LQ_Informasjon),
+             col.names = c("År",
+                           "Primær",
+                           "Berg",
+                           "Industri",
+                           "Bygg",
+                           "Vare og Reperasjon",
+                           "Transport",
+                           "Overnatting",
+                           "Informasjon")) %>% 
+  add_header_above(c(" "=1, "LQ" = 8)) %>% 
+  add_header_above(c("Sunnhordland: LQ - Arbeidssted, Alle Næringer, Tabell 1"=9))
+
+kable(
+  Sunnhordland_arb_LQ %>% 
+    select(År, LQ_Finans, LQ_Teknisk, LQ_Forretning, LQ_Off_Adm, LQ_Undervisning, LQ_Helse, LQ_Personlig, LQ_Uoppgitt),
+             col.names = c("År",
+                           "Finans",
+                           "Teknisk",
+                           "Forretning",
+                           "Off.Adm",
+                           "Undervisning",
+                           "Helse",
+                           "Personlig",
+                           "Uoppgitt")) %>% 
+  add_header_above(c(" "=1, "LQ" = 8)) %>% 
+  add_header_above(c("Sunnhordland: LQ - Arbeidssted, Alle Næringer, Tabell 2"=9))
+```
+
+## Hardanger (2019) - LQ, Etter Arbeidssted
+
+```{r Hardanger_Arb_LQ_Vurdering_1}
+Hardanger_arb_LQ <- har_arb
+```
+
+```{r Hardanger_Arb_LQ_Vurdering_2}
+Hardanger_arb_LQ <- Hardanger_arb_LQ %>% 
+  mutate(
+    Eir_Er_Primær = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+    Eir_Er_Berg = `Bergverksdrift og Utvinning`/`Alle Næringer`,
+    Eir_Er_Industri = Industri/`Alle Næringer`,
+    Eir_Er_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+    Eir_Er_Bygg = `Bygge- og Annleggsvirksomhet`/`Alle Næringer`,
+    Eir_Er_Vare_RepMotor = `Varehandel, Reperasjon av Motorvogner`/`Alle Næringer`,
+    Eir_Er_Transport = `Transport og Lagring`/`Alle Næringer`,
+    Eir_Er_Overnatting = `Overnattings- og Serveringsvirksomhet`/`Alle Næringer`,
+    Eir_Er_Informasjon = `Informasjon og Kommunikasjon`/`Alle Næringer`,
+    Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+    Eir_Er_Teknisk = `Teknisk Tjenesteyting, Eiendomsdrift`/`Alle Næringer`,
+    Eir_Er_Forretning = `Forretningsmessig Tjenesteyting`/`Alle Næringer`,
+    Eir_Er_Off_Adm = `Off.Adm., Forsvar, Sosialforsikring`/`Alle Næringer`,
+    Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+    Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
+    Eir_Er_Personlig = `Personlig Tjenesteyting`/`Alle Næringer`,
+    Eir_Er_Uoppgitt = Uoppgitt/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_arbeidssted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Berg = nasjonalt_arbeidssted$`Bergverksdrift og Utvinning`/nasjonalt_arbeidssted$`Alle Næringer`,
+
+    Ein_En_Industri = nasjonalt_arbeidssted$Industri/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_El_Vann_Reno = nasjonalt_arbeidssted$`Elektrisitet, Vann og Renovasjon`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Bygg = nasjonalt_arbeidssted$`Bygge- og Anleggsvirksomhet`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Vare_RepMotor = nasjonalt_arbeidssted$`Varehandel, Reparasjon av Motorvogner`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Transport = nasjonalt_arbeidssted$`Transport og Lagring`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Overnatting = nasjonalt_arbeidssted$`Overnattings- og Serveringsvirksomhet`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Informasjon = nasjonalt_arbeidssted$`Informasjon og Kommunikasjon`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Finans = nasjonalt_arbeidssted$`Finansiering og Forsikring`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Teknisk = nasjonalt_arbeidssted$`Teknisk Tjenesteyting, Eiendomsdrift`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Forretning = nasjonalt_arbeidssted$`Forretningsmessig Tjenesteyting`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Off_Adm = nasjonalt_arbeidssted$`Off.Adm, Forsvar, Sosialforsikring`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Undervisning = nasjonalt_arbeidssted$Undervisning/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Helse = nasjonalt_arbeidssted$`Helse- og Sosialtjenester`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Personlig = nasjonalt_arbeidssted$`Personlig Tjenesteyting`/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    Ein_En_Uoppgitt = nasjonalt_arbeidssted$Uoppgitt/nasjonalt_arbeidssted$`Alle Næringer`,
+    
+    LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
+    LQ_Berg = Eir_Er_Berg / Ein_En_Berg,
+    LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
+    LQ_El_Vann_Reno = Eir_Er_El_Vann_Reno / Ein_En_El_Vann_Reno,
+    LQ_Bygg = Eir_Er_Bygg / Ein_En_Bygg,
+    LQ_Vare_RepMotor = Eir_Er_Vare_RepMotor / Ein_En_Vare_RepMotor,
+    LQ_Transport = Eir_Er_Transport / Ein_En_Transport,
+    LQ_Overnatting = Eir_Er_Overnatting / Ein_En_Overnatting,
+    LQ_Informasjon = Eir_Er_Informasjon / Ein_En_Informasjon,
+    LQ_Finans = Eir_Er_Finans / Ein_En_Finans,
+    LQ_Teknisk = Eir_Er_Teknisk / Ein_En_Teknisk,
+    LQ_Forretning = Eir_Er_Forretning / Ein_En_Forretning,
+    LQ_Off_Adm = Eir_Er_Off_Adm / Ein_En_Forretning,
+    LQ_Undervisning = Eir_Er_Undervisning / Ein_En_Undervisning,
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse,
+    LQ_Personlig = Eir_Er_Personlig / Ein_En_Personlig,
+    LQ_Uoppgitt = Eir_Er_Uoppgitt / Ein_En_Uoppgitt) %>% 
+  mutate_if(is.numeric, round, digits=4)
+```
+
+```{r Hardanger_Arb_LQ_Vurdering_3}
+kable(
+  Hardanger_arb_LQ %>% 
+    select(År, LQ_Primær, LQ_Berg, LQ_Industri, LQ_Bygg, LQ_Vare_RepMotor, LQ_Transport, LQ_Overnatting, LQ_Informasjon),
+             col.names = c("År",
+                           "Primær",
+                           "Berg",
+                           "Industri",
+                           "Bygg",
+                           "Vare og Reperasjon",
+                           "Transport",
+                           "Overnatting",
+                           "Informasjon")) %>% 
+  add_header_above(c(" "=1, "LQ" = 8)) %>% 
+  add_header_above(c("Hardanger: LQ - Arbeidssted, Alle Næringer, Tabell 1"=9))
+
+kable(
+  Hardanger_arb_LQ %>% 
+    select(År, LQ_Finans, LQ_Teknisk, LQ_Forretning, LQ_Off_Adm, LQ_Undervisning, LQ_Helse, LQ_Personlig, LQ_Uoppgitt),
+             col.names = c("År",
+                           "Finans",
+                           "Teknisk",
+                           "Forretning",
+                           "Off.Adm",
+                           "Undervisning",
+                           "Helse",
+                           "Personlig",
+                           "Uoppgitt")) %>% 
+  add_header_above(c(" "=1, "LQ" = 8)) %>% 
+  add_header_above(c("Hardanger: LQ - Arbeidssted, Alle Næringer, Tabell 2"=9))
+```
+
+Siden vi ser på Odda i 2019 på enkelt kommune nivå, så velger vi å gjøre det samme med Hardanger også. Dvs. vi velger å fokusere på dataene for Hardanger i 2019, når vi skal jobbe med base multiplikatoren for region Hardanger.
+
+
+## Sunnhordland - LQ, Etter Bosted
+
+```{r Sunnhordland_Bos_LQ_Vurdering_1}
+Sunnhordland_bos_LQ <- sun_bos
+```
+
+```{r Sunnhordland_Bos_LQ_Vurdering_2}
+Sunnhordland_bos_LQ <- Sunnhordland_bos_LQ %>% 
+  mutate(
+    Eir_Er_Primær = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+    Eir_Er_Berg = `Bergverksdrift og Utvinning`/`Alle Næringer`,
+    Eir_Er_Industri = Industri/`Alle Næringer`,
+    Eir_Er_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+    Eir_Er_Bygg = `Bygge- og Annleggsvirksomhet`/`Alle Næringer`,
+    Eir_Er_Vare_RepMotor = `Varehandel, Reperasjon av Motorvogner`/`Alle Næringer`,
+    Eir_Er_Transport = `Transport og Lagring`/`Alle Næringer`,
+    Eir_Er_Overnatting = `Overnattings- og Serveringsvirksomhet`/`Alle Næringer`,
+    Eir_Er_Informasjon = `Informasjon og Kommunikasjon`/`Alle Næringer`,
+    Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+    Eir_Er_Teknisk = `Teknisk Tjenesteyting, Eiendomsdrift`/`Alle Næringer`,
+    Eir_Er_Forretning = `Forretningsmessig Tjenesteyting`/`Alle Næringer`,
+    Eir_Er_Off_Adm = `Off.Adm., Forsvar, Sosialforsikring`/`Alle Næringer`,
+    Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+    Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
+    Eir_Er_Personlig = `Personlig Tjenesteyting`/`Alle Næringer`,
+    Eir_Er_Uoppgitt = Uoppgitt/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Berg = nasjonalt_bosted$`Bergverksdrift og Utvinning`/nasjonalt_bosted$`Alle Næringer`,
+
+    Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_El_Vann_Reno = nasjonalt_bosted$`Elektrisitet, Vann og Renovasjon`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Bygg = nasjonalt_bosted$`Bygge- og Anleggsvirksomhet`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Vare_RepMotor = nasjonalt_bosted$`Varehandel, Reparasjon av Motorvogner`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Transport = nasjonalt_bosted$`Transport og Lagring`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Overnatting = nasjonalt_bosted$`Overnattings- og Serveringsvirksomhet`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Informasjon = nasjonalt_bosted$`Informasjon og Kommunikasjon`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Finans = nasjonalt_bosted$`Finansiering og Forsikring`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Teknisk = nasjonalt_bosted$`Teknisk Tjenesteyting, Eiendomsdrift`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Forretning = nasjonalt_bosted$`Forretningsmessig Tjenesteyting`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Off_Adm = nasjonalt_bosted$`Off.Adm, Forsvar, Sosialforsikring`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Undervisning = nasjonalt_bosted$Undervisning/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Personlig = nasjonalt_bosted$`Personlig Tjenesteyting`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Uoppgitt = nasjonalt_bosted$Uoppgitt/nasjonalt_bosted$`Alle Næringer`,
+    
+    LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
+    LQ_Berg = Eir_Er_Berg / Ein_En_Berg,
+    LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
+    LQ_El_Vann_Reno = Eir_Er_El_Vann_Reno / Ein_En_El_Vann_Reno,
+    LQ_Bygg = Eir_Er_Bygg / Ein_En_Bygg,
+    LQ_Vare_RepMotor = Eir_Er_Vare_RepMotor / Ein_En_Vare_RepMotor,
+    LQ_Transport = Eir_Er_Transport / Ein_En_Transport,
+    LQ_Overnatting = Eir_Er_Overnatting / Ein_En_Overnatting,
+    LQ_Informasjon = Eir_Er_Informasjon / Ein_En_Informasjon,
+    LQ_Finans = Eir_Er_Finans / Ein_En_Finans,
+    LQ_Teknisk = Eir_Er_Teknisk / Ein_En_Teknisk,
+    LQ_Forretning = Eir_Er_Forretning / Ein_En_Forretning,
+    LQ_Off_Adm = Eir_Er_Off_Adm / Ein_En_Forretning,
+    LQ_Undervisning = Eir_Er_Undervisning / Ein_En_Undervisning,
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse,
+    LQ_Personlig = Eir_Er_Personlig / Ein_En_Personlig,
+    LQ_Uoppgitt = Eir_Er_Uoppgitt / Ein_En_Uoppgitt) %>% 
+  mutate_if(is.numeric, round, digits=4)
+```
+
+```{r Sunnhordland_Bos_LQ_Vurdering_3}
+kable(
+  Sunnhordland_bos_LQ %>% 
+    select(År, LQ_Primær, LQ_Berg, LQ_Industri, LQ_Bygg, LQ_Vare_RepMotor, LQ_Transport, LQ_Overnatting, LQ_Informasjon),
+             col.names = c("År",
+                           "Primær",
+                           "Berg",
+                           "Industri",
+                           "Bygg",
+                           "Vare og Reperasjon",
+                           "Transport",
+                           "Overnatting",
+                           "Informasjon")) %>% 
+  add_header_above(c(" "=1, "LQ" = 8)) %>% 
+  add_header_above(c("Sunnhordland: LQ - Bosted, Alle Næringer, Tabell 1"=9))
+
+kable(
+  Sunnhordland_bos_LQ %>% 
+    select(År, LQ_Finans, LQ_Teknisk, LQ_Forretning, LQ_Off_Adm, LQ_Undervisning, LQ_Helse, LQ_Personlig, LQ_Uoppgitt),
+             col.names = c("År",
+                           "Finans",
+                           "Teknisk",
+                           "Forretning",
+                           "Off.Adm",
+                           "Undervisning",
+                           "Helse",
+                           "Personlig",
+                           "Uoppgitt")) %>% 
+  add_header_above(c(" "=1, "LQ" = 8)) %>% 
+  add_header_above(c("Sunnhordland: LQ - Bosted, Alle Næringer, Tabell 2"=9))
+```
+
+## Hardanger (2019) - LQ, Etter Bosted
+
+```{r Hardanger_Bos_LQ_Vurdering_1}
+Hardanger_bos_LQ <- har_bos
+```
+
+```{r Hardanger_Bos_LQ_Vurdering_2}
+Hardanger_bos_LQ <- Hardanger_bos_LQ %>% 
+  mutate(
+    Eir_Er_Primær = `Jordbruk, Skogbruk og Fiske`/`Alle Næringer`,
+    Eir_Er_Berg = `Bergverksdrift og Utvinning`/`Alle Næringer`,
+    Eir_Er_Industri = Industri/`Alle Næringer`,
+    Eir_Er_El_Vann_Reno = `Elektrisitet, Vann og Renovasjon`/`Alle Næringer`,
+    Eir_Er_Bygg = `Bygge- og Annleggsvirksomhet`/`Alle Næringer`,
+    Eir_Er_Vare_RepMotor = `Varehandel, Reperasjon av Motorvogner`/`Alle Næringer`,
+    Eir_Er_Transport = `Transport og Lagring`/`Alle Næringer`,
+    Eir_Er_Overnatting = `Overnattings- og Serveringsvirksomhet`/`Alle Næringer`,
+    Eir_Er_Informasjon = `Informasjon og Kommunikasjon`/`Alle Næringer`,
+    Eir_Er_Finans = `Finansiering og Forsikring`/`Alle Næringer`,
+    Eir_Er_Teknisk = `Teknisk Tjenesteyting, Eiendomsdrift`/`Alle Næringer`,
+    Eir_Er_Forretning = `Forretningsmessig Tjenesteyting`/`Alle Næringer`,
+    Eir_Er_Off_Adm = `Off.Adm., Forsvar, Sosialforsikring`/`Alle Næringer`,
+    Eir_Er_Undervisning = Undervisning/`Alle Næringer`,
+    Eir_Er_Helse = `Helse- og Sosialtjenester`/`Alle Næringer`,
+    Eir_Er_Personlig = `Personlig Tjenesteyting`/`Alle Næringer`,
+    Eir_Er_Uoppgitt = Uoppgitt/`Alle Næringer`,
+    
+    Ein_En_Primær = nasjonalt_bosted$`Jordbruk, Skogbruk og Fiske`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Berg = nasjonalt_bosted$`Bergverksdrift og Utvinning`/nasjonalt_bosted$`Alle Næringer`,
+
+    Ein_En_Industri = nasjonalt_bosted$Industri/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_El_Vann_Reno = nasjonalt_bosted$`Elektrisitet, Vann og Renovasjon`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Bygg = nasjonalt_bosted$`Bygge- og Anleggsvirksomhet`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Vare_RepMotor = nasjonalt_bosted$`Varehandel, Reparasjon av Motorvogner`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Transport = nasjonalt_bosted$`Transport og Lagring`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Overnatting = nasjonalt_bosted$`Overnattings- og Serveringsvirksomhet`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Informasjon = nasjonalt_bosted$`Informasjon og Kommunikasjon`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Finans = nasjonalt_bosted$`Finansiering og Forsikring`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Teknisk = nasjonalt_bosted$`Teknisk Tjenesteyting, Eiendomsdrift`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Forretning = nasjonalt_bosted$`Forretningsmessig Tjenesteyting`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Off_Adm = nasjonalt_bosted$`Off.Adm, Forsvar, Sosialforsikring`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Undervisning = nasjonalt_bosted$Undervisning/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Helse = nasjonalt_bosted$`Helse- og Sosialtjenester`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Personlig = nasjonalt_bosted$`Personlig Tjenesteyting`/nasjonalt_bosted$`Alle Næringer`,
+    
+    Ein_En_Uoppgitt = nasjonalt_bosted$Uoppgitt/nasjonalt_bosted$`Alle Næringer`,
+    
+    LQ_Primær = Eir_Er_Primær / Ein_En_Primær,
+    LQ_Berg = Eir_Er_Berg / Ein_En_Berg,
+    LQ_Industri = Eir_Er_Industri / Ein_En_Industri,
+    LQ_El_Vann_Reno = Eir_Er_El_Vann_Reno / Ein_En_El_Vann_Reno,
+    LQ_Bygg = Eir_Er_Bygg / Ein_En_Bygg,
+    LQ_Vare_RepMotor = Eir_Er_Vare_RepMotor / Ein_En_Vare_RepMotor,
+    LQ_Transport = Eir_Er_Transport / Ein_En_Transport,
+    LQ_Overnatting = Eir_Er_Overnatting / Ein_En_Overnatting,
+    LQ_Informasjon = Eir_Er_Informasjon / Ein_En_Informasjon,
+    LQ_Finans = Eir_Er_Finans / Ein_En_Finans,
+    LQ_Teknisk = Eir_Er_Teknisk / Ein_En_Teknisk,
+    LQ_Forretning = Eir_Er_Forretning / Ein_En_Forretning,
+    LQ_Off_Adm = Eir_Er_Off_Adm / Ein_En_Forretning,
+    LQ_Undervisning = Eir_Er_Undervisning / Ein_En_Undervisning,
+    LQ_Helse = Eir_Er_Helse / Ein_En_Helse,
+    LQ_Personlig = Eir_Er_Personlig / Ein_En_Personlig,
+    LQ_Uoppgitt = Eir_Er_Uoppgitt / Ein_En_Uoppgitt) %>% 
+  mutate_if(is.numeric, round, digits=4)
+```
+
+```{r Hardanger_Bos_LQ_Vurdering_3}
+kable(
+  Hardanger_bos_LQ %>% 
+    select(År, LQ_Primær, LQ_Berg, LQ_Industri, LQ_Bygg, LQ_Vare_RepMotor, LQ_Transport, LQ_Overnatting, LQ_Informasjon),
+             col.names = c("År",
+                           "Primær",
+                           "Berg",
+                           "Industri",
+                           "Bygg",
+                           "Vare og Reperasjon",
+                           "Transport",
+                           "Overnatting",
+                           "Informasjon")) %>% 
+  add_header_above(c(" "=1, "LQ" = 8)) %>% 
+  add_header_above(c("Hardanger: LQ - Bosted, Alle Næringer, Tabell 1"=9))
+
+kable(
+  Hardanger_bos_LQ %>% 
+    select(År, LQ_Finans, LQ_Teknisk, LQ_Forretning, LQ_Off_Adm, LQ_Undervisning, LQ_Helse, LQ_Personlig, LQ_Uoppgitt),
+             col.names = c("År",
+                           "Finans",
+                           "Teknisk",
+                           "Forretning",
+                           "Off.Adm",
+                           "Undervisning",
+                           "Helse",
+                           "Personlig",
+                           "Uoppgitt")) %>% 
+  add_header_above(c(" "=1, "LQ" = 8)) %>% 
+  add_header_above(c("Hardanger: LQ - Bosted, Alle Næringer, Tabell 2"=9))
+```
+
 ## Stord - LQ, Med Hensyn På Arbeidssted
 
 ```{r Stord_Arb_LQ_Vurdering_1}
@@ -4032,6 +4487,23 @@ Vi har funne LQ-verdiene for de relevante kommunene vi skal se på, som er Stord
 Noen bemerkelser i videre arbeid. Først så velger vi her å se på talene for Stord og Kvinnherad i 2020, mens for Odda så ser vi på talene fra 2019. Neste er at vi tar utgangspunkt i at alle næringer med LQ under 1 er lokal bedrift. Dette gjør vi for å holde utrekningen konsekvent.
 
 ### Basemultiplikator Med Hensyn På Arbeidssted
+
+#### Sunnhordland
+
+Vi ser ut ifra tabellen at næringene med LQ lik eller over 1 er:
+
+- 
+
+Antall ansatte i region Sunnhordland i lokale næringer blir da .
+
+Totalt ansatte i regionen er .
+
+Multiplikatoren for Sunnhordland blir da ca .
+
+#### Hardanger (2019)
+
+
+
 
 #### Stord
 

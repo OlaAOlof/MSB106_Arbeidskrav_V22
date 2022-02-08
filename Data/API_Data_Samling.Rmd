@@ -186,11 +186,11 @@ hld_arb <- hld_arb %>%
 
 ```{r}
 hld_arb <- hld_arb %>% 
-  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88")) %>% select(-NAstatus)
+  filter(NACE2007 %in% c("00-99", "01-03", "05-09", "10-33", "35-39", "41-43", "45-47", "49-53", "55-56", "58-63", "64-66", "68-75", "77-82", "84", "85", "86-88", "90-99", "00")) %>% select(-NAstatus)
 ```
 
 ```{r}
-hld_arb <- hld_arb[-c(105, 106, 107, 108), ]
+hld_arb <- hld_arb[-c(235:244), ]
 hld_arb[is.na(hld_arb)] = 0
 ```
 
@@ -210,14 +210,24 @@ hld_arb <- hld_arb %>%
 hld_arb <- hld_arb %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
+                       "Uoppgitt" = "00",
                        "Alle Næringer" = "00-99",
                        "Jordbruk, Skogbruk og Fiske" = "01-03",
+                       "Bergverksdrift og Utvinning" = "05-09",
                        "Industri" = "10-33",
                        "Elektrisitet, Vann og Renovasjon" = "35-39",
                        "Bygge- og Annleggsvirksomhet" = "41-43",
+                       "Varehandel, Reperasjon av Motorvogner" = "45-47",
+                       "Transport og Lagring" = "49-53",
+                       "Overnattings- og Serveringsvirksomhet" = "55-56",
+                       "Informasjon og Kommunikasjon" = "58-63",
                        "Finansiering og Forsikring" = "64-66",
+                       "Teknisk Tjenesteyting, Eiendomsdrift" = "68-75",
+                       "Forretningsmessig Tjenesteyting" = "77-82",
+                       "Off.Adm., Forsvar, Sosialforsikring" = "84",
                        "Undervisning" = "85",
-                       "Helse- og Sosialtjenester" = "86-88"))
+                       "Helse- og Sosialtjenester" = "86-88",
+                       "Personlig Tjenesteyting" = "90-99"))
 ```
 
 ```{r}
@@ -279,7 +289,7 @@ sun_arb <- sun_arb %>%
 
 ```{r}
 sun_arb <- sun_arb %>% 
-  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88"))
+  filter(NACE2007 %in% c("00-99", "01-03", "05-09", "10-33", "35-39", "41-43", "45-47", "49-53", "55-56", "58-63", "64-66", "68-75", "77-82", "84", "85", "86-88", "90-99", "00"))
 ```
 
 ```{r}
@@ -305,14 +315,24 @@ sun_arb <- sun_arb %>%
 sun_arb <- sun_arb %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
+                       "Uoppgitt" = "00",
                        "Alle Næringer" = "00-99",
                        "Jordbruk, Skogbruk og Fiske" = "01-03",
+                       "Bergverksdrift og Utvinning" = "05-09",
                        "Industri" = "10-33",
                        "Elektrisitet, Vann og Renovasjon" = "35-39",
                        "Bygge- og Annleggsvirksomhet" = "41-43",
+                       "Varehandel, Reperasjon av Motorvogner" = "45-47",
+                       "Transport og Lagring" = "49-53",
+                       "Overnattings- og Serveringsvirksomhet" = "55-56",
+                       "Informasjon og Kommunikasjon" = "58-63",
                        "Finansiering og Forsikring" = "64-66",
+                       "Teknisk Tjenesteyting, Eiendomsdrift" = "68-75",
+                       "Forretningsmessig Tjenesteyting" = "77-82",
+                       "Off.Adm., Forsvar, Sosialforsikring" = "84",
                        "Undervisning" = "85",
-                       "Helse- og Sosialtjenester" = "86-88"))
+                       "Helse- og Sosialtjenester" = "86-88",
+                       "Personlig Tjenesteyting" = "90-99"))
 ```
 
 ```{r}
@@ -321,7 +341,7 @@ names(sun_arb)[[5]] <- "År"
 ```
 
 ```{r}
-sun_arb <- sun_arb[-105, ]
+sun_arb <- sun_arb[-c(235:238), ]
 sun_arb[is.na(sun_arb)] = 0
 ```
 
@@ -368,7 +388,7 @@ har_arb <- har_arb %>%
 
 ```{r}
 har_arb <- har_arb %>% 
-  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88"))
+  filter(NACE2007 %in% c("00-99", "01-03", "05-09", "10-33", "35-39", "41-43", "45-47", "49-53", "55-56", "58-63", "64-66", "68-75", "77-82", "84", "85", "86-88", "90-99", "00"))
 ```
 
 ```{r}
@@ -388,14 +408,24 @@ har_arb <- har_arb %>%
 har_arb <- har_arb %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
+                       "Uoppgitt" = "00",
                        "Alle Næringer" = "00-99",
                        "Jordbruk, Skogbruk og Fiske" = "01-03",
+                       "Bergverksdrift og Utvinning" = "05-09",
                        "Industri" = "10-33",
                        "Elektrisitet, Vann og Renovasjon" = "35-39",
                        "Bygge- og Annleggsvirksomhet" = "41-43",
+                       "Varehandel, Reperasjon av Motorvogner" = "45-47",
+                       "Transport og Lagring" = "49-53",
+                       "Overnattings- og Serveringsvirksomhet" = "55-56",
+                       "Informasjon og Kommunikasjon" = "58-63",
                        "Finansiering og Forsikring" = "64-66",
+                       "Teknisk Tjenesteyting, Eiendomsdrift" = "68-75",
+                       "Forretningsmessig Tjenesteyting" = "77-82",
+                       "Off.Adm., Forsvar, Sosialforsikring" = "84",
                        "Undervisning" = "85",
-                       "Helse- og Sosialtjenester" = "86-88"))
+                       "Helse- og Sosialtjenester" = "86-88",
+                       "Personlig Tjenesteyting" = "90-99"))
 ```
 
 ```{r}
@@ -404,7 +434,7 @@ names(har_arb)[[5]] <- "År"
 ```
 
 ```{r}
-har_arb <- har_arb[-105, ]
+har_arb <- har_arb[-c(235:236), ]
 har_arb[is.na(har_arb)] = 0
 ```
 
@@ -573,7 +603,7 @@ hld_bos <- hld_bos %>%
 
 ```{r}
 hld_bos <- hld_bos %>% 
-  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88"))
+  filter(NACE2007 %in% c("00-99", "01-03", "05-09", "10-33", "35-39", "41-43", "45-47", "49-53", "55-56", "58-63", "64-66", "68-75", "77-82", "84", "85", "86-88", "90-99", "00"))
 ```
 
 ```{r}
@@ -592,14 +622,24 @@ hld_bos <- hld_bos %>%
 hld_bos <- hld_bos %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
+                       "Uoppgitt" = "00",
                        "Alle Næringer" = "00-99",
                        "Jordbruk, Skogbruk og Fiske" = "01-03",
+                       "Bergverksdrift og Utvinning" = "05-09",
                        "Industri" = "10-33",
                        "Elektrisitet, Vann og Renovasjon" = "35-39",
                        "Bygge- og Annleggsvirksomhet" = "41-43",
+                       "Varehandel, Reperasjon av Motorvogner" = "45-47",
+                       "Transport og Lagring" = "49-53",
+                       "Overnattings- og Serveringsvirksomhet" = "55-56",
+                       "Informasjon og Kommunikasjon" = "58-63",
                        "Finansiering og Forsikring" = "64-66",
+                       "Teknisk Tjenesteyting, Eiendomsdrift" = "68-75",
+                       "Forretningsmessig Tjenesteyting" = "77-82",
+                       "Off.Adm., Forsvar, Sosialforsikring" = "84",
                        "Undervisning" = "85",
-                       "Helse- og Sosialtjenester" = "86-88"))
+                       "Helse- og Sosialtjenester" = "86-88",
+                       "Personlig Tjenesteyting" = "90-99"))
 ```
 
 ```{r}
@@ -661,7 +701,7 @@ sun_bos <- sun_bos %>%
 
 ```{r}
 sun_bos <- sun_bos %>% 
-  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88"))
+  filter(NACE2007 %in% c("00-99", "01-03", "05-09", "10-33", "35-39", "41-43", "45-47", "49-53", "55-56", "58-63", "64-66", "68-75", "77-82", "84", "85", "86-88", "90-99", "00"))
 ```
 
 ```{r}
@@ -687,14 +727,24 @@ sun_bos <- sun_bos %>%
 sun_bos <- sun_bos %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
+                       "Uoppgitt" = "00",
                        "Alle Næringer" = "00-99",
                        "Jordbruk, Skogbruk og Fiske" = "01-03",
+                       "Bergverksdrift og Utvinning" = "05-09",
                        "Industri" = "10-33",
                        "Elektrisitet, Vann og Renovasjon" = "35-39",
                        "Bygge- og Annleggsvirksomhet" = "41-43",
+                       "Varehandel, Reperasjon av Motorvogner" = "45-47",
+                       "Transport og Lagring" = "49-53",
+                       "Overnattings- og Serveringsvirksomhet" = "55-56",
+                       "Informasjon og Kommunikasjon" = "58-63",
                        "Finansiering og Forsikring" = "64-66",
+                       "Teknisk Tjenesteyting, Eiendomsdrift" = "68-75",
+                       "Forretningsmessig Tjenesteyting" = "77-82",
+                       "Off.Adm., Forsvar, Sosialforsikring" = "84",
                        "Undervisning" = "85",
-                       "Helse- og Sosialtjenester" = "86-88"))
+                       "Helse- og Sosialtjenester" = "86-88",
+                       "Personlig Tjenesteyting" = "90-99"))
 ```
 
 ```{r}
@@ -745,7 +795,7 @@ har_bos <- har_bos %>%
 
 ```{r}
 har_bos <- har_bos %>% 
-  filter(NACE2007 %in% c("00-99", "01-03", "10-33", "35-39", "41-43", "64-66", "85", "86-88"))
+  filter(NACE2007 %in% c("00-99", "01-03", "05-09", "10-33", "35-39", "41-43", "45-47", "49-53", "55-56", "58-63", "64-66", "68-75", "77-82", "84", "85", "86-88", "90-99", "00"))
 ```
 
 ```{r}
@@ -765,14 +815,24 @@ har_bos <- har_bos %>%
 har_bos <- har_bos %>% 
   mutate(
     NACE2007 = fct_recode(NACE2007,
+                       "Uoppgitt" = "00",
                        "Alle Næringer" = "00-99",
                        "Jordbruk, Skogbruk og Fiske" = "01-03",
+                       "Bergverksdrift og Utvinning" = "05-09",
                        "Industri" = "10-33",
                        "Elektrisitet, Vann og Renovasjon" = "35-39",
                        "Bygge- og Annleggsvirksomhet" = "41-43",
+                       "Varehandel, Reperasjon av Motorvogner" = "45-47",
+                       "Transport og Lagring" = "49-53",
+                       "Overnattings- og Serveringsvirksomhet" = "55-56",
+                       "Informasjon og Kommunikasjon" = "58-63",
                        "Finansiering og Forsikring" = "64-66",
+                       "Teknisk Tjenesteyting, Eiendomsdrift" = "68-75",
+                       "Forretningsmessig Tjenesteyting" = "77-82",
+                       "Off.Adm., Forsvar, Sosialforsikring" = "84",
                        "Undervisning" = "85",
-                       "Helse- og Sosialtjenester" = "86-88"))
+                       "Helse- og Sosialtjenester" = "86-88",
+                       "Personlig Tjenesteyting" = "90-99"))
 ```
 
 ```{r}

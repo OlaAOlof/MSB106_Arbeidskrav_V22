@@ -1,14 +1,14 @@
-Kjonn,Alder,ContentsCode,År,Alle Næringer,"Jordbruk, Skogbruk og Fiske",Industri,"Elektrisitet, Vann og Renovasjon",Bygge- og Annleggsvirksomhet,Finansiering og Forsikring,Undervisning,Helse- og Sosialtjenester
-Begge Kjønn,15-74,SysselsatteArb,2008,47530,1618,7491,645,3721,456,3578,9596
-Begge Kjønn,15-74,SysselsatteArb,2009,47013,1577,6970,650,3795,433,3767,9803
-Begge Kjønn,15-74,SysselsatteArb,2010,47176,1537,6655,675,3828,417,3850,9798
-Begge Kjønn,15-74,SysselsatteArb,2011,48276,1479,6695,697,4298,387,3824,10124
-Begge Kjønn,15-74,SysselsatteArb,2012,48708,1377,6853,715,4119,376,3911,10017
-Begge Kjønn,15-74,SysselsatteArb,2013,49011,1304,6877,785,4366,354,3887,10116
-Begge Kjønn,15-74,SysselsatteArb,2014,49518,1256,6767,734,4368,326,3973,10425
-Begge Kjønn,15-74,SysselsatteArb,2015,48043,1330,6510,649,4256,324,3850,10676
-Begge Kjønn,15-74,SysselsatteArb,2016,47923,1354,6322,712,4187,307,3951,10664
-Begge Kjønn,15-74,SysselsatteArb,2017,48957,1329,6379,735,4371,295,3991,10832
-Begge Kjønn,15-74,SysselsatteArb,2018,48964,1312,6388,716,4359,273,4023,10986
-Begge Kjønn,15-74,SysselsatteArb,2019,49295,1280,6563,789,4286,265,3990,11050
-Begge Kjønn,15-74,SysselsatteArb,2020,48971,1302,6638,799,4291,248,4021,11050
+Kjonn,Alder,ContentsCode,År,Alle Næringer,"Jordbruk, Skogbruk og Fiske",Bergverksdrift og Utvinning,Industri,"Elektrisitet, Vann og Renovasjon",Bygge- og Annleggsvirksomhet,"Varehandel, Reperasjon av Motorvogner",Transport og Lagring,Overnattings- og Serveringsvirksomhet,Informasjon og Kommunikasjon,Finansiering og Forsikring,"Teknisk Tjenesteyting, Eiendomsdrift",Forretningsmessig Tjenesteyting,"Off.Adm., Forsvar, Sosialforsikring",Undervisning,Helse- og Sosialtjenester,Personlig Tjenesteyting,Uoppgitt
+Begge Kjønn,15-74,SysselsatteArb,2008,47530,1618,1338,7491,645,3721,7025,3210,1438,738,456,1629,1863,1729,3578,9596,1232,223
+Begge Kjønn,15-74,SysselsatteArb,2009,47013,1577,1467,6970,650,3795,6793,3143,1373,737,433,1666,1614,1754,3767,9803,1247,224
+Begge Kjønn,15-74,SysselsatteArb,2010,47176,1537,1348,6655,675,3828,6924,3042,1456,875,417,1865,1600,1834,3850,9798,1197,275
+Begge Kjønn,15-74,SysselsatteArb,2011,48276,1479,1360,6695,697,4298,7030,2996,1438,900,387,1880,1840,1883,3824,10124,1219,226
+Begge Kjønn,15-74,SysselsatteArb,2012,48708,1377,1478,6853,715,4119,7027,3028,1445,940,376,1923,2063,1982,3911,10017,1217,237
+Begge Kjønn,15-74,SysselsatteArb,2013,49011,1304,1472,6877,785,4366,6819,2984,1528,925,354,2063,2024,2023,3887,10116,1249,235
+Begge Kjønn,15-74,SysselsatteArb,2014,49518,1256,1521,6767,734,4368,6779,3046,1559,868,326,2229,2131,2101,3973,10425,1209,226
+Begge Kjønn,15-74,SysselsatteArb,2015,48043,1330,1434,6510,649,4256,6366,3066,1248,863,324,2144,1673,1938,3850,10676,1283,433
+Begge Kjønn,15-74,SysselsatteArb,2016,47923,1354,1358,6322,712,4187,6318,2897,1335,888,307,2104,1732,2041,3951,10664,1336,417
+Begge Kjønn,15-74,SysselsatteArb,2017,48957,1329,1465,6379,735,4371,6345,3052,1363,847,295,2175,1976,2017,3991,10832,1387,398
+Begge Kjønn,15-74,SysselsatteArb,2018,48964,1312,1717,6388,716,4359,6276,2936,1358,920,273,2048,1959,1992,4023,10986,1350,351
+Begge Kjønn,15-74,SysselsatteArb,2019,49295,1280,1752,6563,789,4286,6057,2907,1348,1027,265,2068,2039,2188,3990,11050,1363,323
+Begge Kjønn,15-74,SysselsatteArb,2020,48971,1302,985,6638,799,4291,5975,2831,1174,1075,248,1987,2032,2079,4021,11050,1340,264

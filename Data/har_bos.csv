@@ -1,14 +1,14 @@
-Kjonn,Alder,ContentsCode,År,Alle Næringer,"Jordbruk, Skogbruk og Fiske",Industri,"Elektrisitet, Vann og Renovasjon",Bygge- og Annleggsvirksomhet,Finansiering og Forsikring,Undervisning,Helse- og Sosialtjenester
-Begge Kjønn,15-74,Sysselsatte,2008,5414,255,1045,146,541,53,367,1126
-Begge Kjønn,15-74,Sysselsatte,2009,5341,252,1005,140,530,47,375,1174
-Begge Kjønn,15-74,Sysselsatte,2010,5306,234,955,142,555,49,374,1168
-Begge Kjønn,15-74,Sysselsatte,2011,5248,212,959,140,564,39,360,1131
-Begge Kjønn,15-74,Sysselsatte,2012,5246,185,988,146,537,39,341,1198
-Begge Kjønn,15-74,Sysselsatte,2013,5192,175,963,144,524,36,357,1174
-Begge Kjønn,15-74,Sysselsatte,2014,5216,179,939,145,548,31,344,1199
-Begge Kjønn,15-74,Sysselsatte,2015,5058,175,897,153,540,27,365,1174
-Begge Kjønn,15-74,Sysselsatte,2016,5006,161,814,155,550,19,380,1177
-Begge Kjønn,15-74,Sysselsatte,2017,5058,174,841,145,578,15,383,1192
-Begge Kjønn,15-74,Sysselsatte,2018,5041,164,879,145,568,15,362,1123
-Begge Kjønn,15-74,Sysselsatte,2019,5041,170,894,146,570,21,367,1152
-Begge Kjønn,15-74,Sysselsatte,2020,5503,247,954,155,617,15,405,1233
+Kjonn,Alder,ContentsCode,År,Alle Næringer,"Jordbruk, Skogbruk og Fiske",Bergverksdrift og Utvinning,Industri,"Elektrisitet, Vann og Renovasjon",Bygge- og Annleggsvirksomhet,"Varehandel, Reperasjon av Motorvogner",Transport og Lagring,Overnattings- og Serveringsvirksomhet,Informasjon og Kommunikasjon,Finansiering og Forsikring,"Teknisk Tjenesteyting, Eiendomsdrift",Forretningsmessig Tjenesteyting,"Off.Adm., Forsvar, Sosialforsikring",Undervisning,Helse- og Sosialtjenester,Personlig Tjenesteyting,Uoppgitt
+Begge Kjønn,15-74,Sysselsatte,2008,5414,255,95,1045,146,541,565,223,204,65,53,231,119,184,367,1126,170,25
+Begge Kjønn,15-74,Sysselsatte,2009,5341,252,98,1005,140,530,528,203,173,63,47,248,127,198,375,1174,154,26
+Begge Kjønn,15-74,Sysselsatte,2010,5306,234,121,955,142,555,548,191,170,68,49,258,101,197,374,1168,139,36
+Begge Kjønn,15-74,Sysselsatte,2011,5248,212,128,959,140,564,542,188,197,59,39,253,119,197,360,1131,138,22
+Begge Kjønn,15-74,Sysselsatte,2012,5246,185,134,988,146,537,510,179,176,52,39,264,134,193,341,1198,143,27
+Begge Kjønn,15-74,Sysselsatte,2013,5192,175,139,963,144,524,500,187,197,54,36,270,120,189,357,1174,139,24
+Begge Kjønn,15-74,Sysselsatte,2014,5216,179,151,939,145,548,501,189,193,50,31,273,131,184,344,1199,138,21
+Begge Kjønn,15-74,Sysselsatte,2015,5058,175,141,897,153,540,467,178,179,46,27,254,118,176,365,1174,128,40
+Begge Kjønn,15-74,Sysselsatte,2016,5006,161,132,814,155,550,486,187,191,42,19,262,94,188,380,1177,128,40
+Begge Kjønn,15-74,Sysselsatte,2017,5058,174,115,841,145,578,472,179,195,44,15,264,130,174,383,1192,129,28
+Begge Kjønn,15-74,Sysselsatte,2018,5041,164,125,879,145,568,465,171,200,47,15,267,137,201,362,1123,132,40
+Begge Kjønn,15-74,Sysselsatte,2019,5041,170,144,894,146,570,457,172,191,34,21,253,122,197,367,1152,127,24
+Begge Kjønn,15-74,Sysselsatte,2020,5503,247,172,954,155,617,520,206,182,48,15,256,126,207,405,1233,128,32
