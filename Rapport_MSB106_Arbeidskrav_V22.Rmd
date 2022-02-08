@@ -4023,6 +4023,110 @@ kable(
   add_header_above(c("Odda(-2019): LQ - Bosted, Alle Næringer, Tabell 2"=9))
 ```
 
+## Basemultiplikatoren
+
+Basemultiplikatoren er gitt ved $\Delta E_r = \frac{1}{1-a} \bullet \Delta E_b$
+
+Vi har funne LQ-verdiene for de relevante kommunene vi skal se på, som er Stord (Leirvik), Kvinnherad (Husnes) og Odda, både med hensyn på arbeidssted og bosted. Vi bruker dette til å rekne ut hva multiplikatoren blir for de ulike kommunene.
+
+Noen bemerkelser i videre arbeid. Først så velger vi her å se på talene for Stord og Kvinnherad i 2020, mens for Odda så ser vi på talene fra 2019. Neste er at vi tar utgangspunkt i at alle næringer med LQ under 1 er lokal bedrift. Dette gjør vi for å holde utrekningen konsekvent.
+
+### Basemultiplikator Med Hensyn På Arbeidssted
+
+#### Stord
+
+Vi ser ut ifra tabellen at næringene med LQ lik eller over 1 er:
+
+- Industri
+- Overnatting og Serveringsvirksomhet
+- Undervisning
+- Helsetjenester
+
+Antall ansatte i Stord kommune i lokale næringer blir da 3667.
+
+Totalt ansatte i kommunen er 9301.
+
+Multiplikatoren for Stord blir da 1,65
+
+#### Kvinnherad
+
+Vi ser ut ifra tabellen at næringene med LQ lik eller over 1 er:
+
+- Primærnæringene
+- Industri
+- Undervisning
+- Helsetjenester
+
+Bergutvinning og uoppgitt er NA, dvs. for få antall ansatte til å få data fra SSB, og må dermed regnes som lik 0.
+
+Antall ansatte i Kvinnherad kommune i lokale næringer blir da 2326.
+
+Totalt ansatte i kommunen er 5808.
+
+Multiplikatoren for Kvinnherad blir da 
+
+#### Odda (2019)
+
+Vi ser ut ifra tabellen at næringene med LQ lik eller over 1 er:
+
+- Industri
+- Bygg og Annlegg
+- Helsetjenester
+
+Antall ansatte i Odda kommune (2019) i lokale næringer blir da 1474.
+
+Totalt ansatte i kommunen er 3566
+
+Multiplikatoren for Odda (2019) blir da 
+
+### Basemultiplikator Med Hensyn På Bosted
+
+#### Stord
+
+Vi ser ut ifra tabellen at næringene med LQ lik eller over 1 er:
+
+- Bergutvinning
+- Industri
+- Overnatting og Serveringsvirksomhet
+- Undervisning
+- Helsetjenester
+
+Antall ansatte, etter bosted, i Stord kommune i lokale næringer blir da 3976.
+
+Totalt ansatte, etter bosted, i kommunen er 9315.
+
+Multiplikatoren for Stord, etter bosted, blir da .
+
+#### Kvinnherad
+
+Vi ser ut ifra tabellen at næringene med LQ lik eller over 1 er:
+
+- Primærnæringene
+- Bergutvinning
+- Industri
+- Bygg- og Anlegg
+- Helsetjenester
+
+Antall ansatte, etter bosted, i Kvinnherad kommune i lokale næringer blir da 2509.
+
+Totalt ansatte, etter bosted, i kommunen er 6426.
+
+Multiplikatoren for Kvinnherad, etter bosted, blir da .
+
+#### Odda (2019)
+
+Vi ser ut ifra tabellen at næringene med LQ lik eller over 1 er:
+
+- Industri
+- Bygg- og Anlegg
+- Helsetjenester
+
+Antall ansatte, etter bosted, i Odda (2019) kommune i lokale næringer blir da 1474.
+
+Totalt ansatte, etter bosted, i kommunen er 3350.
+
+Multiplikatoren for Odda (2019), etter bosted, blir da .
+
 # 6 - Basemultiplikator (Kevin & Ola A)
 
 ## Teori
