@@ -4662,5 +4662,34 @@ I vårt arbeidskrav skal vi se på hva som skjer ved en evt. satsing på vindkra
 
 ### Eksogent Sjokk Med Hensyn På Arbeidssted.
 
-Ved et positivt sjokk på 500 for Stord kommune så vil dette medfølge en verdi på 1,65 * 500 = 825 totalt nye arbeidsplasser. 500 arbeidsplasser i bedriften og ytterlige 325 i lokalnæringen som følge av økt etterspørsel til goder i kommunen. Vi må her også ta hensyn til pendling. Det vil si at det blir 500 nye arbeidsplasser i Stord kommune i industrien, men arbeidstakere kan ha bosted i Bømlo, eller Fitjar. Dette vil medføre at en andel av økningen i de lokale arbeidsplassene på Stord, vil nå bli mer fordelt blant kommuner rundt Stord.
+Først velger vi å se på effekten av en ny industribedrift med 500 ansatte i kommunene Stord, Kvinnherad og Odda, før vi ser på det på et regionalt nivå. Vi ser først her med hensyn på arbeidssted.
+
+Ved et positivt sjokk på 500 for Stord kommune så vil dette medfølge en verdi på 1,65 * 500 = 825 totalt nye arbeidsplasser. 500 arbeidsplasser i bedriften og ytterlige 325 i lokalnæringen som følge av økt etterspørsel til goder i kommunen. Vi må her også ta hensyn til pendling. Det vil si at det blir 500 nye arbeidsplasser i Stord kommune i industrien, men arbeidstakere kan ha bosted i Bømlo, eller Fitjar. Dette vil medføre at en andel av økningen i de lokale arbeidsplassene på Stord, vil nå bli mer fordelt blant pendler kommuner rundt Stord.
+
+En bedrift i Kvinnherad vil medføre 1,66 * 500 = 830 ny arbeidsplasser, hvorav 500 er i nye industrien og 330 er i lokale næringer. Her igjen må vi også ta hensyn til pendling som vil medføre at antal lokale arbeidsplasser vil bli fordelt blant pendler kommunene. Arbeidsplassen til industrien, dvs. de 500 nye, vil være i Kvinnherad kommune, men bostedet til arbeidstakerene kan og vil variere mellom Kvinnherad og kommunene rundt.
+
+Ved en ny bedrift med 500 arbeidsplasser i Odda(2019) så vil dette medføre 1,70 * 500 = 850 nye arbeidsplasser, hvorav 500 er i basisnæringen og 350 i lokale bedrifter. Når en tar hensyn til pendling så vil det igjen påvirke fordelingen av de nye arbeidsplassene i lokale bedrifter blant kommuner rundt.
+
+Til slutt ønsker vi å se på scenarioet på regionalt nivå, der vi først ser på Sunnhordland.
+
+1,49 * 500 = 745 nye arbeidsplasser, hvorav 500 er i den nyetablerte industrien, mens de siste 245 er i lokale næringer rundt i kommunene i regionen. Ved en etablering av ny bedrift i Hardanger så vil dette medføre 1,63 * 500 = 815 nye arbeidsplasser i Hardanger. I både Sunnhordland og Hardanger så vil bedriften med 500 arbeidsplasser gi regionen 500 arbeidsplasser uansett hvor den blir plassert i regionen, men pendling og lokale arbeidsplasser vil være en annen faktor. Nå når vi ser på regionalt nivå så vil de lokale arbeidsplassene være i stor grad innen den samme regionen hvor bedriften blir plassert.
+
+Pendlingen en evt. må ta hensyn til her er pendling fra Haugalandet til Sunnhordland ved en etablering av bedriften i Sunnhordland. Men dette gjelder bare i stor grad om bedriften blir etablert på Stord, da det er svært få personer som orker å pendle fra Skudneshavn på Karmøy til Husnes i Kvinnherad for å jobbe. Pendling vil dermed i stor grad i dette tilfellet forbli internt i regionen.
+
+### Eksogent Sjokk Med Hensyn På Bosted.
+
+Nå velger vi å se på effekten av en ny industribedrift med 500 ansatte i kommunene Stord, Kvinnherad og Odda, før vi ser på det på et regionalt nivå, med hensyn på bosted til arbeidstakere.
+
+Stord kommune vil få 1,74 * 500 = 870 arbeidstakere, der 370 er lokale næringer. Disse 370 plassene vil bli fordelt blant pendler kommunene rundt Stord som pendler til Stord for å jobbe. Kvinnherad ville fått 1,64 * 500 = 820 arbeidstakere, hvorav 320 er lokale næringer som vil bli fordelt blant kommuner som pendler til Kvinnherad for jobb. Til slutt Odda, som ville fått 1,79 * 500 = 895 arbeidstakere, som gir oss 395 til lokale næringer. Igjen ved pendling til Odda kommune, så vil en del av disse plassene bli fordelt på pendlerkommunene.
+
+Videre ønsker vi å se på effekten av den nye bedriften på regionalt nivå, og den første vi ser på er Sunnhordland. Sunnhordland ville fått 1,61 * 500 = 805 nye arbeidstakere, hvorav 305 er for lokale næringer fordelt rundt i regionen i henhold til pendling internt i regionen. For Hardanger gir multiplikatoren oss 1,61 * 500 = 810 arbeidstakere, der 310 er for lokale næringer igjen fordelt med hensyn etter pendling internt.
+
+Når vi ser på positiv sjokk på regionalt nivå med hensyn på arbeidstakerenes bosted, så er det en detalj som kommer frem: migrasjon. Vi ser her en økning i antal bosatte som jobber i den nye bedriften som igjen gir ringvirkninger lokalt. Vi ser her med andre ord en vekst i befolkning i regionen i sin helhet. Dette kommer mest sannsynelig av at personer i andre kommuner utenfor regionen flytter til regionen som får den nye bedriften for å jobbe. En ny bedrift i en region vil dermed medføre positiv vekst i flere områder: antalt arbeidere, lokale økonomien og befolkningsvekst.
+
+
+
+
+
+
+
 
