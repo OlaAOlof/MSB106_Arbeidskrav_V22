@@ -4492,18 +4492,33 @@ Noen bemerkelser i videre arbeid. Først så velger vi her å se på talene for 
 
 Vi ser ut ifra tabellen at næringene med LQ lik eller over 1 er:
 
-- 
+- Primærnæringene
+- Industri
+- Bygg- og Anlegg
+- Undervisning
+- Helsetjenester
 
-Antall ansatte i region Sunnhordland i lokale næringer blir da .
+Antall ansatte i region Sunnhordland i lokale næringer blir da 8 360.
 
-Totalt ansatte i regionen er .
+Totalt ansatte i regionen er 25 379.
 
-Multiplikatoren for Sunnhordland blir da ca .
+Multiplikatoren for Sunnhordland blir da ca 1,49.
 
 #### Hardanger (2019)
 
+Vi ser ut ifra tabellen at næringene med LQ lik eller over 1 er:
 
+- Primærnæringene
+- Industri
+- Bygg- og Anlegg
+- Overnatting og Serveringsvirksomhet
+- Helsetjenester
 
+Antall ansatte i region Hardanger(2019) i lokale næringer blir da 1864.
+
+Totalt ansatte i regionen er 4827.
+
+Multiplikatoren for Hardanger(2019) blir da ca 1,63.
 
 #### Stord
 
@@ -4552,6 +4567,40 @@ Totalt ansatte i kommunen er 3566
 Multiplikatoren for Odda (2019) blir da ca 1,70
 
 ### Basemultiplikator Med Hensyn På Bosted
+
+#### Sunnhordland
+
+Vi ser ut ifra tabellen at næringene med LQ lik eller over 1 er:
+
+- Primærnæringene
+- Bergdrift
+- Industri
+- Bygg- og Anlegg
+- Transport
+- Helsetjenester
+
+Antall ansatte i region Sunnhordland, etter bosted, i lokale næringer blir da 11 081.
+
+Totalt ansatte i regionen, etter bosted, er 29 369.
+
+Multiplikatoren for Sunnhordland, etter bosted, blir da ca 1,61.
+
+#### Hardanger (2019)
+
+Vi ser ut ifra tabellen at næringene med LQ lik eller over 1 er:
+
+- Primærnæringene
+- Bergdrift
+- Industri
+- Bygg- og Anlegg
+- Overnatting og Servering
+- Helsetjenester
+
+Antall ansatte i region Hardanger(2019), etter bosted, i lokale næringer blir da 1 920.
+
+Totalt ansatte i regionen, etter bosted, er 5 041.
+
+Multiplikatoren for Hardanger(2019), etter bosted, blir da ca 1,62.
 
 #### Stord
 
