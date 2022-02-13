@@ -4688,10 +4688,13 @@ Videre ønsker vi å se på effekten av den nye bedriften på regionalt nivå, o
 
 Når vi ser på positiv sjokk på regionalt nivå med hensyn på arbeidstakerenes bosted, så er det en detalj som kommer frem: migrasjon. Vi ser her en økning i antal bosatte som jobber i den nye bedriften som igjen gir ringvirkninger lokalt. Vi ser her med andre ord en vekst i befolkning i regionen i sin helhet. Dette kommer mest sannsynelig av at personer i andre kommuner utenfor regionen flytter til regionen som får den nye bedriften for å jobbe. En ny bedrift i en region vil dermed medføre positiv vekst i flere områder: antalt arbeidere, lokale økonomien og befolkningsvekst.
 
-**Trenger Pendler Detaljer her**
+Videre har vi utledet en shift-share analyse. Vi ser på utviklingen i det ulike sektorene i Sunnhordland og Hardanger fra år 2008 og år 2000. Regionene er her delt inn i indre, midtre og ytre. Odda og Ullensvang utgjør indre, Tysnes og Kvinnherad kategoriseres som midtre, og i den ytre kategorien ligger Bømlo, Stord, Sveio og Fitjar
 
+![](Bilde/Shift share.png "Shift-share analyse")
 
+Den samlede mix-effekten er negativ for disse bransjene i samtlige deler av regionen, dette betyr at næringssammensettingen i regionen er svak i forhold til det nasjonale nivået.
 
+DIF viser til konkurranseeffekten. Denne gir et bilde på regional økonomisk kapasitet til utvikling av sektorer med større gjennomsnittsrater enn de som oppnås av de korresponderende nasjonale sektorer. Her ser vi negativ DIF-effekt i samtlige inndelinger som tyder på at regionen har svakere økonomisk kapasitet for sektorutvikling enn det som er gjennomsnitt på nasjonalt nivå
 
 
 
