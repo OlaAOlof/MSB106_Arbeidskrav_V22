@@ -3657,7 +3657,7 @@ kable(
   add_header_above(c("Sunnhordland: LQ - Bosted, Alle Næringer, Tabell 2"=9))
 ```
 
-## Hardanger (2019) - LQ, Etter Bosted
+## Hardanger (2019) - LQ, Etter bosted
 
 ```{r Hardanger_Bos_LQ_Vurdering_1}
 Hardanger_bos_LQ <- har_bos
@@ -3770,7 +3770,7 @@ kable(
   add_header_above(c("Hardanger: LQ - Bosted, Alle Næringer, Tabell 2"=9))
 ```
 
-## Stord - LQ, Med Hensyn På Arbeidssted
+## Stord - LQ, med hensyn på arbeidssted
 
 ```{r Stord_Arb_LQ_Vurdering_1}
 Stord_arb_LQ <- syssel_arb %>% 
@@ -3888,7 +3888,7 @@ kable(
   add_header_above(c("Stord: LQ - Arbeidssted, Alle Næringer, Tabell 2"=9))
 ```
 
-## Kvinnherad - LQ, Med Hensyn På Arbeidssted
+## Kvinnherad - LQ, med hensyn på arbeidssted
 
 ```{r Kvinnherad_Arb_LQ_Vurdering_1}
 Kvinnherad_arb_LQ <- syssel_arb %>% 
@@ -4006,7 +4006,7 @@ kable(
   add_header_above(c("Kvinnherad: LQ - Arbeidssted, Alle Næringer, Tabell 2"=9))
 ```
 
-## Odda (-2019) - LQ, Med Hensyn På Arbeidssted
+## Odda (-2019) - LQ, med hensyn på arbeidssted
 
 ```{r Odda_Arb_LQ_Vurdering_1}
 Odda_arb_LQ <- syssel_arb %>% 
@@ -4124,7 +4124,7 @@ kable(
   add_header_above(c("Odda(-2019): LQ - Arbeidssted, Alle Næringer, Tabell 2"=9))
 ```
 
-## Stord - LQ, Med Hensyn På Bosted
+## Stord - LQ, med hensyn på bosted
 
 ```{r Stord_Bos_LQ_Vurdering_1}
 Stord_bos_LQ <- syssel_bos %>% 
@@ -4242,7 +4242,7 @@ kable(
   add_header_above(c("Stord: LQ - Bosted, Alle Næringer, Tabell 2"=9))
 ```
 
-## Kvinnherad - LQ, Med Hensyn På Bosted
+## Kvinnherad - LQ, med hensyn på bosted
 
 ```{r Kvinnherad_Bos_LQ_Vurdering_1}
 Kvinnherad_bos_LQ <- syssel_bos %>% 
@@ -4360,7 +4360,7 @@ kable(
   add_header_above(c("Kvinnherad: LQ - Bosted, Alle Næringer, Tabell 2"=9))
 ```
 
-## Odda(-2019) - LQ, Med Hensyn På Bosted
+## Odda(-2019) - LQ, med hensyn på bosted
 
 ```{r Odda_Bos_LQ_Vurdering_1}
 Odda_bos_LQ <- syssel_bos %>% 
@@ -4486,7 +4486,7 @@ Vi har funne LQ-verdiene for de relevante kommunene vi skal se på, som er Stord
 
 Noen bemerkelser i videre arbeid. Først så velger vi her å se på talene for Stord og Kvinnherad i 2020, mens for Odda så ser vi på talene fra 2019. Neste er at vi tar utgangspunkt i at alle næringer med LQ under 1 er lokal bedrift. Dette gjør vi for å holde utregningen konsekvent.
 
-### Basemultiplikator Med Hensyn På Arbeidssted
+### Basemultiplikator med hensyn på arbeidssted
 
 #### Sunnhordland
 
@@ -4566,7 +4566,7 @@ Totalt ansatte i kommunen er 3566
 
 Multiplikatoren for Odda (2019) blir da ca 1,70
 
-### Basemultiplikator Med Hensyn På Bosted
+### Basemultiplikator med hensyn på bosted
 
 #### Sunnhordland
 
@@ -4648,7 +4648,7 @@ Totalt ansatte, etter bosted, i kommunen er 3350.
 
 Multiplikatoren for Odda (2019), etter bosted, blir da ca 1,79.
 
-# 6 - Basemultiplikator (Kevin & Ola A)
+# 6 - Basemultiplikator
 
 ## Teori
 
@@ -4660,7 +4660,7 @@ Studien til @hoogstraJobsFollowPeople2017 peker på flere funn som indikerer på
 
 I vårt arbeidskrav skal vi se på hva som skjer ved en evt. satsing på vindkraft i en kommune, som medfører en etablering av en industribedrift med 500 arbeidstakere. Vi skal her se på effekten av plasseringen av en slik bedrift i Odda (Ullensvang), Husnes (Kvinnherad) og Leirvik (Stord). Vi vil her se på hvordan dette påvirker kommunene både med hensyn på arbeidssted og bosted.
 
-### Eksogent Sjokk Med Hensyn På Arbeidssted.
+### Eksogent sjokk med hensyn på arbeidssted.
 
 Først velger vi å se på effekten av en ny industribedrift med 500 ansatte i kommunene Stord, Kvinnherad og Odda, før vi ser på det på et regionalt nivå. Vi ser først her med hensyn på arbeidssted.
 
@@ -4676,7 +4676,7 @@ Til slutt ønsker vi å se på scenarioet på regionalt nivå, der vi først ser
 
 Pendlingen en evt. må ta hensyn til her er pendling fra Haugalandet til Sunnhordland ved en etablering av bedriften i Sunnhordland. Men dette gjelder bare i stor grad om bedriften blir etablert på Stord, da det er svært få personer som orker å pendle fra Skudneshavn på Karmøy til Husnes i Kvinnherad for å jobbe. Pendling vil dermed i stor grad i dette tilfellet forbli internt i regionen.
 
-### Eksogent Sjokk Med Hensyn På Bosted.
+### Eksogent sjokk med hensyn på bosted.
 
 Nå velger vi å se på effekten av en ny industribedrift med 500 ansatte i kommunene Stord, Kvinnherad og Odda, før vi ser på det på et regionalt nivå, med hensyn på bosted til arbeidstakere.
 
