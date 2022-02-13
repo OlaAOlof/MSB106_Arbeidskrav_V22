@@ -35,7 +35,7 @@ knitr::opts_chunk$set(echo=FALSE, include = TRUE)
 
 I denne oppgaven vil vi se på næringsstrukturer på Haugalandet, Sunnhordland og Ullensvang.
 
-Problemstillinger og beregninger vi vil se nærmere på
+Problemstillinger og beregninger som vi vil se nærmere på
 
 -   Beskrive situasjonen slik den er for 2020, og for utviklingen over tid.
 -   Sysselsettingsutviklingen for ulike næringer i ulike kommuner og for regionen samlet.
@@ -65,8 +65,8 @@ Problemstillinger og beregninger vi vil se nærmere på
 
 Haugalandet består av kommunene Bokn (852), Haugesund (37357), Karmøy (42186), Sauda (4595), Tysvær(11065), Utsira(198) og Vindafjord(8714).
 tilsammen bor det 104967 personer i denne regionen.
-i tidsperioden vi har hentet inn data har det vert kommunesammenslåing i denne regionen.
-Da ble Ølen og vindafjord slått i sammen til en kommune.
+I tidsperioden vi har hentet inn data har det vært kommunesammenslåing i denne regionen.
+Da ble Ølen og Vindafjord slått sammen til en kommune.
 
 Sunnhordland og Ullensvang består av kommunene Bømlo(11957), Etne(4062), Fitjar(3189), Kvinnherad(13071), Stord(18759), Sveio(5766), Tysnes(2869) og Ullensvang(11048).
 Tilsammen bor det 70721 personer i denne regionen.
@@ -189,7 +189,7 @@ hld_arb_long %>%
 
 Figur 5 og 6 viser utviklingen av de 6 mest relevante næringene i Haugalandsregionen på kommune nivå.
 
-Vi ser i de tre største kommunene, Haugesund, Karmøy og Vindafjord utgjør næringene Helse- og Sosialtjenester og Industri de største. Helse- og Sosialtjenester har vokst jevnt og trutt de siste tiårene, mens antall ansatte i industrinæringen har variert fra kommune til kommune. I Haugalandet utgjør primærnæringer (jordbruk, Skogbrug og Fiske) en større andel, enn hos Karmøy og Haugesund hvor primærnæringene kun utgjøre en liten andel.
+Vi ser i de tre største kommunene, Haugesund, Karmøy og Vindafjord utgjør næringene Helse- og Sosialtjenester og Industri de største. Helse- og Sosialtjenester har vokst jevnt og trutt de siste tiårene, mens antall ansatte i industrinæringen har variert fra kommune til kommune. I Haugalandet utgjør primærnæringer (jordbruk, skogbruk og fiske) en større andel, enn hos Karmøy og Haugesund hvor primærnæringene kun utgjøre en liten andel.
 
 Det er relativt store kommunevise forskjeller i næringsstrukturen. Rogaland har en forholdsvis ensidig næringsstruktur, olje og gass er dominerende. Fylket er suverent dominerende for fossil energi. De har for øvrig de siste årene satset på et en mer differensiert næringsstruktur og næringsliv ved å satse på helse, IKT og fornybar energi.
 
@@ -199,7 +199,7 @@ Rogaland har gode jordbruksmuligheter, men i Fig. 2: Haugalandet ser vi en nedga
 
 Universitets- og høgskolesektoren er liten i Rogaland, og den består for det første av Universitetet i Stavanger (UiS) og Høgskulen på Vestlandet (HVL) med campus Haugesund.
 
-Haugaland Vekst, som er eigd/drevet av Haugalandsregionen er i spissen på å legge til rette for å etablere ny industri samt andre arbeidsplasser i regionen.
+Haugaland Vekst, som er eid/drevet av Haugalandsregionen er i spissen på å legge til rette for å etablere ny industri samt andre arbeidsplasser i regionen.
 
 I helsesektoren er Stavanger universitetssykehus (SuS) sentralt.
 
@@ -216,7 +216,7 @@ sun_arb %>%
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
 ```
 
-Her viser figur 7 utviklingen til den totale summen av ansatte i Sunnhordlandsregionen fra 2008 til 2020. Sunnhordland har i 2020 i underkant av 25 500 ansatte. Vi ser ut ifrå figuren at Sunnhordlandsregionen hadde ein markant vekst ifrå 2008 til 2014 med periodar med svak nedgang. Fra 2014 har det vært en reduksjon i totalt antall ansatte.
+Her viser figur 7 utviklingen til den totale summen av ansatte i Sunnhordlandsregionen fra 2008 til 2020. Sunnhordland har i 2020 i underkant av 25 500 ansatte. Vi ser ut ifra figuren at Sunnhordlandsregionen hadde en markant vekst ifra 2008 til 2014 med perioder med svak nedgang. Fra 2014 har det vært en reduksjon i totalt antall ansatte.
 
 ```{r Arbeidssted_Sunnhordland_2}
 syssel_arb %>% 
@@ -231,7 +231,7 @@ syssel_arb %>%
   theme(legend.position = 'bottom')
 ```
 
-Figur 8 viser utviklingen av totalt ansatte i Sunnhordlandsregionen på kommunenivå i hele regionen fra 2008 til 2020. Denne figuren gir oss en oversikt, men er ikke heilt brukervennelig. Vi lager dermed en mer oversiktlig figur, jf. figur 9 & 10.
+Figur 8 viser utviklingen av totalt ansatte i Sunnhordlandsregionen på kommunenivå i hele regionen fra 2008 til 2020. Denne figuren gir oss en oversikt, men er ikke helt brukervennlig. Vi lager dermed en mer oversiktlig figur, jf. figur 9 & 10.
 
 ```{r sun_arb_long}
 sun_arb_long <- syssel_arb %>%
@@ -271,7 +271,7 @@ sun_arb_long %>%
 
 Vi ser her ut ifra figur 9 og 10 utviklingen for hver enkelt kommune i Sunnhordland totalt sett, og her ser vi mye tydligere utviklingen fra 2008 til 2020. En kan se her at Kvinnherad, Etne og Fitjar har hatt en reduksjon i totalt ansatte, mens Tysnes og Sveio har hatt ein kraftig vekst. En interessant bemerking er Stord i 2014 og Kvinnherad fra 2008 til 2017.
 
-For å få et bedre oversikt over utviklingen i kommunen ønsker vi å se på de 6 mest relevante næringene i hver kommune.
+For å få en bedre oversikt over utviklingen i kommunen ønsker vi å se på de 6 mest relevante næringene i hver kommune.
 
 ```{r Næringsfordeling_og_Utvikling_Sunnhordland_3_Største_Arbeidssted}
 sun_arb_long %>% 
@@ -301,19 +301,19 @@ sun_arb_long %>%
 
 Figur 11 og 12 viser de 6 mest relevante næringene i hver enkelt kommune i Sunnhordlandsregionen fra 2008 til 2020.
 
-En ser ut ifra figur 11 at i de tre største kommunene, *Bømlo*, *Kvinnherad* og *Stord* så har de alle hatt en reduksjon i industrien, samtidig som de har hatt en vekst i helse- og sosialtjenester. Tysnes har vært stabil når det kommer til industri, men har sett ein markant vekst i primærnæringen (Jordbruk, Skogbruk og Fiske).
+En ser ut ifra figur 11 at i de tre største kommunene, *Bømlo*, *Kvinnherad* og *Stord* har de alle hatt en reduksjon i industrien, samtidig som de har hatt en vekst i helse- og sosialtjenester. Tysnes har vært stabil når det kommer til industri, men har sett ein markant vekst i primærnæringen (Jordbruk, Skogbruk og Fiske).
 
-Det første bemerkelsesverdige i Sunnhordlandsregionen er den markante reduksjonen i industri i Stord kommune i 2014, samt Kvinnherad fra 2008. Dette stemmer overens med to hendelser. Den første er oljeknekken i 2014 som medførte at bl.a. Aker Solutions AS som er avhengig av Olje-industrien måtte permitere.
+Det første bemerkelsesverdige i Sunnhordlandsregionen er den markante reduksjonen i industri i Stord kommune i 2014, samt Kvinnherad fra 2008. Dette stemmer overens med to hendelser. Den første er oljeknekken i 2014 som medførte at bl.a. Aker Solutions AS som er avhengig av Olje-industrien måtte permittere.
 
 Stord er en kommune som har mye offshore industri. I 2008/2009 så stengte Sør-Norge Aluminium "B-Hallen" som medførte 50% reduksjon i produksjon, og dermed ansatte. Interessant å bemerke at i Kvinnherad så er antall industriarbeidere redusert samtidig som antall ansatte i Helse- og Sosialetjenester økt. Bømlo har også sett en stabil reduksjon i ansatte innen industri, samt vekst i Helse- og Sosialetjenester frem til 2018.
 
-Ser en på hele Sunnhordlandsregionen i sin helhet, så ser vi en svært tydelig vekst innen Helse- og Sosialetjenester, og reduksjon innen industri i hele regionen. Kvinnherad, Tysnes og Fitjar har opplevd ein markant vekst innen primærnæring.
+Ser en på hele Sunnhordlandsregionen i sin helhet, så ser vi en svært tydelig vekst innen Helse- og Sosialetjenester, og reduksjon innen industri i hele regionen. Kvinnherad, Tysnes og Fitjar har opplevd en markant vekst innen primærnæring.
 
 ## Hardanger
 
 I henhold til oppgavens krav til betrakter vi *Hardanger* før 2019 som Ullensvang- og Odda kommune som to separerte kommuner.
 
-i 2020 så ble Ullensvang, Odda og Jondal slått sammen til Ullensvang. Dette forklarer den voldsomme økningen i sysselsetting i regionen ved tidspunktet for kommunesammenslåing.
+I 2020 ble Ullensvang, Odda og Jondal slått sammen til Ullensvang. Dette forklarer den voldsomme økningen i sysselsetting i regionen ved tidspunktet for kommunesammenslåing.
 
 ```{r Arbeidssted_Hardanger_1}
 har_arb %>% 
@@ -369,7 +369,7 @@ har_arb_long %>%
   theme(legend.position = 'bottom')
 ```
 
-Ullensvang kommune har stor kraftproduksjon og hovednæringen er industri. Majoriteten av kraftproduksjonen foregår i tidligere Odda. Odda er et ensidig industristed, men har også en maritim næring i tillegg. I figur 16 ser vi at industrinæringen utgjør en betraktelig større andel av sysselsettingen i her. Industrinæringen er også omfattet og bygg- og anleggsvirksomhet. På motsatt side er jordbruk, helse- og sosialtjenester dominerende i Ullensvang.
+Ullensvang kommune har stor kraftproduksjon og hovednæringen er industri. Majoriteten av kraftproduksjonen foregår i tidligere Odda. Odda er et ganske ensidig industristed, men har også en maritim næring i tillegg. I figur 16 ser vi at industrinæringen utgjør en betraktelig større andel av sysselsettingen i her. Industrinæringen er også omfattet og bygg- og anleggsvirksomhet. På motsatt side er jordbruk, helse- og sosialtjenester dominerende i Ullensvang.
 
 Ullensvang kommune (med Odda) har hatt en jevn og negativ befolkningsvekst i mange tiår.
 Det gjenspeiles ikke tydelig i våre modeller på grunn av skalaen som er brukt.
@@ -381,11 +381,11 @@ I tillegg har vi ikke hensyntatt innvandrende arbeidere, eller midlertidige fraf
 nasjonalt_arbeidssted <- read_excel("Data/nasjonalt_arbeidssted.xlsx")
 ```
 
-Nå har vi illustert og sett på grafene for utviklingen i de tre regionene, med hensyn på sysselsetting etter arbeidssted. Videre i rapporten skal vi nå se på Gini-koeffisientene og den regionelle diversifiserings indeksen (RDI) for å vurdere hvor spredt eller konsentrert, samt spesialisert utvlagt næringer er i utvalgte kommuner i regionene.
+Nå har vi illustert og sett på grafene for utviklingen i de tre regionene, med hensyn på sysselsetting etter arbeidssted. Videre i rapporten skal vi nå se på Gini-koeffisientene og den regionelle diversifiserings indeksen (RDI) for å vurdere hvor spredt eller konsentrert, samt spesialisert utvalgte næringer er i utvalgte kommuner i regionene.
 
 En generell regel for lokalkvotient-verdier (LQ-verdier) er at visst verdien er over 1 så kan det tyde på at det har oppstått klynger innenfor næringen. En annen regel er at verdier under 1 innenfor næringer som driver med produksjon og eksport så er det oftest en *lokal næring*. Visst verdien er over 1 så kan det være tegn til at det er *en basisnæring*.
 
-Disse to argumentene for LQ-verdier vil vi ta med oss videre når vi ser nermere på regionene i sin helhet og utvalgte næringer, samt utvalgte kommuner og næringer i dem.
+Disse to argumentene for LQ-verdier vil vi ta med oss videre når vi ser nærmere på regionene i sin helhet og utvalgte næringer, samt utvalgte kommuner og næringer i dem.
 
 RDI er et mål for hvorvidt næringsstrukturen er diversifisert og mangfoldig. Høy RDI karakterisert ved mer spesialisert, og motsatt.
 
@@ -487,9 +487,9 @@ kable(hld_arb_GINI,
   add_header_above(c("Haugalandet"=8))
 ```
 
-Her ser vi flere faktorer.
+Her har vi flere faktorer.
 
-Det første og viktigeste vi ser med en gang er GINI-koeffisientene. Vi har en stor svakhet i disse beregninge, som stammer fra aggregeringsnivået vårt. I våre data er primær, industri og helsetjenester en "felles benevnelse". Det vil si at når vi hentet data fra SSB så skilte ikke SSB næringene innen hver bemerkelse, i tabellen vi brukte som var *Tabell 07984*. Den har med andre ord slått sammen alt som har med industri å gjøre, f.eks. olje og gass, bergvinning, skipsverft, osv. under en og samme kategori. Dette gjør at alle GINI-koeffisienter vi rekner ut vil være ekstremt små fordi den skiller ikke ut de store ulikhetene mellom næringene innenfor hver bemerkelse. Dette igjen medfører at det er vanskelig å vurdere GINI-koeffisientene optimalt. Dette er desverre et problem som følger oss gjennom rapporten videre på alle regioner og kommuner hvor vi rekner ut GINI-koeffisientene.
+Det første og viktigste vi ser med en gang er GINI-koeffisientene. Vi har en stor svakhet i disse beregningene, som stammer fra aggregeringsnivået vårt. I våre data er primær, industri og helsetjenester en "felles benevnelse". Det vil si at når vi hentet data fra SSB så skilte ikke SSB næringene innen hver bemerkelse, i tabellen vi brukte som var *Tabell 07984*. Den har med andre ord slått sammen alt som har med industri å gjøre, f.eks. olje og gass, bergvinning, skipsverft, osv. under en og samme kategori. Dette gjør at alle GINI-koeffisienter vi regner ut vil være ekstremt små fordi den skiller ikke ut de store ulikhetene mellom næringene innenfor hver bemerkelse. Dette igjen medfører at det er vanskelig å vurdere GINI-koeffisientene optimalt. Dette er dessverre et problem som følger oss gjennom rapporten videre på alle regioner og kommuner hvor vi regner ut GINI-koeffisientene.
 
 Vi ser ut ifra GINI-verdiene våres for Haugalandet at industri har en mye høyere verdi enn primærnæringer og helsetjenester, som tyder på at det er større grad av klyngedannelser av industri i regionen. En annen observasjon verdt å merke seg, er at blant de tre undersøkte næringene, er det kun «Industri» som har stadig hatt sterkere klyngetendenser de siste årene. Dette gjenspeiles av en stadig økende verdi på indeksen over tid. Samme observasjon kan vi ikke se hos primærnæringen eller i helsesektoren.
 
@@ -584,7 +584,7 @@ kable(
   add_header_above(c("Haugesund: Lokalkvotient"=11))
 ```
 
-Tabellen viser LQ-verdiene for de utvalgte næringene i Haugesund kommune. Det som er verdt å bemerke her er igjen industrien og helsetjenester. Haugesund kommune har sett en kraftig vekst innen industri og helsetjenester, med industri fra 1.19 til 1.38 og helsetjenester fra 1.19 til 1.30. Dette tyder på klyngedannelser innen både industri og helsetjenster i Haugesund, noe som kan stemme mtp. Haugesund Sjukehus som tilbyr tjenester til heile regionen. I tillegg er Haugesund også et industri senter med Haugaland Vekst i front, samt stort fokus på entreprenørskap i kommunen.
+Tabellen viser LQ-verdiene for de utvalgte næringene i Haugesund kommune. Det som er verdt å bemerke her er igjen industrien og helsetjenester. Haugesund kommune har sett en kraftig vekst innen industri og helsetjenester, med industri fra 1.19 til 1.38 og helsetjenester fra 1.19 til 1.30. Dette tyder på klyngedannelser innen både industri og helsetjenster i Haugesund, noe som kan stemme mtp. Haugesund Sjukehus som tilbyr tjenester til hele regionen. I tillegg er Haugesund også et industri senter med Haugaland Vekst i front, samt stort fokus på entreprenørskap i kommunen.
 
 I Haugesund kommune viser alle observasjonene små eller tilnærmet ingen endringer over tid. I lys av klyngetendenser, skiller primærnæringene i Haugesund seg ut ved at indeksen synker over tid. Med andre ord viser primærnæringen indikasjoner på at den sprer seg jevnere ut i motsetning til å klynge seg sammen. Det er også verdt å trekke frem at primærnæringene har spesialisert seg med tiden, mens industri- og helsesektoren har blitt mer mangfoldig og diversifisert det siste tiåret.
 
@@ -675,7 +675,7 @@ kable(
   add_header_above(c("Bokn: Lokalkvotient"=11))
 ```
 
-I denne tabellen ser vi LQ-verdien til utvalgte næringer i Bokn kommune. Her ser vi at både primærnæringene og indudstri har sett en svært kraftig vekst i regionen i perioden 2008 - 2020. Under primærnæringer går jordbruk, skogbruk og fiske, og vi kan dermed si at her er det klart tilstedeværelse av klynger innenfor primærnæringene og industrien på bokn. Det tyder også sterkt på at det er tilstedeværelse av basisnæringer i kommunen. Helsetjenester har sett en kraftig reduksjon. En må være observang på en faktor, og det er hvor liten den totale sysselsetningen på bokn er. Dette gjør at en liten endring i antal personer som jobber innen industri vil ha store utslag på LQ-verdiene. Men det er ingen tvil om at Bokn har sett en solid vekst siste perioden. 
+I denne tabellen ser vi LQ-verdien til utvalgte næringer i Bokn kommune. Her ser vi at både primærnæringene og industri har sett en svært kraftig vekst i regionen i perioden 2008 - 2020. Under primærnæringer går jordbruk, skogbruk og fiske, og vi kan dermed si at her er det klart tilstedeværelse av klynger innenfor primærnæringene og industrien på Bokn. Det tyder også sterkt på at det er tilstedeværelse av basisnæringer i kommunen. Helsetjenester har sett en kraftig reduksjon. En må være observant på en faktor, og det er hvor liten den totale sysselsetningen på Bokn er. Dette gjør at en liten endring i antal personer som jobber innen industri vil ha store utslag på LQ-verdiene. Men det er ingen tvil om at Bokn har sett en solid vekst siste perioden. 
 
 GINI fra næringene i Bokn har for lave verdiene til å fanges opp i vår metode. RDI fra næringene i Bokn forteller oss at industrisektoren har blitt betraktelig mer diversifisert eller mangfoldig, mens helsevesenet har spesialisert mer årene. Indeksen på de ulike næringene har fluktuerende verdi, men fra 2008 til 2020 er utfallet som nevnt.
 
@@ -865,9 +865,9 @@ I Karmøy mangler vi representativ data for den romlige Gini-indeksen for helses
 
 RDI-indeksen viser samme nivå av fluktuasjoner i primærnæringer. Det fremkommer som en spesialisert næringen med små endringer i sammensetning over tid. I Industrien og helsesektoren ser vi derimot økende grad av spesialisering jevnt over tid.
 
-Oppsummert situasjonen i Haugalands-regionen så ser vi at industrien i regionen ser ein større og større grad av sysselsettning og tilstedeværelse av klynger. Vi ser også en gjentakande nedgang i primærnæringer, med untak av Bokn. Helsetjenenester også ut til å ha en jevn reduksjon i kommunene rundt Haugesund, der også Haugesund skiller seg ut, med en vekst innenfor helsetjenester.
+Oppsummert situasjonen i Haugalands-regionen så ser vi at industrien i regionen ser ein større og større grad av sysselsetting og tilstedeværelse av klynger. Vi ser også en gjentakende nedgang i primærnæringer, med unntak av Bokn. Helsetjenenester også ut til å ha en jevn reduksjon i kommunene rundt Haugesund, der også Haugesund skiller seg ut, med en vekst innenfor helsetjenester.
 
-Sluttvis så ser vi at GINI-koeffisientene ikke er særlig optimale, og følger oss gjennom rapporten, som nevnt tidlegere i rapporten.
+Sluttvis så ser vi at GINI-koeffisientene ikke er særlig optimale, og følger oss gjennom rapporten, som nevnt tidligere i rapporten.
 
 ## Sunnhordland
 
@@ -921,11 +921,11 @@ kable(sun_arb_LQ,
   add_header_above(c("Lokalkvotienten, region: Sunnhordland"=9))
 ```
 
-I denne tabellen ser vi LQ-verdiene til hele region Sunnhordland, med 7 utvalgte næringer, med hensyn på sysselsetting etter arbeidssted. Vi ser at *primærnæringene (Jordbruk, Skogbruk og Fiske)*, *industri*, *bygge- og annleggsvirksomhet*, og *helsetjenester* alle har hatt en vekst i LQ-verdiene i perioden 2008 - 2020. Det har derimot vert en nedgang i *Elektrisitet, Vann og Renovasjon* og *Finans*. *Undervisning* har vert veldig mye opp og ned i denne perioden, men den er lavere i 2020 enn den var i 2008, så den har i sin helhet opplevd en reduksjon den også.
+I denne tabellen ser vi LQ-verdiene til hele region Sunnhordland, med 7 utvalgte næringer, med hensyn på sysselsetting etter arbeidssted. Vi ser at *primærnæringene (Jordbruk, Skogbruk og Fiske)*, *industri*, *bygge- og annleggsvirksomhet*, og *helsetjenester* alle har hatt en vekst i LQ-verdiene i perioden 2008 - 2020. Det har derimot vært en nedgang i *Elektrisitet, Vann og Renovasjon* og *Finans*. *Undervisning* har vert veldig mye opp og ned i denne perioden, men den er lavere i 2020 enn den var i 2008, så den har i sin helhet opplevd en reduksjon den også.
 
-Det er tydelig tilstedeværelse av klynger innenfor flere næringer, spessielt innen primærnæringer og industrien. Dette stemmer også ganske godt når vi vet at Aker Solutions, Leirvik Sveis samt Hydro Husnes (tidlegere Sør-Norge Aluminium) er store industrier i regionen. Innen primær så har Sunnhordland blant annet Alsaker Fjordbruk som en stor aktør.
+Det er tydelig tilstedeværelse av klynger innenfor flere næringer, spessielt innen primærnæringer og industrien. Dette stemmer også ganske godt når vi vet at Aker Solutions, Leirvik Sveis samt Hydro Husnes (tidligere Sør-Norge Aluminium) er store industrier i regionen. Innen primær så har Sunnhordland blant annet Alsaker Fjordbruk som en stor aktør.
 
-Vi ser at *Finans* oppgir 0 i LQ-verdi i 2020. Dette stemmer ikke. Grunnen til at dette skjer er personvern fra SSBs side i *Tabell 07984*. Det er noen kommuner i Sunnhordland som har 1 eller 2 ansatte i finans, og SSB oppgir ikke da talene. I RStudio, programmet vi bruker i denne rapporten, så får vi da en "NA-Verdi" som vi ikke kan opperere med. Dette gjør at vi må sette NA lik noe. Vi valgte i denne rapporten å sette NA lik 0, da vi ikke kan si for sikkert om det er 1 eller 2 personer som jobber i denne næringen. Dette gjør at når vi utfører divisjonen (Eir/Er)/(Ein/En) så vil det vere en 0 inne i uttrykket. Dette igjen fører til at finans får 0 i verdi i 2020. Kommunene i Sunnhordland det er snakk om er Etne og Tysnes i 2020.
+Vi ser at *Finans* oppgir 0 i LQ-verdi i 2020. Dette stemmer ikke. Grunnen til at dette skjer er personvern fra SSBs side i *Tabell 07984*. Det er noen kommuner i Sunnhordland som har 1 eller 2 ansatte i finans, og SSB oppgir ikke da talene. I RStudio, programmet vi bruker i denne rapporten, så får vi da en "NA-Verdi" som vi ikke kan operere med. Dette gjør at vi må sette NA lik noe. Vi valgte i denne rapporten å sette NA lik 0, da vi ikke kan si for sikkert om det er 1 eller 2 personer som jobber i denne næringen. Dette gjør at når vi utfører divisjonen (Eir/Er)/(Ein/En) så vil det være en 0 inne i uttrykket. Dette igjen fører til at finans får 0 i verdi i 2020. Kommunene i Sunnhordland det er snakk om er Etne og Tysnes i 2020.
 
 ```{r Sunnhordland_Arb_LQ_3}
 sun_arb_GINI <- sun_arb %>% 
@@ -1116,11 +1116,11 @@ kable(
   add_header_above(c("Stord: Lokalkvotient"=11))
 ```
 
-I denne tabellen så ser vi at Stord kommune har hatt en stabil nedgang i LQ-verdien innen primærnæringene. Også interessant å bemerke er at Stord har sett en svak vekst i LQ-verdien til industrien frem til 2019, med noen fall tidvis i perioden, mens i 2020 så har Stord sett et stort fall ifra 3.2287 ned til 2.4715. Uansett så er det ganske tydelig at det er tilstedeværelse av klynge innen industri, samt basisnæring i kommunen. Bl.a. Aker Solutions og Leirvik Sveis er to store aktører på Stord innen industri. Helsetjenester på Stord har også sett en betydlig økning. Stord Sjukehus server i stor grad Kvinnherad, Fitjar og Bømlo, som kan forklare den høye verdien på 1.23.
+I denne tabellen så ser vi at Stord kommune har hatt en stabil nedgang i LQ-verdien innen primærnæringene. Også interessant å bemerke er at Stord har sett en svak vekst i LQ-verdien til industrien frem til 2019, med noen fall tidvis i perioden, mens i 2020 så har Stord sett et stort fall ifra 3.2287 ned til 2.4715. Uansett så er det ganske tydelig at det er tilstedeværelse av klynge innen industri, samt basisnæring i kommunen. Bl.a. Aker Solutions og Leirvik Sveis er to store aktører på Stord innen industri. Helsetjenester på Stord har også sett en betydelig økning. Stord Sjukehus server i stor grad Kvinnherad, Fitjar og Bømlo, som kan forklare den høye verdien på 1.23.
 
 Stord er den eneste av de fire kommunene som har en synkende GINI-indeks for primærnæringen over tid. Med andre ord skiller kommunen seg ut ved at primærnæringene viser tendenser til å desentralisere seg. I likhet med de fire neste kommunene, ser vi at industrisektoren har svakere klyngedannelser med årene som har gått.
 
-I kommunen ser vi også et primærnæringer og helsesektoren har diversifisert seg mer med årene, mens industrisektoren har spessialisert seg litt mer enn tidlegere år, men ikke mye. 
+I kommunen ser vi også et primærnæringer og helsesektoren har diversifisert seg mer med årene, mens industrisektoren har spesialisert seg litt mer enn tidligere år, men ikke mye. 
 
 ```{r Kvinnherad_Arb_LQ_1}
 Kvinn_arb_GINI <- syssel_arb %>% 
@@ -1451,13 +1451,13 @@ kable(
   add_header_above(c("Sveio: Lokalkvotient"=11))
 ```
 
-I denne tabellen ser vi utvilingen til LQ-verdiene til Sveio kommune og dens utvalgte næringer. Vi ser her at helsetjenester har sett en liten vekst fra 2008 til 2020. Ser også at både primærnæringen og idnustrien har sett en reduksjon siste årene, spessielt innenfor primærnæringene. LQ-verdien til industri tilsier at det ikke er noen klynger her og at industrien i kommunen er lokal næring. I motsetning til dette så tilser LQ-verdien til primærnæringene at det er tilstedeværelse av klynger og basisnæring. Antageligvis er denne basisnæringen innen enten fiske eller skogbruk.
+I denne tabellen ser vi utvilingen til LQ-verdiene til Sveio kommune og dens utvalgte næringer. Vi ser her at helsetjenester har sett en liten vekst fra 2008 til 2020. Ser også at både primærnæringen og industrien har sett en reduksjon siste årene, spessielt innenfor primærnæringene. LQ-verdien til industri tilsier at det ikke er noen klynger her og at industrien i kommunen er lokal næring. I motsetning til dette så tilsier LQ-verdien til primærnæringene at det er tilstedeværelse av klynger og basisnæring. Antageligvis er denne basisnæringen innen enten fiske eller skogbruk.
 
 Gini-koeffisienten sier oss at I Sveio er primærnæringene spredd utover med tiden. Den romlige GINI-indeksen har i vår skala halvert seg fra 2008 til 2020. Vi har ikke klart å frembringe brukbare tall for industri- og helsesektoren.
 
 RDI-verdien forteller oss at primærnæringene og industrisektoren her har spesialisert seg mer, i motsetning til helsesektoren som har vist seg å bli mer diversifisert og mangfoldig.
 
-Oppsumeringsmessig så ser vi at Sunnhordland har en generell reduksjon i industrien over hele linja. Samme gjelder også primærnæringene med unntak av Kvinnherad som har noen lunde samme verdi i 2008 som 2020, men har likevel sett reduksjon siden 2017 frem til 2020. Vekst innen helsetjenester ser også ut til å være en trend. 
+Oppsummeringsmessig så ser vi at Sunnhordland har en generell reduksjon i industrien over hele linja. Samme gjelder også primærnæringene med unntak av Kvinnherad som har noen lunde samme verdi i 2008 som 2020, men har likevel sett reduksjon siden 2017 frem til 2020. Vekst innen helsetjenester ser også ut til å være en trend. 
 
 ## Hardanger
 
@@ -1511,9 +1511,9 @@ kable(har_arb_LQ,
   add_header_above(c("Lokalkvotient, region: Hardanger"=9))
 ```
 
-Her i denne tabellen så ser vi LQ-verdiene for hele Hardanger fra 2008 til 2020. Vi ser her at *primærnæringene*, *industrien* og *helsetjenester* har sett en vekst i denne perioden. Spessielt industrien har sett en kraftig vekst, men i 2020 så har industrien flatet ut.
+Her i denne tabellen så ser vi LQ-verdiene for hele Hardanger fra 2008 til 2020. Vi ser her at *primærnæringene*, *industrien* og *helsetjenester* har sett en vekst i denne perioden. Spesielt industrien har sett en kraftig vekst, men i 2020 så har industrien flatet ut.
 
-*Undervisning* er nesten heilt stabil i hele perioden, mens *Elektrisitet, Vann og Renovasjon*, og *Bygge- og Anleggsvirksomhet* har sett en reduksjon i perioden, der spessielt *Elektrisitet, Vann og Renovasjon* har gått kraftig ned. Helsetjenester har også hatt en liten nedgang siste året.
+*Undervisning* er nesten helt stabil i hele perioden, mens *Elektrisitet, Vann og Renovasjon*, og *Bygge- og Anleggsvirksomhet* har sett en reduksjon i perioden, der spesielt *Elektrisitet, Vann og Renovasjon* har gått kraftig ned. Helsetjenester har også hatt en liten nedgang siste året.
 
 ```{r Har_Arb_LQ_3}
 har_arb_GINI <- har_arb %>% 
@@ -1655,7 +1655,7 @@ kable(
   add_header_above(c("Odda(-2019): Lokalkvotient"=11))
 ```
 
-Vi ser her tabellen for LQ-verdier for Odda kommune frem til 2019, da Odda ble slått sammen med ullensvang, får vi ikke tak i data for Odda i 2020. Men vi ser at Odda kommune har hatt en periode med vekst frem til 2012, før det så begynte å gå ned innen primærnæringer. Industrien derimot har sett en kraftig vekst i perioden. LQ-verdien til industrien at det er både klynger med industri i Odda, samt basisnæringer, noe som kan stemme ganske godt da Odda er en stor industri kommune. Interessant å se at helsetjenester i Odda har sett en reduksjon etter 2012, mtp. Oddas eldrende befolkning.
+Vi ser her tabellen for LQ-verdier for Odda kommune frem til 2019, da Odda ble slått sammen med Ullensvang, får vi ikke tak i data for Odda i 2020. Men vi ser at Odda kommune har hatt en periode med vekst frem til 2012, før det så begynte å gå ned innen primærnæringer. Industrien derimot har sett en kraftig vekst i perioden. LQ-verdien til industrien at det er både klynger med industri i Odda, samt basisnæringer, noe som kan stemme ganske godt da Odda er en stor industri kommune. Interessant å se at helsetjenester i Odda har sett en reduksjon etter 2012, mtp. Oddas aldrende befolkning.
 
 Vi ser at GINI-indeksen synker for primærnæringer, mens den øker for industrisektoren. Industrinæringene viser altså tendens til klyngedannelser med årene. Det motsatte er tilfellet med primærnæringene, men variasjonene er marginale.
 
@@ -1754,9 +1754,9 @@ Gini-koeffisienten tilsier at primærnæringene i Ullensvang viser preg av utspr
 
 Kommunens primærnæringer viser en utvikling det siste tiåret som tilsier at næringene som jordbruk, skogbruk og fiske har spesialisert seg og blitt mindre diversifisert. Helsesektoren er også mer spesialisert i 2020 enn i 2008. Industrisektoren har på den andre siden blitt mer diversifisert.
 
-Oppsummeringsvis til Hardanger så ser vi en vekst i industrien og primærnæringen i regionen, men en nedgang i flere andre næringer. Helsetjenester har her også generelt sett sitt en vekst, noe av det kommer av sammenslåinga da Odda såg ut til å begynne å få en reduksjon i sysselsatte i helsetjenester.
+Oppsummeringsvis til Hardanger så ser vi en vekst i industrien og primærnæringen i regionen, men en nedgang i flere andre næringer. Helsetjenester har her også generelt sett sitt en vekst, noe av det kommer av sammenslåinga da Odda så ut til å begynne å få en reduksjon i sysselsatte i helsetjenester.
 
-Avsluttningsvis her kan vi si noe om vurderingen av utviklingen i våres data. Vi ser ganske tydelig nå at med det aggregeringsnivået vi har i denne rapporten, så stiller Gini-koeffisienten et problem for oss, som er en svakhet. Med aggregeringsnivået vi har i rapporten så ville det antageligvis vært mer optimalt å studere utviklingen til LQ-verdien slik vi har gjort og sammenlignet Eir/Er mot Ein/En med så små kommuner og regioner. Dette er en av hovedgrunnene til at vi velger å ta med Eir/Er og Ein/En med i tabellene som for å illustrere dataene bedre. Dessverre er dataene innhentet og tilrettelagt, og kalkuleringene er gjennomført, så vi må jobbe med det vi har. Dette er en svakhet som evt. videre arbeid på denne rapporten kunne tatt hensyn til i neste omgang. 
+Avslutningsvis her kan vi si noe om vurderingen av utviklingen i våres data. Vi ser ganske tydelig nå at med det aggregeringsnivået vi har i denne rapporten, så stiller Gini-koeffisienten et problem for oss, som er en svakhet. Med aggregeringsnivået vi har i rapporten så ville det antageligvis vært mer optimalt å studere utviklingen til LQ-verdien slik vi har gjort og sammenlignet Eir/Er mot Ein/En med så små kommuner og regioner. Dette er en av hovedgrunnene til at vi velger å ta med Eir/Er og Ein/En med i tabellene som for å illustrere dataene bedre. Dessverre er dataene innhentet og tilrettelagt, og kalkuleringene er gjennomført, så vi må jobbe med det vi har. Dette er en svakhet som evt. videre arbeid på denne rapporten kunne tatt hensyn til i neste omgang. 
 
 Nå har vi sett på utviklingen av hvor mange som jobber i kommunene etter de 6 mest relevante næringene, fra 2008 til 2020, i regionene Haugalandet, Sunnhordland og Hardanger. Vi har også sett på Gini-koeffisientene og RDI-verdiene til utvalgte kommuner og næringer, samt problemstillingen ved disse verdiene i forhold til dataene våres og aggregeringsnivået vi har.
 
@@ -1861,7 +1861,7 @@ Figurene viser antall ansatte etter bosted, fordelt i ulike næringer for kommun
 
 For Haugesund og Karmøy ser vi at næringen jordbruk og skogbruk er særlig lave i antall ansatte, men for Vindafjord er denne næringen betydelig høyere enn Haugesund og Karmøy. For næringen finansiering og forsikring er denne kurven lav og tilnærmet flat i alle kommunene for perioden, og det samme for næringen elektrisitet, vann og renovasjon. Bygg- og anleggsvirksomhet er også lav for Haugesund og Karmøy, men som jordbruk og skogbruk, er denne næringen høyere i Vindafjord sammenlignet mot kommunene Haugesund og Karmøy tatt i betraktning at Vindafjord har et betydelig lavere antall ansatte totalt enn Haugesund og Karmøy har.
 
-Vi ser også samme trendene for de små kommunene på Haugalandet. Helse- og sosiale tjenester har estt en stabil vekst i Bokn, Sauda, Tysvær og utsira, mens industrien har, med unntak av bokn, sett en reduksjon i perioden 2008 - 2020. Utsira skiller seg og ut med å hatt en svak vekst i jordbruk, skogbruk og fiske i denne perioden.
+Vi ser også samme trendene for de små kommunene på Haugalandet. Helse- og sosiale tjenester har hatt en stabil vekst i Bokn, Sauda, Tysvær og Utsira, mens industrien har, med unntak av Bokn, sett en reduksjon i perioden 2008 - 2020. Utsira skiller seg og ut med å hatt en svak vekst i jordbruk, skogbruk og fiske i denne perioden.
 
 ## Sunnhordland
 
@@ -1876,7 +1876,7 @@ sun_bos %>%
   scale_x_continuous(breaks = seq(2008, 2020, by = 1))
 ```
 
-Denne figuren viser utviklingen av antall sysselsatte i alle næringer etter bosted i region Sunnhordland fra 2008 til 2020. Vi kan se utfra grafen at regionen hadde en kraftig vekst 2010 - 2014, før den falt kraftig i 2014 - 2016, før regionen igjen har sett en kraftig vekst 2016 - 2019. Ut fra grafen kan det se ut til at regionen igjen står ovenfor en ny reduksjon fra 2019 av.
+Denne figuren viser utviklingen av antall sysselsatte i alle næringer etter bosted i region Sunnhordland fra 2008 til 2020. Vi kan se ut i fra grafen at regionen hadde en kraftig vekst 2010 - 2014, før den falt kraftig i 2014 - 2016, før regionen igjen har sett en kraftig vekst 2016 - 2019. Ut fra grafen kan det se ut til at regionen igjen står ovenfor en ny reduksjon fra 2019 av.
 
 Vi ønsker å se videre på utviklingen på kommunalt nivå, som vist i figur 24.
 
@@ -1957,11 +1957,11 @@ sun_bos_long %>%
 
 Disse figurene, 27 og 28, viser utviklingen av sysselsatte etter bosted, på kommunalt nivå i Sunnhordlandsregionen 2008 - 2020.
 
-Vi ser nå en trend for Stord, Bømlo og Kvinnherad. Alle disse tre kommunene hadde et kraftig fall i 2014. Kvinnherad hadde allerede en jevn reduksjon i industri frem til 2014, men hadde likevell et kraftig fall her, sammen med Stord og Bømlo. Reduksjonen i industri for Kvinnherad er mest sannsynelig stenging av "B-hallen" på Sør-Norge Aluminium AS i 2008 en av faktorene.
+Vi ser nå en trend for Stord, Bømlo og Kvinnherad. Alle disse tre kommunene hadde et kraftig fall i 2014. Kvinnherad hadde allerede en jevn reduksjon i industri frem til 2014, men hadde likevel et kraftig fall her, sammen med Stord og Bømlo. Reduksjonen i industri for Kvinnherad er mest sannsynlig stenging av "B-hallen" på Sør-Norge Aluminium AS i 2008 en av faktorene.
 
-Vi såg akkuratt samme fallet når vi såg på sysselsetting etter arbeidssted tidlegere i rapporten. Dette kommer mest sannsynelig av olje-knekket i 2014. Aker Solutions, som det heter i dag, er blant Sunnhordlands største arbeidsplasser, og det er flere som pendler fra både Kvinnherad og Bømlo som jobber på Aker Solutions. Det er dermed naturlig at dårlige tider i olje-industrien vil påvirke Aker som igjen vil påvirke kommunene som har sysselsette i denne næringa. Vi ser enda et fall i Kvinnherad innen industri i 2016, og dette kommer mest sannsynelig av at Eide Marine Service på Halsnøy blei slått konkurs dette året.
+Vi såg akkurat samme fallet når vi såg på sysselsetting etter arbeidssted tidligere i rapporten. Dette kommer mest sannsynlig av olje-knekket i 2014. Aker Solutions, som det heter i dag, er blant Sunnhordlands største arbeidsplasser, og det er flere som pendler fra både Kvinnherad og Bømlo som jobber på Aker Solutions. Det er dermed naturlig at dårlige tider i olje-industrien vil påvirke Aker som igjen vil påvirke kommunene som har sysselsette i denne næringa. Vi ser enda et fall i Kvinnherad innen industri i 2016, og dette kommer mest sannsynlig av at Eide Marine Service på Halsnøy blei slått konkurs dette året.
 
-Alle kommunene i region Sunnhordland har også sett en vekst innen helse- og sosialetjenester i perioden 2008 - 2020. Kvinnherad, Bømlo, Stord, Fitjar og Tysnes har sett en vekst innen jordbruk, skogbruk og fiske. Mest sannsynelig er fiske en stor del av veksten da Alsaker Fjordbruk har ekspandert i disse kommunene i denne perioden. Bygge- og Annleggsvirksomhet har også hatt en liten vekst i flere kommuner, mens finans relatert aktivitet har sett en jevn reduksjon i hele regionen.
+Alle kommunene i region Sunnhordland har også sett en vekst innen helse- og sosialetjenester i perioden 2008 - 2020. Kvinnherad, Bømlo, Stord, Fitjar og Tysnes har sett en vekst innen jordbruk, skogbruk og fiske. Mest sannsynlig er fiske en stor del av veksten da Alsaker Fjordbruk har ekspandert i disse kommunene i denne perioden. Bygge- og anleggsvirksomhet har også hatt en liten vekst i flere kommuner, mens finans relatert aktivitet har sett en jevn reduksjon i hele regionen.
 
 ## Hardanger
 
@@ -2017,7 +2017,7 @@ har_bos_long %>%
   theme(legend.position = 'bottom')
 ```
 
-Vi ser her tydelig utviklingen til spessielt Odda, som berre stuper ned, uten tegn til å snu med det første. For å se utviklingen tydligere så deler vi igjen opp i noen utvalgte næringer i hver kommune, jf. figur 32.
+Vi ser her tydelig utviklingen til spesielt Odda, som berre stuper ned, uten tegn til å snu med det første. For å se utviklingen tydligere så deler vi igjen opp i noen utvalgte næringer i hver kommune, jf. figur 32.
 
 ```{r Næringsfordeling_og_Utvikling_Hardanger_Bosted}
 har_bos_long %>% 
@@ -2031,7 +2031,7 @@ har_bos_long %>%
   theme(legend.position = 'bottom')
 ```
 
-Vi ser på denne figuren utviklingen av 6 ulike næringar, med hensyn på syssselsetting etter bosted, i Hardanger i denne perioden. Vi ser samme trender her i Hardanger som vi gjore for både Sunnhordland og Haugalandet: reduksjon i industri og primærnæringane, mens vi ser en vekst i helsetjenester. Det som er litt interessant å bemerke er at Odda såg en vekst i industri fra 2016 til 2019, men grunna sammenslåingen er det vanskelig å si noe om utviklingen for Odda spesifikt i 2020. Igjen så ser vi også samme ekstreme vekst i Ullensvang i 2020 som kommer av sammenslåingen.
+Vi ser på denne figuren utviklingen av 6 ulike næringar, med hensyn på sysselsetting etter bosted, i Hardanger i denne perioden. Vi ser samme trender her i Hardanger som vi gjore for både Sunnhordland og Haugalandet: reduksjon i industri og primærnæringene, mens vi ser en vekst i helsetjenester. Det som er litt interessant å bemerke er at Odda såg en vekst i industri fra 2016 til 2019, men grunna sammenslåingen er det vanskelig å si noe om utviklingen for Odda spesifikt i 2020. Igjen så ser vi også samme ekstreme vekst i Ullensvang i 2020 som kommer av sammenslåingen.
 
 Odda er kjent lokalt for sin aldrende befolkning, som mest sannsynelig er en viktig faktor for hvorfor Odda har sett så kraftig reduksjon i sysselsetting etter bosted, samtidig som kommunen har sett en vekst i helsetjenester.
 
@@ -2141,7 +2141,7 @@ kable(hld_bos_GINI,
   add_header_above(c("Haugalandet"=8))
 ```
 
-På Haugalandet har både primærnæringer, industri og helsetjenester har svært lave GINI-verdier, dette tyder på lav grad av klyngedannelser. GINI verdiene for industri er noe høyere enn de for primærnæringer og helse, og tendenserer derfor mer mot klyngedannelser enn de to overstående.
+På Haugalandet har både primærnæringer, industri og helsetjenester har svært lave GINI-verdier, dette tyder på lav grad av klyngedannelser. GINI verdiene for industri er noe høyere enn de for primærnæringer og helse, og tendensere derfor mer mot klyngedannelser enn de to overstående.
 
 Indeksen tyder på at næringsstrukturen i primærnæringene og helse er spesialisert. I tillegg er det svært jevn utvikling indeksen for industri, mens indeksen for primærnæringer og helse er svært ujevn over tid. Indeksverdiene tyder på at industri er en mer diversifisert næring.
 
@@ -4482,9 +4482,9 @@ kable(
 
 Basemultiplikatoren er gitt ved $\Delta E_r = \frac{1}{1-a} \bullet \Delta E_b$
 
-Vi har funne LQ-verdiene for de relevante kommunene vi skal se på, som er Stord (Leirvik), Kvinnherad (Husnes) og Odda, både med hensyn på arbeidssted og bosted. Vi bruker dette til å rekne ut hva multiplikatoren blir for de ulike kommunene.
+Vi har funne LQ-verdiene for de relevante kommunene vi skal se på, som er Stord (Leirvik), Kvinnherad (Husnes) og Odda, både med hensyn på arbeidssted og bosted. Vi bruker dette til å regne ut hva multiplikatoren blir for de ulike kommunene.
 
-Noen bemerkelser i videre arbeid. Først så velger vi her å se på talene for Stord og Kvinnherad i 2020, mens for Odda så ser vi på talene fra 2019. Neste er at vi tar utgangspunkt i at alle næringer med LQ under 1 er lokal bedrift. Dette gjør vi for å holde utrekningen konsekvent.
+Noen bemerkelser i videre arbeid. Først så velger vi her å se på talene for Stord og Kvinnherad i 2020, mens for Odda så ser vi på talene fra 2019. Neste er at vi tar utgangspunkt i at alle næringer med LQ under 1 er lokal bedrift. Dette gjør vi for å holde utregningen konsekvent.
 
 ### Basemultiplikator Med Hensyn På Arbeidssted
 
@@ -4666,7 +4666,7 @@ Først velger vi å se på effekten av en ny industribedrift med 500 ansatte i k
 
 Ved et positivt sjokk på 500 for Stord kommune så vil dette medfølge en verdi på 1,65 * 500 = 825 totalt nye arbeidsplasser. 500 arbeidsplasser i bedriften og ytterlige 325 i lokalnæringen som følge av økt etterspørsel til goder i kommunen. Vi må her også ta hensyn til pendling. Det vil si at det blir 500 nye arbeidsplasser i Stord kommune i industrien, men arbeidstakere kan ha bosted i Bømlo, eller Fitjar. Dette vil medføre at en andel av økningen i de lokale arbeidsplassene på Stord, vil nå bli mer fordelt blant pendler kommuner rundt Stord.
 
-En bedrift i Kvinnherad vil medføre 1,66 * 500 = 830 ny arbeidsplasser, hvorav 500 er i nye industrien og 330 er i lokale næringer. Her igjen må vi også ta hensyn til pendling som vil medføre at antal lokale arbeidsplasser vil bli fordelt blant pendler kommunene. Arbeidsplassen til industrien, dvs. de 500 nye, vil være i Kvinnherad kommune, men bostedet til arbeidstakerene kan og vil variere mellom Kvinnherad og kommunene rundt.
+En bedrift i Kvinnherad vil medføre 1,66 * 500 = 830 ny arbeidsplasser, hvorav 500 er i nye industrien og 330 er i lokale næringer. Her igjen må vi også ta hensyn til pendling som vil medføre at antall lokale arbeidsplasser vil bli fordelt blant pendler kommunene. Arbeidsplassen til industrien, dvs. de 500 nye, vil være i Kvinnherad kommune, men bostedet til arbeidstakerne kan og vil variere mellom Kvinnherad og kommunene rundt.
 
 Ved en ny bedrift med 500 arbeidsplasser i Odda(2019) så vil dette medføre 1,70 * 500 = 850 nye arbeidsplasser, hvorav 500 er i basisnæringen og 350 i lokale bedrifter. Når en tar hensyn til pendling så vil det igjen påvirke fordelingen av de nye arbeidsplassene i lokale bedrifter blant kommuner rundt.
 
@@ -4675,8 +4675,6 @@ Til slutt ønsker vi å se på scenarioet på regionalt nivå, der vi først ser
 1,49 * 500 = 745 nye arbeidsplasser, hvorav 500 er i den nyetablerte industrien, mens de siste 245 er i lokale næringer rundt i kommunene i regionen. Ved en etablering av ny bedrift i Hardanger så vil dette medføre 1,63 * 500 = 815 nye arbeidsplasser i Hardanger. I både Sunnhordland og Hardanger så vil bedriften med 500 arbeidsplasser gi regionen 500 arbeidsplasser uansett hvor den blir plassert i regionen, men pendling og lokale arbeidsplasser vil være en annen faktor. Nå når vi ser på regionalt nivå så vil de lokale arbeidsplassene være i stor grad innen den samme regionen hvor bedriften blir plassert.
 
 Pendlingen en evt. må ta hensyn til her er pendling fra Haugalandet til Sunnhordland ved en etablering av bedriften i Sunnhordland. Men dette gjelder bare i stor grad om bedriften blir etablert på Stord, da det er svært få personer som orker å pendle fra Skudneshavn på Karmøy til Husnes i Kvinnherad for å jobbe. Pendling vil dermed i stor grad i dette tilfellet forbli internt i regionen.
-
-**Trenger Pendler Detaljer Her**
 
 ### Eksogent Sjokk Med Hensyn På Bosted.
 
@@ -4688,13 +4686,16 @@ Videre ønsker vi å se på effekten av den nye bedriften på regionalt nivå, o
 
 Når vi ser på positiv sjokk på regionalt nivå med hensyn på arbeidstakerenes bosted, så er det en detalj som kommer frem: migrasjon. Vi ser her en økning i antal bosatte som jobber i den nye bedriften som igjen gir ringvirkninger lokalt. Vi ser her med andre ord en vekst i befolkning i regionen i sin helhet. Dette kommer mest sannsynelig av at personer i andre kommuner utenfor regionen flytter til regionen som får den nye bedriften for å jobbe. En ny bedrift i en region vil dermed medføre positiv vekst i flere områder: antalt arbeidere, lokale økonomien og befolkningsvekst.
 
-Videre har vi utledet en shift-share analyse. Vi ser på utviklingen i det ulike sektorene i Sunnhordland og Hardanger fra år 2008 og år 2000. Regionene er her delt inn i indre, midtre og ytre. Odda og Ullensvang utgjør indre, Tysnes og Kvinnherad kategoriseres som midtre, og i den ytre kategorien ligger Bømlo, Stord, Sveio og Fitjar
+Videre har vi utledet en shift-share analyse. Vi ser på utviklingen i det ulike sektorene i Sunnhordland og Hardanger fra år 2008 og år 2020. Regionene er her delt inn i indre, midtre og ytre. Odda og Ullensvang utgjør indre, Tysnes og Kvinnherad kategoriseres som midtre, og i den ytre kategorien ligger Bømlo, Stord, Sveio og Fitjar
 
 ![](Bilde/Shift share.png "Shift-share analyse")
 
-Den samlede mix-effekten er negativ for disse bransjene i samtlige deler av regionen, dette betyr at næringssammensettingen i regionen er svak i forhold til det nasjonale nivået.
+Den samlede MIX-effekten er negativ for disse bransjene i samtlige deler av regionen, dette betyr at næringssammensettingen i regionen er svak i forhold til det nasjonale nivået.
 
 DIF viser til konkurranseeffekten. Denne gir et bilde på regional økonomisk kapasitet til utvikling av sektorer med større gjennomsnittsrater enn de som oppnås av de korresponderende nasjonale sektorer. Her ser vi negativ DIF-effekt i samtlige inndelinger som tyder på at regionen har svakere økonomisk kapasitet for sektorutvikling enn det som er gjennomsnitt på nasjonalt nivå
 
+![](Bilde/Kart arbeidssted.png "Shift-share analyse")
+Figuren over viser effekten av et eksogent sjokk i kommunen Stord, Kvinnherad og Odda med hensyn på arbeidssted. Effekten er målt i %.
 
-
+![](Bilde/kart bosted.png "Shift-share analyse")
+Figuren viser effekten av et eksogent sjokk i kommunen Stord, Kvinnherad og Odda med hensyn på bosted. Effekten er målt i %.
